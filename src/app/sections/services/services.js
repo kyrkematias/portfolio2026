@@ -1,0 +1,14 @@
+"use client";
+import ServiceCard from "./serviceCard";
+
+export default function Services() {
+  return (
+    <section className="bg-[#0e0f1a] px-6 md:px-20 py-6" id="services">
+      <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit">
+        MIS SERVICIOS
+      </h2>
+
+      <ServiceCard />
+    </section>
+  );
+}
