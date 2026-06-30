@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import portfolioData from "../../data/portfolioData";
+import Image from "next/image";
 
 export default function Portfolio() {
   const [visibleCount, setVisibleCount] = useState(6);
@@ -37,13 +38,18 @@ export default function Portfolio() {
   };
 
   return (
-    <section className="bg-[#0e0f1a] px-6 md:px-20 py-16 md:py-24" id="portfolio">
+    <section
+      className="bg-[#0e0f1a] px-6 md:px-20 py-16 md:py-24"
+      id="portfolio"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit">
           MI PORTAFOLIO
         </h2>
         <p className="mt-4 text-gray-400 max-w-2xl text-sm sm:text-base font-light leading-relaxed">
-          Una recopilación de mis trabajos destacados en desarrollo frontend, optimización SEO técnica, estructuración de bases de datos y campañas de marketing de precisión.
+          Una recopilación de mis trabajos destacados en desarrollo frontend,
+          optimización SEO técnica, estructuración de bases de datos y campañas
+          de marketing de precisión.
         </p>
 
         {/* Project Grid */}
@@ -63,8 +69,29 @@ export default function Portfolio() {
 
               <div>
                 {/* Visual Banner Preview */}
-                <div className={`relative h-44 w-full bg-gradient-to-tr ${project.gradient} rounded-lg flex items-center justify-center overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px] group-hover:scale-105 transition-transform duration-500" />
+                <div className="relative h-44 w-full rounded-lg flex items-center justify-center overflow-hidden bg-[#161725]">
+                  {project.image ? (
+                    <>
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        unoptimized
+                        quality={100}
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {/* Dark overlay for tag contrast without blurring */}
+                      <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-tr ${project.gradient} group-hover:scale-105 transition-transform duration-500`}
+                      />
+                      {/* Blur and overlay for abstract gradient backgrounds */}
+                      <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px] pointer-events-none" />
+                    </>
+                  )}
                   <span className="relative z-10 text-[10px] font-bold tracking-widest text-white/95 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full uppercase border border-white/10">
                     {project.category}
                   </span>
@@ -159,8 +186,28 @@ export default function Portfolio() {
               {/* Scrollable Content */}
               <div className="overflow-y-auto p-6 md:p-8 flex-grow">
                 {/* Preview Banner */}
-                <div className={`h-48 md:h-56 w-full bg-gradient-to-tr ${activeProject.gradient} rounded-xl flex items-center justify-center relative overflow-hidden mb-6`}>
-                  <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px]" />
+                <div className="relative h-48 md:h-56 w-full rounded-xl flex items-center justify-center overflow-hidden mb-6 bg-[#161725]">
+                  {activeProject.image ? (
+                    <>
+                      <Image
+                        src={activeProject.image}
+                        alt={activeProject.title}
+                        fill
+                        unoptimized
+                        className="object-cover object-top"
+                      />
+                      {/* Dark overlay for tag contrast without blurring */}
+                      <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-tr ${activeProject.gradient}`}
+                      />
+                      {/* Blur and overlay for abstract gradient backgrounds */}
+                      <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px] pointer-events-none" />
+                    </>
+                  )}
                   <span className="relative z-10 text-xs font-bold tracking-widest text-white/95 bg-black/40 backdrop-blur-md px-3.5 py-2 rounded-full uppercase border border-white/10">
                     {activeProject.category}
                   </span>

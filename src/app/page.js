@@ -4,15 +4,26 @@ import Services from "./sections/services/services";
 import Techs from "./sections/techs/techs";
 import Certifications from "./sections/certifications/certifications";
 import Portfolio from "./sections/portfolio/portfolio";
+import ScrollSection from "./components/scrollSection";
 
 export default function Home() {
   return (
-    <div>
-      <Hero />
-      <Services />
-      <Techs />
-      <Certifications />
-      <Portfolio />
+    <div className="overflow-hidden">
+      <ScrollSection>
+        <Hero />
+      </ScrollSection>
+      <ScrollSection>
+        <Services />
+      </ScrollSection>
+      <ScrollSection>
+        <Techs />
+      </ScrollSection>
+      <ScrollSection>
+        <Certifications />
+      </ScrollSection>
+      <ScrollSection>
+        <Portfolio />
+      </ScrollSection>
     </div>
   );
 }
