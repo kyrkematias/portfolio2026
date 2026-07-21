@@ -6,6 +6,7 @@ import Certifications from "./sections/certifications/certifications";
 import Portfolio from "./sections/portfolio/portfolio";
 import Contact from "./sections/contact/contact";
 import ScrollSection from "./components/scrollSection";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <ScrollSection>
         <Contact />
       </ScrollSection>
+      <Footer />
     </div>
   );
 }

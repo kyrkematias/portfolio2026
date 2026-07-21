@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Martín Matías - Professional Portfolio",
+  title: "Desarrollo Web & Optimización SEO | Martín Matías",
   description:
-    "Martín’s Professional Portfolio: web development, UX/UI design & technical SEO focused on creative and effective solutions.",
+    "Especialista en desarrollo web & optimización SEO. Creo sitios web modernos, ultrarrápidos y enfocados en posicionar en Google para potenciar tu negocio.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
