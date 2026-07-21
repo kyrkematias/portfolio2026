@@ -15,12 +15,30 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-[#0e0f1a] text-white w-full fixed top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 md:px-10 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <p className="text-sm md:text-lg font-semibold tracking-wide">
-          PORTAFOLIO DE MARTÍN
-        </p>
+    <header className="bg-[#0e0f1a]/95 backdrop-blur-md text-white w-full fixed top-0 z-50 shadow-md border-b border-white/5">
+      <div className="max-w-7xl mx-auto px-4 md:px-10 py-3 flex justify-between items-center">
+        {/* Pure Code Logo */}
+        <a
+          href="#"
+          className="flex items-center gap-2.5 sm:gap-3 group select-none transition-transform duration-300 hover:scale-[1.02]"
+        >
+          {/* Glowing Monogram Emblem */}
+          <div className="relative p-[1.5px] rounded-lg bg-gradient-to-tr from-pink-500 via-purple-500 to-cyan-400 shadow-[0_0_12px_rgba(236,72,153,0.35)] group-hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] transition-all duration-300">
+            <div className="bg-[#0e0f1a] rounded-[6.5px] px-2.5 py-1 flex items-center justify-center">
+              <span className="font-extrabold text-xs sm:text-sm tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400">
+                MM
+              </span>
+            </div>
+          </div>
+
+          {/* Separator & Typography */}
+          <div className="flex items-center gap-2">
+            <span className="text-pink-500/80 font-light text-xs sm:text-sm">—</span>
+            <span className="text-xs sm:text-sm font-bold tracking-widest text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-cyan-400 transition-all duration-300">
+              POSICIONAMIENTO WEB
+            </span>
+          </div>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">

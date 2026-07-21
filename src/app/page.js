@@ -4,6 +4,7 @@ import Services from "./sections/services/services";
 import Techs from "./sections/techs/techs";
 import Certifications from "./sections/certifications/certifications";
 import Portfolio from "./sections/portfolio/portfolio";
+import Contact from "./sections/contact/contact";
 import ScrollSection from "./components/scrollSection";
 
 export default function Home() {
@@ -23,6 +24,9 @@ export default function Home() {
       </ScrollSection>
       <ScrollSection>
         <Portfolio />
+      </ScrollSection>
+      <ScrollSection>
+        <Contact />
       </ScrollSection>
     </div>
   );
