@@ -16,6 +16,9 @@ export const metadata = {
   title: "Desarrollo Web & Optimización SEO | Martín Matías",
   description:
     "Especialista en desarrollo web & optimización SEO. Creo sitios web modernos, ultrarrápidos y enfocados en posicionar en Google para potenciar tu negocio.",
+  verification: {
+    google: "6ho0OeF8hKAkEARx9sy_sHjuwKCIDtcniNjfBZ1m8ko",
+  },
 };
 
 export default function RootLayout({ children }) {
