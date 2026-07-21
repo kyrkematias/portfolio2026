@@ -189,10 +189,10 @@ export default function Contact() {
                       Email
                     </p>
                     <a
-                      href="mailto:tuemail@dominio.com"
+                      href="mailto:contacto@martinmatias.com.ar"
                       className="text-sm sm:text-base hover:text-cyan-400 transition-colors duration-200"
                     >
-                      tuemail@dominio.com
+                      contacto@martinmatias.com.ar
                     </a>
                   </div>
                 </div>
