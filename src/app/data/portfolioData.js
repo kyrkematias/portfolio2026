@@ -221,7 +221,8 @@ const portfolioData = [
       { name: "Firebase", type: "desarrollo web" },
       { name: "Docker", type: "desarrollo web" },
     ],
-    link: "https://github.com/tuusuario/roommate-finder",
+    link: "https://github.com/kyrkematias/segundo-hogar",
+    image: "/projects/sh.png",
     gradient: "from-pink-500 via-purple-900 to-indigo-500",
   },
   {

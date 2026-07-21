@@ -1,7 +1,14 @@
 "use client";
 import { useState } from "react";
-import { Mail, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
-import { FaGithub, FaBehance } from "react-icons/fa";
+import {
+  Mail,
+  MapPin,
+  Send,
+  CheckCircle,
+  AlertCircle,
+  Loader2,
+} from "lucide-react";
+import { FaGithub, FaBehance, FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -102,7 +109,7 @@ export default function Contact() {
     if (!accessKey || accessKey === "your_web3forms_access_key_here") {
       setStatus("error");
       setStatusMessage(
-        "Clave de acceso no configurada. Por favor, añade tu clave de Web3Forms en tu archivo de configuración (.env.local)."
+        "Clave de acceso no configurada. Por favor, añade tu clave de Web3Forms en tu archivo de configuración (.env.local).",
       );
       return;
     }
@@ -136,11 +143,15 @@ export default function Contact() {
         setErrors({});
       } else {
         setStatus("error");
-        setStatusMessage(result.message || "Hubo un problema al enviar el formulario.");
+        setStatusMessage(
+          result.message || "Hubo un problema al enviar el formulario.",
+        );
       }
     } catch (error) {
       setStatus("error");
-      setStatusMessage("No se pudo conectar con el servidor. Revisa tu conexión a internet.");
+      setStatusMessage(
+        "No se pudo conectar con el servidor. Revisa tu conexión a internet.",
+      );
     }
   };
 
@@ -151,7 +162,9 @@ export default function Contact() {
           CONTACTO
         </h2>
         <p className="mt-4 text-gray-400 max-w-2xl text-sm sm:text-base font-light leading-relaxed">
-          ¿Tienes un proyecto en mente, buscas mejorar el posicionamiento de tu negocio o quieres conversar sobre desarrollo frontend? Escríbeme y hablemos sobre cómo podemos trabajar juntos.
+          ¿Tenés un proyecto en mente, buscas mejorar el posicionamiento web de
+          tu negocio o querés mejorar tu presencia online? Contactame y hablemos
+          sobre cómo podemos trabajar juntos.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12">
@@ -162,7 +175,8 @@ export default function Contact() {
                 Información de contacto
               </h3>
               <p className="text-gray-400 text-sm sm:text-base font-light leading-relaxed">
-                Completa el formulario para enviar un correo directamente a mi bandeja de entrada. Responderé a la brevedad posible para agendar una llamada.
+                Completa el formulario para enviar un correo. Responderé a la
+                brevedad posible para agendar una llamada.
               </p>
 
               <div className="space-y-4 pt-4">
@@ -171,20 +185,15 @@ export default function Contact() {
                     <Mail className="text-pink-500 w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold">Email</p>
-                    <a href="mailto:tuemail@dominio.com" className="text-sm sm:text-base hover:text-cyan-400 transition-colors duration-200">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold">
+                      Email
+                    </p>
+                    <a
+                      href="mailto:tuemail@dominio.com"
+                      className="text-sm sm:text-base hover:text-cyan-400 transition-colors duration-200"
+                    >
                       tuemail@dominio.com
                     </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 text-gray-300">
-                  <div className="p-3 bg-[#161725] rounded-lg border border-[#2c2f3a]">
-                    <MapPin className="text-blue-500 w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold">Ubicación</p>
-                    <p className="text-sm sm:text-base">Buenos Aires, Argentina</p>
                   </div>
                 </div>
               </div>
@@ -193,11 +202,11 @@ export default function Contact() {
             {/* Redes Sociales */}
             <div className="pt-6 border-t border-[#2c2f3a] space-y-4">
               <h4 className="text-xs text-gray-500 uppercase tracking-widest font-semibold">
-                Redes Profesionales
+                Seguime en mis redes
               </h4>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/tuusuario"
+                  href="https://github.com/kyrkematias/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
@@ -209,7 +218,19 @@ export default function Contact() {
                   </div>
                 </a>
                 <a
-                  href="https://behance.net/tuusuario"
+                  href="https://www.linkedin.com/in/martinrodrigomatias/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
+                    <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
+                      <FaLinkedin />
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="https://www.behance.net/martinmatias2"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
@@ -363,7 +384,10 @@ export default function Contact() {
                 {status === "success" && (
                   <div className="flex items-center gap-3 p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-sm text-sm">
                     <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                    <p>¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.</p>
+                    <p>
+                      ¡Mensaje enviado con éxito! Me pondré en contacto contigo
+                      pronto.
+                    </p>
                   </div>
                 )}
 

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -9,6 +10,11 @@ import Image from "next/image";
 export default function Portfolio() {
   const [visibleCount, setVisibleCount] = useState(6);
   const [activeProject, setActiveProject] = useState(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Disable scroll when modal is open
   useEffect(() => {
@@ -154,117 +160,123 @@ export default function Portfolio() {
         )}
       </div>
 
-      {/* Interactive Modal */}
-      <AnimatePresence>
-        {activeProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Backdrop Blur */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setActiveProject(null)}
-              className="fixed inset-0 bg-black/80 backdrop-blur-md"
-            />
+      {/* Interactive Modal rendered into document.body via Portal */}
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {activeProject && (
+              <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+                {/* Backdrop Blur */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setActiveProject(null)}
+                  className="fixed inset-0 bg-black/80 backdrop-blur-md"
+                />
 
-            {/* Modal Window */}
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              transition={{ type: "spring", duration: 0.4 }}
-              className="relative w-full max-w-2xl bg-[#121324] border border-[#2c2f3a] rounded-2xl overflow-hidden shadow-2xl z-10 max-h-[90vh] flex flex-col"
-            >
-              {/* X Close Button */}
-              <button
-                onClick={() => setActiveProject(null)}
-                className="absolute top-4 right-4 bg-black/40 hover:bg-black/80 backdrop-blur-sm border border-white/10 text-white rounded-full p-2 transition-all duration-200 z-20 cursor-pointer"
-              >
-                <X size={18} />
-              </button>
-
-              {/* Scrollable Content */}
-              <div className="overflow-y-auto p-6 md:p-8 flex-grow">
-                {/* Preview Banner */}
-                <div className="relative h-48 md:h-56 w-full rounded-xl flex items-center justify-center overflow-hidden mb-6 bg-[#161725]">
-                  {activeProject.image ? (
-                    <>
-                      <Image
-                        src={activeProject.image}
-                        alt={activeProject.title}
-                        fill
-                        unoptimized
-                        className="object-cover object-top"
-                      />
-                      {/* Dark overlay for tag contrast without blurring */}
-                      <div className="absolute inset-0 bg-black/15 pointer-events-none" />
-                    </>
-                  ) : (
-                    <>
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-tr ${activeProject.gradient}`}
-                      />
-                      {/* Blur and overlay for abstract gradient backgrounds */}
-                      <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px] pointer-events-none" />
-                    </>
-                  )}
-                  <span className="relative z-10 text-xs font-bold tracking-widest text-white/95 bg-black/40 backdrop-blur-md px-3.5 py-2 rounded-full uppercase border border-white/10">
-                    {activeProject.category}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-wide">
-                  {activeProject.title}
-                </h3>
-
-                {/* Skills tags */}
-                <div className="flex flex-wrap gap-1.5 mt-4">
-                  {activeProject.skills.map((skill) => (
-                    <span
-                      key={skill.name}
-                      className={`text-[9px] font-bold tracking-wider px-2.5 py-1 rounded-full uppercase ${getPillColor(skill.type)}`}
-                    >
-                      {skill.name}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Detail Description */}
-                <div className="mt-6">
-                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-widest">
-                    Sobre el Proyecto
-                  </h4>
-                  <p className="mt-2 text-sm md:text-base text-gray-300 leading-relaxed font-light whitespace-pre-line">
-                    {activeProject.fullDescription}
-                  </p>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="mt-8 pt-6 border-t border-[#2c2f3a] flex flex-wrap justify-between items-center gap-4">
-                  <a
-                    href={activeProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative inline-flex items-center gap-2 rounded-full p-[2px] bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 hover:shadow-[0_0_15px_#ec4899,0_0_15px_#3b82f6] cursor-pointer"
-                  >
-                    <span className="block rounded-full px-6 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#0e0f1a] transition-all duration-300 group-hover:bg-transparent">
-                      VISITAR PROYECTO
-                    </span>
-                  </a>
-
+                {/* Modal Window */}
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                  animate={{ scale: 1, opacity: 1, y: 0 }}
+                  exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                  transition={{ type: "spring", duration: 0.4 }}
+                  className="relative w-full max-w-2xl bg-[#121324] border border-[#2c2f3a] rounded-2xl overflow-hidden shadow-2xl z-[10000] max-h-[85vh] flex flex-col my-auto"
+                >
+                  {/* X Close Button */}
                   <button
                     onClick={() => setActiveProject(null)}
-                    className="px-5 py-2.5 rounded-full border border-[#2c2f3a] text-xs sm:text-sm font-bold text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-200 cursor-pointer"
+                    aria-label="Cerrar modal"
+                    className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-black/60 hover:bg-black/90 backdrop-blur-md border border-white/20 text-white rounded-full p-2.5 transition-all duration-200 z-20 cursor-pointer shadow-lg"
                   >
-                    Cerrar
+                    <X size={18} />
                   </button>
-                </div>
+
+                  {/* Scrollable Content */}
+                  <div className="overflow-y-auto p-5 sm:p-8 flex-grow">
+                    {/* Preview Banner */}
+                    <div className="relative h-44 sm:h-56 w-full rounded-xl flex items-center justify-center overflow-hidden mb-6 bg-[#161725]">
+                      {activeProject.image ? (
+                        <>
+                          <Image
+                            src={activeProject.image}
+                            alt={activeProject.title}
+                            fill
+                            unoptimized
+                            className="object-cover object-top"
+                          />
+                          {/* Dark overlay for tag contrast without blurring */}
+                          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+                        </>
+                      ) : (
+                        <>
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-tr ${activeProject.gradient}`}
+                          />
+                          {/* Blur and overlay for abstract gradient backgrounds */}
+                          <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px] pointer-events-none" />
+                        </>
+                      )}
+                      <span className="relative z-10 text-xs font-bold tracking-widest text-white/95 bg-black/50 backdrop-blur-md px-3.5 py-2 rounded-full uppercase border border-white/10">
+                        {activeProject.category}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl sm:text-3xl font-bold text-white tracking-wide pr-8">
+                      {activeProject.title}
+                    </h3>
+
+                    {/* Skills tags */}
+                    <div className="flex flex-wrap gap-1.5 mt-4">
+                      {activeProject.skills.map((skill) => (
+                        <span
+                          key={skill.name}
+                          className={`text-[9px] font-bold tracking-wider px-2.5 py-1 rounded-full uppercase ${getPillColor(skill.type)}`}
+                        >
+                          {skill.name}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Detail Description */}
+                    <div className="mt-6">
+                      <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-widest">
+                        Sobre el Proyecto
+                      </h4>
+                      <p className="mt-2 text-sm sm:text-base text-gray-300 leading-relaxed font-light whitespace-pre-line">
+                        {activeProject.fullDescription}
+                      </p>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="mt-8 pt-6 border-t border-[#2c2f3a] flex flex-wrap justify-between items-center gap-4">
+                      <a
+                        href={activeProject.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto text-center group relative inline-flex items-center justify-center gap-2 rounded-full p-[2px] bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 hover:shadow-[0_0_15px_#ec4899,0_0_15px_#3b82f6] cursor-pointer"
+                      >
+                        <span className="w-full sm:w-auto block rounded-full px-6 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#0e0f1a] transition-all duration-300 group-hover:bg-transparent">
+                          VISITAR PROYECTO
+                        </span>
+                      </a>
+
+                      <button
+                        onClick={() => setActiveProject(null)}
+                        className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#2c2f3a] text-xs sm:text-sm font-bold text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-200 cursor-pointer"
+                      >
+                        Cerrar
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
-            </motion.div>
-          </div>
+            )}
+          </AnimatePresence>,
+          document.body
         )}
-      </AnimatePresence>
     </section>
   );
 }
+

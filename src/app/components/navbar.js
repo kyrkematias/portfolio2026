@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { FaGithub, FaBehance } from "react-icons/fa";
+import { FaGithub, FaBehance, FaLinkedin } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,9 @@ export default function Navbar() {
 
           {/* Separator & Typography */}
           <div className="flex items-center gap-2">
-            <span className="text-pink-500/80 font-light text-xs sm:text-sm">—</span>
+            <span className="text-pink-500/80 font-light text-xs sm:text-sm">
+              —
+            </span>
             <span className="text-xs sm:text-sm font-bold tracking-widest text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-cyan-400 transition-all duration-300">
               POSICIONAMIENTO WEB
             </span>
@@ -55,7 +57,7 @@ export default function Navbar() {
           ))}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/tuusuario"
+              href="https://github.com/kyrkematias"
               target="_blank"
               rel="noopener noreferrer"
               className="group"
@@ -67,7 +69,19 @@ export default function Navbar() {
               </div>
             </a>
             <a
-              href="https://behance.net/tuusuario"
+              href="https://www.linkedin.com/in/martinrodrigomatias/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
+                <div className="bg-black rounded-full p-2 text-white text-xl flex items-center justify-center">
+                  <FaLinkedin />
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://www.behance.net/martinmatias2"
               target="_blank"
               rel="noopener noreferrer"
               className="group"
@@ -103,14 +117,21 @@ export default function Navbar() {
             ))}
             <div className="flex justify-center gap-6 pt-4">
               <a
-                href="https://github.com/tuusuario"
+                href="https://github.com/kyrkematias"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaGithub className="text-xl hover:text-blue-400" />
               </a>
               <a
-                href="https://behance.net/tuusuario"
+                href="https://www.linkedin.com/in/martinrodrigomatias/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="text-xl hover:text-blue-400" />
+              </a>
+              <a
+                href="https://www.behance.net/martinmatias2"
                 target="_blank"
                 rel="noopener noreferrer"
               >
