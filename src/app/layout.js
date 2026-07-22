@@ -18,8 +18,39 @@ export const metadata = {
   title: "Desarrollo Web & Optimización SEO | Martín Matías",
   description:
     "Especialista en desarrollo web & optimización SEO. Creo sitios web modernos, ultrarrápidos y enfocados en posicionar en Google para potenciar tu negocio.",
+  authors: [{ name: "Martín Matías", url: "https://www.martinmatias.com.ar" }],
+  publisher: "Martín Matías",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   verification: {
     google: "6ho0OeF8hKAkEARx9sy_sHjuwKCIDtcniNjfBZ1m8ko",
+  },
+  openGraph: {
+    title: "Desarrollo Web & Optimización SEO | Martín Matías",
+    description:
+      "Especialista en desarrollo web & optimización SEO. Creo sitios web modernos, ultrarrápidos y enfocados en posicionar en Google para potenciar tu negocio.",
+    url: "https://www.martinmatias.com.ar",
+    siteName: "Martín Matías Portfolio",
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Desarrollo Web & Optimización SEO | Martín Matías",
+    description:
+      "Especialista en desarrollo web & optimización SEO. Creo sitios web modernos, ultrarrápidos y enfocados en posicionar en Google para potenciar tu negocio.",
   },
 };
 
