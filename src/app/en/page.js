@@ -31,10 +31,8 @@ export const metadata = {
 
 export default function HomeEn() {
   return (
-    <div className="overflow-hidden">
-      <ScrollSection>
-        <Hero lang="en" />
-      </ScrollSection>
+    <div className="overflow-hidden bg-[#0e0f1a] text-white">
+      <Hero lang="en" />
       <ScrollSection>
         <Services lang="en" />
       </ScrollSection>

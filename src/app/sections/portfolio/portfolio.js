@@ -38,7 +38,7 @@ export default function Portfolio({ lang = "es" }) {
       return "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
     }
     if (t.includes("sem") || t.includes("ppc")) {
-      return "bg-amber-500/10 text-amber-400 border border-amber-500/20";
+      return "bg-purple-500/10 text-purple-400 border border-purple-500/20";
     }
     if (t.includes("desarrollo") || t.includes("web")) {
       return "bg-blue-500/10 text-blue-400 border border-blue-500/20";
@@ -46,7 +46,7 @@ export default function Portfolio({ lang = "es" }) {
     if (t.includes("ux") || t.includes("ui")) {
       return "bg-pink-500/10 text-pink-400 border border-pink-500/20";
     }
-    return "bg-gray-500/10 text-gray-400 border border-gray-500/20";
+    return "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20";
   };
 
   return (

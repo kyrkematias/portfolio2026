@@ -9,10 +9,8 @@ import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
-      <ScrollSection>
-        <Hero lang="es" />
-      </ScrollSection>
+    <div className="overflow-hidden bg-[#0e0f1a] text-white">
+      <Hero lang="es" />
       <ScrollSection>
         <Services lang="es" />
       </ScrollSection>
