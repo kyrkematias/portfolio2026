@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "./sections/hero/hero";
 import Services from "./sections/services/services";
 import Techs from "./sections/techs/techs";
@@ -12,24 +11,24 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <ScrollSection>
-        <Hero />
+        <Hero lang="es" />
       </ScrollSection>
       <ScrollSection>
-        <Services />
+        <Services lang="es" />
       </ScrollSection>
       <ScrollSection>
-        <Techs />
+        <Techs lang="es" />
       </ScrollSection>
       <ScrollSection>
-        <Certifications />
+        <Certifications lang="es" />
       </ScrollSection>
       <ScrollSection>
-        <Portfolio />
+        <Portfolio lang="es" />
       </ScrollSection>
       <ScrollSection>
-        <Contact />
+        <Contact lang="es" />
       </ScrollSection>
-      <Footer />
+      <Footer lang="es" />
     </div>
   );
 }

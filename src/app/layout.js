@@ -22,6 +22,10 @@ export const metadata = {
   publisher: "Martín Matías",
   alternates: {
     canonical: "/",
+    languages: {
+      "es-AR": "/",
+      "en-US": "/en",
+    },
   },
   robots: {
     index: true,
@@ -56,7 +60,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" className="scroll-smooth">
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-MRHQGZEZLK"
@@ -73,7 +77,7 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0e0f1a] text-white`}
       >
         <Navbar />
         {children}
@@ -81,4 +85,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-

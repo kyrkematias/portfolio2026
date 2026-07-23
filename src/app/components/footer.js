@@ -1,8 +1,11 @@
 "use client";
 import { FaGithub, FaLinkedin, FaBehance } from "react-icons/fa";
 import { ArrowUp } from "lucide-react";
+import { getDictionary } from "../data/dictionary";
 
-export default function Footer() {
+export default function Footer({ lang = "es" }) {
+  const dict = getDictionary(lang);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -10,12 +13,14 @@ export default function Footer() {
     });
   };
 
+  const baseHash = lang === "en" ? "/en#" : "#";
+
   const navLinks = [
-    { name: "Servicios", url: "#services" },
-    { name: "Tecnologías", url: "#technologies" },
-    { name: "Certificaciones", url: "#certifications" },
-    { name: "Portafolio", url: "#portfolio" },
-    { name: "Contacto", url: "#contact" },
+    { name: dict.nav.services, url: `${baseHash}services` },
+    { name: dict.nav.technologies, url: `${baseHash}technologies` },
+    { name: dict.nav.certifications, url: `${baseHash}certifications` },
+    { name: dict.nav.portfolio, url: `${baseHash}portfolio` },
+    { name: dict.nav.contact, url: `${baseHash}contact` },
   ];
 
   return (
@@ -28,7 +33,7 @@ export default function Footer() {
           {/* Brand & Bio */}
           <div className="md:col-span-5 space-y-4">
             <a
-              href="#"
+              href={lang === "en" ? "/en" : "/"}
               className="inline-flex items-center gap-2.5 sm:gap-3 group select-none transition-transform duration-300 hover:scale-[1.02]"
             >
               {/* Monogram Emblem */}
@@ -46,20 +51,20 @@ export default function Footer() {
                   —
                 </span>
                 <span className="text-xs sm:text-sm font-bold tracking-widest text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-cyan-400 transition-all duration-300">
-                  POSICIONAMIENTO WEB
+                  {dict.nav.subtitle}
                 </span>
               </div>
             </a>
 
             <p className="text-gray-400 text-sm font-light leading-relaxed max-w-sm">
-              Desarrollo web frontend y optimización SEO técnica. Creo interfaces modernas, ultrarrápidas y orientadas a potenciar tu presencia online.
+              {dict.footer.tagline}
             </p>
           </div>
 
           {/* Quick Navigation Links */}
           <div className="md:col-span-4 space-y-3">
             <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-              Navegación
+              {lang === "en" ? "Navigation" : "Navegación"}
             </h3>
             <ul className="space-y-2">
               {navLinks.map((link) => (
@@ -78,7 +83,7 @@ export default function Footer() {
           {/* Social Networks & Contact CTA */}
           <div className="md:col-span-3 space-y-4">
             <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-              Redes Sociales
+              {lang === "en" ? "Social Media" : "Redes Sociales"}
             </h3>
             <div className="flex items-center gap-3">
               <a
@@ -115,15 +120,15 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Scroll to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 font-light">
           <p>
-            © {new Date().getFullYear()} Martín Matías. Todos los derechos reservados.
+            © {new Date().getFullYear()} Martín Matías. {dict.footer.rights}
           </p>
 
           <button
             onClick={scrollToTop}
-            aria-label="Volver arriba"
+            aria-label={lang === "en" ? "Back to top" : "Volver arriba"}
             className="flex items-center gap-2 text-gray-400 hover:text-pink-400 transition-colors duration-200 cursor-pointer group"
           >
-            <span>Volver arriba</span>
+            <span>{lang === "en" ? "Back to top" : "Volver arriba"}</span>
             <div className="p-1.5 rounded-full bg-white/5 border border-white/10 group-hover:border-pink-500/50 transition-colors duration-200">
               <ArrowUp className="w-3.5 h-3.5" />
             </div>

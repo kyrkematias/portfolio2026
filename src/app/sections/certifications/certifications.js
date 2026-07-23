@@ -1,21 +1,25 @@
 "use client";
 import { motion } from "framer-motion";
-import certifications from "../../data/certificationsData";
+import { getCertifications } from "../../data/certificationsData";
+import { getDictionary } from "../../data/dictionary";
 
-export default function Certifications() {
+export default function Certifications({ lang = "es" }) {
+  const dict = getDictionary(lang);
+  const certsList = getCertifications(lang);
+
   return (
     <section className="bg-[#0e0f1a] px-6 md:px-20 py-16 md:py-24" id="certifications">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit">
-          CERTIFICACIONES
+        <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit uppercase">
+          {dict.certificationsSection.tag}
         </h2>
         <p className="mt-4 text-gray-400 max-w-2xl text-sm sm:text-base font-light leading-relaxed">
-          Validaciones de formación profesional emitidas por instituciones y plataformas líderes en la industria del software, marketing y diseño de producto.
+          {dict.certificationsSection.title}
         </p>
 
         {/* Certifications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          {certifications.map((cert, index) => (
+          {certsList.map((cert, index) => (
             <motion.div
               key={cert.title}
               initial={{ opacity: 0, y: 30 }}
@@ -29,13 +33,13 @@ export default function Certifications() {
 
               <div>
                 <div className="flex items-start gap-4">
-                  {/* Icon Wrapper with Gradient Border on Hover */}
+                  {/* Icon Wrapper */}
                   <div className="p-[1px] rounded-lg bg-[#2c2f3a] group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-blue-500 transition-all duration-300 flex-shrink-0">
                     <div className="bg-[#171926] p-3 rounded-lg text-2xl text-blue-400 group-hover:text-white transition-colors duration-300 flex items-center justify-center">
                       {cert.icon}
                     </div>
                   </div>
-                  
+
                   <div>
                     <span className="text-xs font-semibold tracking-wider text-pink-500 uppercase">
                       {cert.issuer}
@@ -45,7 +49,7 @@ export default function Certifications() {
                     </h3>
                   </div>
                 </div>
-                
+
                 <p className="mt-4 text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                   {cert.description}
                 </p>

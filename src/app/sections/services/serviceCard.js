@@ -1,15 +1,17 @@
 "use client";
 import { motion } from "framer-motion";
-import services from "../../data/services";
+import { getServices } from "../../data/services";
 
-export default function ServiceCard() {
+export default function ServiceCard({ lang = "es" }) {
+  const servicesList = getServices(lang);
+
   return (
     <div className="relative flex flex-col items-center w-full px-4 my-12">
       {/* Línea vertical central */}
       <div className="hidden md:block absolute top-0 left-1/2 h-full w-[1px] bg-[#2c2f3a] transform -translate-x-1/2 z-0" />
 
       <div className="flex flex-col gap-8 w-full z-10">
-        {services.map((service, index) => (
+        {servicesList.map((service, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 40 }}

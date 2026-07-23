@@ -1,32 +1,40 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { categories, techs } from "../../data/techsData";
+import { getCategories, getTechs } from "../../data/techsData";
+import { getDictionary } from "../../data/dictionary";
 
-export default function Techs() {
+export default function Techs({ lang = "es" }) {
+  const dict = getDictionary(lang);
+  const categoriesList = getCategories(lang);
+  const techsList = getTechs(lang);
+
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [visibleCount, setVisibleCount] = useState(9);
 
-  const filteredTechs = selectedCategory === "all"
-    ? techs
-    : techs.filter((tech) => tech.category === selectedCategory);
+  const filteredTechs =
+    selectedCategory === "all"
+      ? techsList
+      : techsList.filter((tech) => tech.category === selectedCategory);
 
   const visibleTechs = filteredTechs.slice(0, visibleCount);
 
   return (
-    <section className="bg-[#0e0f1a] px-6 md:px-20 py-16 md:py-24" id="technologies">
+    <section
+      className="bg-[#0e0f1a] px-6 md:px-20 py-16 md:py-24"
+      id="technologies"
+    >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit">
-          TECNOLOGÍAS & HABILIDADES
+        <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit uppercase">
+          {dict.techsSection.tag}
         </h2>
         <p className="mt-4 text-gray-400 max-w-2xl text-sm sm:text-base font-light leading-relaxed">
-          Herramientas, metodologías y lenguajes que utilizo para construir aplicaciones web eficientes,
-          optimizar el posicionamiento orgánico y diseñar experiencias centradas en el usuario.
+          {dict.techsSection.title}
         </p>
 
         {/* Category Filters */}
         <div className="flex flex-wrap gap-3 mt-10">
-          {categories.map((cat) => (
+          {categoriesList.map((cat) => (
             <button
               key={cat.id}
               onClick={() => {
@@ -52,7 +60,7 @@ export default function Techs() {
         </div>
 
         {/* Tech Grid */}
-        <motion.div 
+        <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
         >
@@ -69,7 +77,7 @@ export default function Techs() {
               >
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                
+
                 <div>
                   <div className="flex items-center gap-4">
                     <div className="p-[1px] rounded-lg bg-[#2c2f3a] group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-blue-500 transition-all duration-300">
@@ -97,9 +105,10 @@ export default function Techs() {
               onClick={() => setVisibleCount((prev) => prev + 9)}
               className="group relative px-6 py-3 rounded-full border border-[#2c2f3a] text-sm font-bold tracking-wider text-gray-300 hover:text-white transition-all duration-300 hover:border-transparent cursor-pointer overflow-hidden"
             >
-              {/* Background gradient transition on hover */}
               <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-              <span className="relative z-10">VER MÁS</span>
+              <span className="relative z-10">
+                {lang === "en" ? "SHOW MORE" : "VER MÁS"}
+              </span>
             </button>
           </div>
         )}

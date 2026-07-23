@@ -4,10 +4,14 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import portfolioData from "../../data/portfolioData";
+import { getPortfolioData } from "../../data/portfolioData";
+import { getDictionary } from "../../data/dictionary";
 import Image from "next/image";
 
-export default function Portfolio() {
+export default function Portfolio({ lang = "es" }) {
+  const dict = getDictionary(lang);
+  const projectsList = getPortfolioData(lang);
+
   const [visibleCount, setVisibleCount] = useState(6);
   const [activeProject, setActiveProject] = useState(null);
   const [mounted, setMounted] = useState(false);
@@ -29,18 +33,20 @@ export default function Portfolio() {
   }, [activeProject]);
 
   const getPillColor = (type) => {
-    switch (type.toLowerCase()) {
-      case "seo":
-        return "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
-      case "sem":
-        return "bg-amber-500/10 text-amber-400 border border-amber-500/20";
-      case "desarrollo web":
-        return "bg-blue-500/10 text-blue-400 border border-blue-500/20";
-      case "ux/ui":
-        return "bg-pink-500/10 text-pink-400 border border-pink-500/20";
-      default:
-        return "bg-gray-500/10 text-gray-400 border border-gray-500/20";
+    const t = type.toLowerCase();
+    if (t.includes("seo")) {
+      return "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
     }
+    if (t.includes("sem") || t.includes("ppc")) {
+      return "bg-amber-500/10 text-amber-400 border border-amber-500/20";
+    }
+    if (t.includes("desarrollo") || t.includes("web")) {
+      return "bg-blue-500/10 text-blue-400 border border-blue-500/20";
+    }
+    if (t.includes("ux") || t.includes("ui")) {
+      return "bg-pink-500/10 text-pink-400 border border-pink-500/20";
+    }
+    return "bg-gray-500/10 text-gray-400 border border-gray-500/20";
   };
 
   return (
@@ -49,18 +55,16 @@ export default function Portfolio() {
       id="portfolio"
     >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit">
-          MI PORTAFOLIO
+        <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit uppercase">
+          {dict.portfolioSection.tag}
         </h2>
         <p className="mt-4 text-gray-400 max-w-2xl text-sm sm:text-base font-light leading-relaxed">
-          Una recopilación de mis trabajos destacados en desarrollo frontend,
-          optimización SEO técnica, estructuración de bases de datos y campañas
-          de marketing de precisión.
+          {dict.portfolioSection.title}
         </p>
 
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {portfolioData.slice(0, visibleCount).map((project, index) => (
+          {projectsList.slice(0, visibleCount).map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
@@ -86,7 +90,6 @@ export default function Portfolio() {
                         quality={100}
                         className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
-                      {/* Dark overlay for tag contrast without blurring */}
                       <div className="absolute inset-0 bg-black/20 pointer-events-none" />
                     </>
                   ) : (
@@ -94,7 +97,6 @@ export default function Portfolio() {
                       <div
                         className={`absolute inset-0 bg-gradient-to-tr ${project.gradient} group-hover:scale-105 transition-transform duration-500`}
                       />
-                      {/* Blur and overlay for abstract gradient backgrounds */}
                       <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px] pointer-events-none" />
                     </>
                   )}
@@ -128,16 +130,17 @@ export default function Portfolio() {
                   ))}
                 </div>
 
-                {/* Direct link - prevents modal pop */}
+                {/* Direct link */}
                 <div className="mt-5 pt-4 border-t border-[#2c2f3a] flex justify-between items-center">
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-pink-500 hover:text-blue-400 transition-colors duration-200 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-pink-500 hover:text-blue-400 transition-colors duration-200 cursor-pointer uppercase"
                   >
-                    VER PROYECTO <FaExternalLinkAlt className="text-[10px]" />
+                    {lang === "en" ? "VIEW PROJECT" : "VER PROYECTO"}{" "}
+                    <FaExternalLinkAlt className="text-[10px]" />
                   </a>
                 </div>
               </div>
@@ -146,27 +149,27 @@ export default function Portfolio() {
         </div>
 
         {/* Paginate / Load More */}
-        {visibleCount < portfolioData.length && (
+        {visibleCount < projectsList.length && (
           <div className="mt-12 flex justify-center">
             <button
               onClick={() => setVisibleCount((prev) => prev + 6)}
               className="group relative px-6 py-3 rounded-full border border-[#2c2f3a] text-sm font-bold tracking-wider text-gray-300 hover:text-white transition-all duration-300 hover:border-transparent cursor-pointer overflow-hidden"
             >
-              {/* Background gradient transition on hover */}
               <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-              <span className="relative z-10">VER MÁS PROYECTOS</span>
+              <span className="relative z-10">
+                {lang === "en" ? "SEE MORE PROJECTS" : "VER MÁS PROYECTOS"}
+              </span>
             </button>
           </div>
         )}
       </div>
 
-      {/* Interactive Modal rendered into document.body via Portal */}
+      {/* Interactive Modal */}
       {mounted &&
         createPortal(
           <AnimatePresence>
             {activeProject && (
               <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
-                {/* Backdrop Blur */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -175,7 +178,6 @@ export default function Portfolio() {
                   className="fixed inset-0 bg-black/80 backdrop-blur-md"
                 />
 
-                {/* Modal Window */}
                 <motion.div
                   initial={{ scale: 0.9, opacity: 0, y: 20 }}
                   animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -183,7 +185,6 @@ export default function Portfolio() {
                   transition={{ type: "spring", duration: 0.4 }}
                   className="relative w-full max-w-2xl bg-[#121324] border border-[#2c2f3a] rounded-2xl overflow-hidden shadow-2xl z-[10000] max-h-[85vh] flex flex-col my-auto"
                 >
-                  {/* X Close Button */}
                   <button
                     onClick={() => setActiveProject(null)}
                     aria-label="Cerrar modal"
@@ -192,9 +193,7 @@ export default function Portfolio() {
                     <X size={18} />
                   </button>
 
-                  {/* Scrollable Content */}
                   <div className="overflow-y-auto p-5 sm:p-8 flex-grow">
-                    {/* Preview Banner */}
                     <div className="relative h-44 sm:h-56 w-full rounded-xl flex items-center justify-center overflow-hidden mb-6 bg-[#161725]">
                       {activeProject.image ? (
                         <>
@@ -205,7 +204,6 @@ export default function Portfolio() {
                             unoptimized
                             className="object-cover object-top"
                           />
-                          {/* Dark overlay for tag contrast without blurring */}
                           <div className="absolute inset-0 bg-black/20 pointer-events-none" />
                         </>
                       ) : (
@@ -213,7 +211,6 @@ export default function Portfolio() {
                           <div
                             className={`absolute inset-0 bg-gradient-to-tr ${activeProject.gradient}`}
                           />
-                          {/* Blur and overlay for abstract gradient backgrounds */}
                           <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px] pointer-events-none" />
                         </>
                       )}
@@ -222,12 +219,10 @@ export default function Portfolio() {
                       </span>
                     </div>
 
-                    {/* Title */}
                     <h3 className="text-xl sm:text-3xl font-bold text-white tracking-wide pr-8">
                       {activeProject.title}
                     </h3>
 
-                    {/* Skills tags */}
                     <div className="flex flex-wrap gap-1.5 mt-4">
                       {activeProject.skills.map((skill) => (
                         <span
@@ -239,17 +234,17 @@ export default function Portfolio() {
                       ))}
                     </div>
 
-                    {/* Detail Description */}
                     <div className="mt-6">
                       <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-widest">
-                        Sobre el Proyecto
+                        {lang === "en"
+                          ? "About the Project"
+                          : "Sobre el Proyecto"}
                       </h4>
                       <p className="mt-2 text-sm sm:text-base text-gray-300 leading-relaxed font-light whitespace-pre-line">
                         {activeProject.fullDescription}
                       </p>
                     </div>
 
-                    {/* Action Buttons */}
                     <div className="mt-8 pt-6 border-t border-[#2c2f3a] flex flex-wrap justify-between items-center gap-4">
                       <a
                         href={activeProject.link}
@@ -258,7 +253,7 @@ export default function Portfolio() {
                         className="w-full sm:w-auto text-center group relative inline-flex items-center justify-center gap-2 rounded-full p-[2px] bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 hover:shadow-[0_0_15px_#ec4899,0_0_15px_#3b82f6] cursor-pointer"
                       >
                         <span className="w-full sm:w-auto block rounded-full px-6 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#0e0f1a] transition-all duration-300 group-hover:bg-transparent">
-                          VISITAR PROYECTO
+                          {lang === "en" ? "VISIT WEBSITE" : "VISITAR PROYECTO"}
                         </span>
                       </a>
 
@@ -266,7 +261,7 @@ export default function Portfolio() {
                         onClick={() => setActiveProject(null)}
                         className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#2c2f3a] text-xs sm:text-sm font-bold text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-200 cursor-pointer"
                       >
-                        Cerrar
+                        {dict.portfolioSection.modal.close}
                       </button>
                     </div>
                   </div>
@@ -279,4 +274,3 @@ export default function Portfolio() {
     </section>
   );
 }
-

@@ -2,15 +2,18 @@
 import { useState } from "react";
 import {
   Mail,
-  MapPin,
   Send,
   CheckCircle,
   AlertCircle,
   Loader2,
 } from "lucide-react";
 import { FaGithub, FaBehance, FaLinkedin } from "react-icons/fa";
+import { getDictionary } from "../../data/dictionary";
 
-export default function Contact() {
+export default function Contact({ lang = "es" }) {
+  const dict = getDictionary(lang);
+  const c = dict.contactSection;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,28 +29,48 @@ export default function Contact() {
   const validate = (values) => {
     const tempErrors = {};
     if (!values.name.trim()) {
-      tempErrors.name = "El nombre completo es obligatorio.";
+      tempErrors.name =
+        lang === "en"
+          ? "Full name is required."
+          : "El nombre completo es obligatorio.";
     } else if (values.name.trim().length < 3) {
-      tempErrors.name = "El nombre debe tener al menos 3 caracteres.";
+      tempErrors.name =
+        lang === "en"
+          ? "Name must be at least 3 characters."
+          : "El nombre debe tener al menos 3 caracteres.";
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!values.email.trim()) {
-      tempErrors.email = "El correo electrónico es obligatorio.";
+      tempErrors.email =
+        lang === "en"
+          ? "Email is required."
+          : "El correo electrónico es obligatorio.";
     } else if (!emailRegex.test(values.email)) {
-      tempErrors.email = "El formato de correo electrónico no es válido.";
+      tempErrors.email =
+        lang === "en"
+          ? "Invalid email format."
+          : "El formato de correo electrónico no es válido.";
     }
 
     if (!values.subject.trim()) {
-      tempErrors.subject = "El asunto es obligatorio.";
+      tempErrors.subject =
+        lang === "en" ? "Subject is required." : "El asunto es obligatorio.";
     } else if (values.subject.trim().length < 4) {
-      tempErrors.subject = "El asunto debe tener al menos 4 caracteres.";
+      tempErrors.subject =
+        lang === "en"
+          ? "Subject must be at least 4 characters."
+          : "El asunto debe tener al menos 4 caracteres.";
     }
 
     if (!values.message.trim()) {
-      tempErrors.message = "El mensaje es obligatorio.";
+      tempErrors.message =
+        lang === "en" ? "Message is required." : "El mensaje es obligatorio.";
     } else if (values.message.trim().length < 10) {
-      tempErrors.message = "El mensaje debe tener al menos 10 caracteres.";
+      tempErrors.message =
+        lang === "en"
+          ? "Message must be at least 10 characters."
+          : "El mensaje debe tener al menos 10 caracteres.";
     }
 
     return tempErrors;
@@ -90,13 +113,17 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.botcheck) return; // SPAM bot detection
+    if (formData.botcheck) return;
 
     const validationErrors = validate(formData);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       setStatus("error");
-      setStatusMessage("Por favor, corrige los errores en el formulario.");
+      setStatusMessage(
+        lang === "en"
+          ? "Please fix the errors in the form."
+          : "Por favor, corrige los errores en el formulario."
+      );
       return;
     }
 
@@ -109,7 +136,9 @@ export default function Contact() {
     if (!accessKey || accessKey === "your_web3forms_access_key_here") {
       setStatus("error");
       setStatusMessage(
-        "Clave de acceso no configurada. Por favor, añade tu clave de Web3Forms en tu archivo de configuración (.env.local).",
+        lang === "en"
+          ? "Access key not configured. Please add Web3Forms access key."
+          : "Clave de acceso no configurada. Por favor, añade tu clave de Web3Forms."
       );
       return;
     }
@@ -143,41 +172,31 @@ export default function Contact() {
         setErrors({});
       } else {
         setStatus("error");
-        setStatusMessage(
-          result.message || "Hubo un problema al enviar el formulario.",
-        );
+        setStatusMessage(result.message || c.errorMsg);
       }
     } catch (error) {
       setStatus("error");
-      setStatusMessage(
-        "No se pudo conectar con el servidor. Revisa tu conexión a internet.",
-      );
+      setStatusMessage(c.errorMsg);
     }
   };
 
   return (
     <section className="bg-[#0e0f1a] px-6 md:px-20 py-16 md:py-24" id="contact">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit">
-          CONTACTO
+        <h2 className="text-4xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 w-fit uppercase">
+          {c.tag}
         </h2>
         <p className="mt-4 text-gray-400 max-w-2xl text-sm sm:text-base font-light leading-relaxed">
-          ¿Tenés un proyecto en mente, buscas mejorar el posicionamiento web de
-          tu negocio o querés mejorar tu presencia online? Contactame y hablemos
-          sobre cómo podemos trabajar juntos.
+          {c.subtitle}
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12">
-          {/* Columna de Información */}
+          {/* Contact Info Column */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
               <h3 className="text-2xl font-light text-white tracking-wide">
-                Información de contacto
+                {c.title}
               </h3>
-              <p className="text-gray-400 text-sm sm:text-base font-light leading-relaxed">
-                Completa el formulario para enviar un correo. Responderé a la
-                brevedad posible para agendar una llamada.
-              </p>
 
               <div className="space-y-4 pt-4">
                 <div className="flex items-center gap-4 text-gray-300">
@@ -199,10 +218,10 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Redes Sociales */}
+            {/* Social Links */}
             <div className="pt-6 border-t border-[#2c2f3a] space-y-4">
               <h4 className="text-xs text-gray-500 uppercase tracking-widest font-semibold">
-                Seguime en mis redes
+                {lang === "en" ? "Follow me" : "Seguime en mis redes"}
               </h4>
               <div className="flex gap-4">
                 <a
@@ -210,6 +229,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  aria-label="GitHub"
                 >
                   <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
                     <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
@@ -222,6 +242,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  aria-label="LinkedIn"
                 >
                   <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
                     <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
@@ -234,6 +255,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  aria-label="Behance"
                 >
                   <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
                     <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
@@ -245,14 +267,12 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Columna del Formulario */}
+          {/* Form Column */}
           <div className="lg:col-span-7">
             <div className="bg-[#121324] border border-[#2c2f3a] rounded-xl p-6 sm:p-8 relative overflow-hidden shadow-xl">
-              {/* Efecto Glow sutil en la esquina superior derecha */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-500/5 to-blue-500/5 rounded-full blur-2xl pointer-events-none" />
 
               <form onSubmit={handleSubmit} noValidate className="space-y-6">
-                {/* Honeypot Spam Protection */}
                 <input
                   type="checkbox"
                   name="botcheck"
@@ -268,7 +288,7 @@ export default function Contact() {
                       htmlFor="name"
                       className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-2 block"
                     >
-                      Nombre completo
+                      {c.nameLabel}
                     </label>
                     <input
                       type="text"
@@ -278,7 +298,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      placeholder="Juan Pérez"
+                      placeholder={c.namePlaceholder}
                       className={`w-full bg-[#161725] border rounded-sm px-4 py-3 text-sm text-white focus:outline-none transition-all duration-300 placeholder:text-gray-600 ${
                         errors.name
                           ? "border-rose-500/60 focus:border-rose-500 focus:ring-1 focus:ring-rose-500/30"
@@ -297,7 +317,7 @@ export default function Contact() {
                       htmlFor="email"
                       className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-2 block"
                     >
-                      Correo electrónico
+                      {c.emailLabel}
                     </label>
                     <input
                       type="email"
@@ -307,7 +327,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      placeholder="juan@correo.com"
+                      placeholder={c.emailPlaceholder}
                       className={`w-full bg-[#161725] border rounded-sm px-4 py-3 text-sm text-white focus:outline-none transition-all duration-300 placeholder:text-gray-600 ${
                         errors.email
                           ? "border-rose-500/60 focus:border-rose-500 focus:ring-1 focus:ring-rose-500/30"
@@ -327,7 +347,7 @@ export default function Contact() {
                     htmlFor="subject"
                     className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-2 block"
                   >
-                    Asunto
+                    {lang === "en" ? "Subject" : "Asunto"}
                   </label>
                   <input
                     type="text"
@@ -337,7 +357,11 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="Consulta de presupuesto, propuesta laboral..."
+                    placeholder={
+                      lang === "en"
+                        ? "Web development, SEO audit, project..."
+                        : "Consulta de presupuesto, propuesta..."
+                    }
                     className={`w-full bg-[#161725] border rounded-sm px-4 py-3 text-sm text-white focus:outline-none transition-all duration-300 placeholder:text-gray-600 ${
                       errors.subject
                         ? "border-rose-500/60 focus:border-rose-500 focus:ring-1 focus:ring-rose-500/30"
@@ -356,7 +380,7 @@ export default function Contact() {
                     htmlFor="message"
                     className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-2 block"
                   >
-                    Mensaje
+                    {c.messageLabel}
                   </label>
                   <textarea
                     id="message"
@@ -366,7 +390,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="Escribe tu mensaje aquí detallando los requerimientos de tu proyecto..."
+                    placeholder={c.messagePlaceholder}
                     className={`w-full bg-[#161725] border rounded-sm px-4 py-3 text-sm text-white focus:outline-none transition-all duration-300 placeholder:text-gray-600 resize-none ${
                       errors.message
                         ? "border-rose-500/60 focus:border-rose-500 focus:ring-1 focus:ring-rose-500/30"
@@ -380,14 +404,10 @@ export default function Contact() {
                   )}
                 </div>
 
-                {/* Mensajes de Estado */}
                 {status === "success" && (
                   <div className="flex items-center gap-3 p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-sm text-sm">
                     <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                    <p>
-                      ¡Mensaje enviado con éxito! Me pondré en contacto contigo
-                      pronto.
-                    </p>
+                    <p>{c.successMsg}</p>
                   </div>
                 )}
 
@@ -398,21 +418,20 @@ export default function Contact() {
                   </div>
                 )}
 
-                {/* Botón de Envío */}
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full text-center flex items-center justify-center gap-2 rounded-sm px-6 py-4 text-sm font-semibold text-black bg-white hover:bg-gray-100 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                  className="w-full text-center flex items-center justify-center gap-2 rounded-sm px-6 py-4 text-sm font-semibold text-black bg-white hover:bg-gray-100 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer uppercase"
                 >
                   {status === "loading" ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      ENVIANDO...
+                      {c.sending}
                     </>
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      ENVIAR MENSAJE
+                      {c.sendBtn}
                     </>
                   )}
                 </button>
