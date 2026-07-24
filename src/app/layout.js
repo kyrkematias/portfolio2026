@@ -75,6 +75,12 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-MRHQGZEZLK');
           `}
         </Script>
+        <Script
+          src="https://analytics.quicksolutionsit.com.ar/script.js"
+          data-website-id="2879b1f0-6326-47cb-ac1d-ffc922b0ab02"
+          strategy="afterInteractive"
+          defer
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0e0f1a] text-white`}
