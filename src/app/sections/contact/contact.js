@@ -426,8 +426,6 @@ export default function Contact({ lang = "es" }) {
 
                 <button
                   type="submit"
-                  data-umami-event="form-submit"
-                  data-umami-event-form="contact"
                   disabled={status === "loading"}
                   className="w-full text-center flex items-center justify-center gap-2 rounded-sm px-6 py-4 text-sm font-semibold text-black bg-white hover:bg-gray-100 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer uppercase"
                 >
