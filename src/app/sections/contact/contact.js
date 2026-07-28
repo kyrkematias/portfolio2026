@@ -7,7 +7,7 @@ import {
   AlertCircle,
   Loader2,
 } from "lucide-react";
-import { FaGithub, FaBehance, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaBehance, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { getDictionary } from "../../data/dictionary";
 
 export default function Contact({ lang = "es" }) {
@@ -266,6 +266,19 @@ export default function Contact({ lang = "es" }) {
                   <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
                     <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
                       <FaBehance />
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="https://www.instagram.com/martinmatias.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                  aria-label="Instagram"
+                >
+                  <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
+                    <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
+                      <FaInstagram />
                     </div>
                   </div>
                 </a>

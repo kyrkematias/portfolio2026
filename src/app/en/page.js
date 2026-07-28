@@ -3,6 +3,7 @@ import Services from "../sections/services/services";
 import Techs from "../sections/techs/techs";
 import Certifications from "../sections/certifications/certifications";
 import Portfolio from "../sections/portfolio/portfolio";
+import BlogSection from "../sections/blog/blogSection";
 import Contact from "../sections/contact/contact";
 import ScrollSection from "../components/scrollSection";
 import Footer from "../components/footer";
@@ -44,6 +45,9 @@ export default function HomeEn() {
       </ScrollSection>
       <ScrollSection>
         <Portfolio lang="en" />
+      </ScrollSection>
+      <ScrollSection>
+        <BlogSection lang="en" />
       </ScrollSection>
       <ScrollSection>
         <Contact lang="en" />

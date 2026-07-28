@@ -23,7 +23,7 @@ Cuando un usuario entra a un sitio web espera encontrar rápidamente lo que busc
 
 Eso no solo representa una oportunidad perdida para el negocio. También envía señales negativas a Google.
 
-Por ese motivo, cada vez más proyectos comienzan desde una estrategia de UX (User Experience) y no únicamente desde el aspecto visual.
+Por ese motivo, cada vez más proyectos comienzan desde una estrategia de UX y no únicamente desde el aspecto visual.
 
 ### El rol del Design System
 
@@ -45,9 +45,7 @@ En otras palabras, la interfaz desaparece y el contenido se vuelve protagonista.
 
 ## La experiencia del usuario también es SEO
 
-Muchas personas todavía creen que el SEO consiste únicamente en agregar palabras clave.
-
-La realidad es muy distinta.
+Muchas personas todavía creen que el SEO consiste únicamente en agregar palabras clave. Ojalá fuera tan simple, pero la realidad es muy distinta.
 
 Google intenta mostrar los resultados que ofrecen la mejor respuesta para cada búsqueda. Para hacerlo analiza cientos de señales relacionadas con la calidad del sitio.
 
@@ -106,7 +104,7 @@ Esto implica trabajar aspectos como:
 
 • Investigación de palabras clave.
 • Arquitectura del contenido.
-• Encabezados bien organizedos.
+• Encabezados bien organizados.
 • Títulos optimizados.
 • Meta descripciones.
 • Enlaces internos.
@@ -218,7 +216,7 @@ When a user visits a website, they expect to quickly find what they are looking 
 
 That is not only a lost business opportunity—it also sends negative signals to Google.
 
-For this reason, more and more projects start with a UX (User Experience) strategy rather than focusing solely on visual aesthetics.
+For this reason, more and more projects start with a UX strategy rather than focusing solely on visual aesthetics.
 
 ### The Role of a Design System
 

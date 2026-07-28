@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { FaGithub, FaBehance, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaBehance, FaLinkedin, FaInstagram } from "react-icons/fa";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { getDictionary } from "../data/dictionary";
 
@@ -14,7 +14,7 @@ export default function Navbar({ lang: propLang }) {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const baseHash = isEnPath ? "/en#" : "#";
+  const baseHash = isEnPath ? "/en#" : "/#";
 
   const navItems = [
     { name: dict.nav.services, url: `${baseHash}services` },
@@ -35,7 +35,7 @@ export default function Navbar({ lang: propLang }) {
           className="flex items-center gap-2.5 sm:gap-3 group select-none transition-transform duration-300 hover:scale-[1.02]"
         >
           {/* Glowing Monogram Emblem */}
-          <div className="relative p-[1.5px] rounded-lg bg-gradient-to-tr from-pink-500 via-purple-500 to-cyan-400 shadow-[0_0_12px_rgba(236,72,153,0.35)] group-hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] transition-all duration-300">
+          <div className="relative p-[1.5px] rounded-lg bg-gradient-to-tr from-pink-500 via-purple-500 to-cyan-400 shadow-[0_0_11px_rgba(236,72,153,0.35)] group-hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] transition-all duration-300">
             <div className="bg-[#0e0f1a] rounded-[6.5px] px-2.5 py-1 flex items-center justify-center">
               <span className="font-extrabold text-xs sm:text-sm tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400">
                 MM
@@ -79,7 +79,7 @@ export default function Navbar({ lang: propLang }) {
               className="group"
               aria-label="GitHub"
             >
-              <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
+              <div className="p-[1px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
                 <div className="bg-black rounded-full p-2 text-white text-lg flex items-center justify-center">
                   <FaGithub />
                 </div>
@@ -92,7 +92,7 @@ export default function Navbar({ lang: propLang }) {
               className="group"
               aria-label="LinkedIn"
             >
-              <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
+              <div className="p-[1px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
                 <div className="bg-black rounded-full p-2 text-white text-lg flex items-center justify-center">
                   <FaLinkedin />
                 </div>
@@ -105,9 +105,22 @@ export default function Navbar({ lang: propLang }) {
               className="group"
               aria-label="Behance"
             >
-              <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
+              <div className="p-[1px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
                 <div className="bg-black rounded-full p-2 text-white text-lg flex items-center justify-center">
                   <FaBehance />
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/martinmatias.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              aria-label="Instagram"
+            >
+              <div className="p-[1px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
+                <div className="bg-black rounded-full p-2 text-white text-lg flex items-center justify-center">
+                  <FaInstagram />
                 </div>
               </div>
             </a>
@@ -165,6 +178,14 @@ export default function Navbar({ lang: propLang }) {
                 aria-label="Behance"
               >
                 <FaBehance className="text-xl text-gray-300 hover:text-pink-400" />
+              </a>
+              <a
+                href="https://www.instagram.com/martinmatias.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="text-xl text-gray-300 hover:text-pink-400" />
               </a>
             </div>
           </div>

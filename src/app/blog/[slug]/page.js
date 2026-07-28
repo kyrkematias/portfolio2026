@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Footer from "../../components/footer";
+import BlogContactCTA from "../../components/BlogContactCTA";
 import { getPostBySlug, getPosts } from "../../data/blogData";
 
 export async function generateStaticParams() {
@@ -105,6 +106,7 @@ export default async function BlogPostEs({ params }) {
         )}
 
         <PostContent content={post.content} />
+        <BlogContactCTA lang="es" />
       </article>
 
       <Footer lang="es" />

@@ -8,9 +8,9 @@ export default function Hero({ lang = "es" }) {
   const dict = getDictionary(lang);
   const h = dict.hero;
 
-  const contactHref = lang === "en" ? "/en#contact" : "#contact";
-  const portfolioHref = lang === "en" ? "/en#portfolio" : "#portfolio";
-  const servicesHref = lang === "en" ? "/en#services" : "#services";
+  const contactHref = lang === "en" ? "/en#contact" : "/#contact";
+  const portfolioHref = lang === "en" ? "/en#portfolio" : "/#portfolio";
+  const servicesHref = lang === "en" ? "/en#services" : "/#services";
 
   return (
     <section className="relative bg-[#0e0f1a] text-white min-h-screen flex items-center justify-center px-6 md:px-20 pt-24 pb-16 overflow-hidden">

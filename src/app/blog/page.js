@@ -6,7 +6,7 @@ import { getPosts } from "../data/blogData";
 export const metadata = {
   title: "Blog de Desarrollo Web & SEO | Martín Matías",
   description:
-    "Artículos sobre desarrollo frontend, optimización SEO técnica, velocidad de carga y mejores prácticas web.",
+    "Artículos sobre desarrollo frontend, optimización SEO técnica y mejores prácticas web.",
   alternates: {
     canonical: "/blog",
     languages: {
@@ -23,10 +23,14 @@ export default function BlogIndexEs() {
     <div className="min-h-screen bg-[#0e0f1a] text-white pt-28 pb-16 flex flex-col justify-between">
       <div className="max-w-4xl mx-auto px-6 w-full">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-          Blog & <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-400">Artículos</span>
+          Blog &{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-400">
+            Artículos
+          </span>
         </h1>
         <p className="mt-4 text-gray-400 text-base font-light">
-          Novedades, guías y estrategias sobre desarrollo web moderno, SEO técnico y optimización de rendimiento.
+          Novedades, guías y estrategias sobre desarrollo web moderno, SEO
+          técnico y optimización de rendimiento.
         </p>
 
         <div className="mt-10 space-y-6">
@@ -47,7 +51,9 @@ export default function BlogIndexEs() {
                 </div>
               )}
               <div className="flex-1 flex flex-col justify-center">
-                <span className="text-xs text-pink-400 font-mono">{post.date}</span>
+                <span className="text-xs text-pink-400 font-mono">
+                  {post.date}
+                </span>
                 <h2 className="text-xl font-bold text-white mt-1 group-hover:text-cyan-400 transition-colors leading-snug">
                   {post.title}
                 </h2>

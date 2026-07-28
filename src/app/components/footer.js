@@ -1,5 +1,5 @@
 "use client";
-import { FaGithub, FaLinkedin, FaBehance } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaBehance, FaInstagram } from "react-icons/fa";
 import { ArrowUp } from "lucide-react";
 import { getDictionary } from "../data/dictionary";
 
@@ -13,7 +13,7 @@ export default function Footer({ lang = "es" }) {
     });
   };
 
-  const baseHash = lang === "en" ? "/en#" : "#";
+  const baseHash = lang === "en" ? "/en#" : "/#";
 
   const navLinks = [
     { name: dict.nav.services, url: `${baseHash}services` },
@@ -112,6 +112,15 @@ export default function Footer({ lang = "es" }) {
                 className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300"
               >
                 <FaBehance className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/martinmatias.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-pink-500/50 hover:bg-white/10 transition-all duration-300"
+              >
+                <FaInstagram className="w-5 h-5" />
               </a>
             </div>
           </div>

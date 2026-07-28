@@ -51,6 +51,15 @@ export const dictionary = {
         technologies: "Tecnologías y herramientas:",
       },
     },
+    blogSection: {
+      tag: "BLOG & ARTÍCULOS",
+      title: "Últimas publicaciones y novedades",
+      subtitle:
+        "Estrategias, guías y consejos sobre desarrollo web, SEO y UX para potenciar tu presencia digital.",
+      latestBadge: "Último artículo publicado",
+      readMore: "Leer artículo completo",
+      viewAll: "Ver todos los artículos",
+    },
     contactSection: {
       tag: "CONTACTO",
       title: "¿Tenés un proyecto en mente? Hablemos.",
@@ -128,6 +137,15 @@ export const dictionary = {
         viewSite: "Visit Website",
         technologies: "Technologies & tools:",
       },
+    },
+    blogSection: {
+      tag: "BLOG & ARTICLES",
+      title: "Latest posts and insights",
+      subtitle:
+        "Strategies, guides, and tips on web development, SEO, and UX to boost your digital presence.",
+      latestBadge: "Latest published article",
+      readMore: "Read full article",
+      viewAll: "View all articles",
     },
     contactSection: {
       tag: "CONTACT",
