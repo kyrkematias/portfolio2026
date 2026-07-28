@@ -1,5 +1,6 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
+import { getAlternatePostSlug } from "../data/blogData";
 
 export function ArgentinaFlag({ className = "w-5 h-5" }) {
   return (
@@ -84,7 +85,6 @@ export function UsaFlag({ className = "w-5 h-5" }) {
     </svg>
   );
 }
-
 export default function LanguageSwitcher({ currentLang = "es" }) {
   const pathname = usePathname();
   const router = useRouter();
@@ -97,7 +97,19 @@ export default function LanguageSwitcher({ currentLang = "es" }) {
 
     let targetPath = pathname;
 
-    if (targetLang === "en") {
+    // Check for blog post path match (/blog/[slug] or /en/blog/[slug])
+    const esBlogMatch = pathname.match(/^\/blog\/(.+)$/);
+    const enBlogMatch = pathname.match(/^\/en\/blog\/(.+)$/);
+
+    if (esBlogMatch && targetLang === "en") {
+      const currentSlug = esBlogMatch[1];
+      const altSlug = getAlternatePostSlug(currentSlug, "es");
+      targetPath = `/en/blog/${altSlug || currentSlug}`;
+    } else if (enBlogMatch && targetLang === "es") {
+      const currentSlug = enBlogMatch[1];
+      const altSlug = getAlternatePostSlug(currentSlug, "en");
+      targetPath = `/blog/${altSlug || currentSlug}`;
+    } else if (targetLang === "en") {
       // Switching from ES to EN
       if (pathname === "/") {
         targetPath = "/en";

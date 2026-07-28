@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Footer from "../../../components/footer";
 import { getPostBySlug, getPosts } from "../../../data/blogData";
@@ -15,17 +16,56 @@ export async function generateMetadata({ params }) {
   const post = getPostBySlug(slug, "en");
   if (!post) return {};
 
+  const altSlug = post.alternateSlug || "entrada";
+
   return {
     title: `${post.title} | Martín Matías Blog`,
     description: post.excerpt,
     alternates: {
       canonical: `/en/blog/${slug}`,
       languages: {
-        "es-AR": `/blog/entrada`,
+        "es-AR": `/blog/${altSlug}`,
         "en-US": `/en/blog/${slug}`,
       },
     },
   };
+}
+
+function PostContent({ content }) {
+  const paragraphs = content.split("\n\n").filter(Boolean);
+  return (
+    <div className="mt-8 text-gray-300 space-y-5 font-light leading-relaxed border-t border-[#2c2f3a] pt-8">
+      {paragraphs.map((p, idx) => {
+        const trimmed = p.trim();
+        if (trimmed.startsWith("## ")) {
+          return (
+            <h2 key={idx} className="text-xl sm:text-2xl font-bold text-cyan-400 pt-4 pb-1">
+              {trimmed.replace(/^##\s+/, "")}
+            </h2>
+          );
+        }
+        if (trimmed.startsWith("### ")) {
+          return (
+            <h3 key={idx} className="text-lg font-semibold text-pink-400 pt-3 pb-1">
+              {trimmed.replace(/^###\s+/, "")}
+            </h3>
+          );
+        }
+        if (trimmed.startsWith("# ")) {
+          return (
+            <h1 key={idx} className="text-2xl sm:text-3xl font-extrabold text-white pt-4 pb-2">
+              {trimmed.replace(/^#\s+/, "")}
+            </h1>
+          );
+        }
+        return (
+          <p key={idx} className="whitespace-pre-line">
+            {trimmed}
+          </p>
+        );
+      })}
+    </div>
+  );
 }
 
 export default async function BlogPostEn({ params }) {
@@ -41,7 +81,7 @@ export default async function BlogPostEn({ params }) {
       <article className="max-w-3xl mx-auto px-6 w-full">
         <Link
           href="/en/blog"
-          className="text-xs font-bold text-pink-400 hover:text-cyan-400 uppercase tracking-wider mb-6 inline-block"
+          className="text-xs font-bold text-pink-400 hover:text-cyan-400 uppercase tracking-wider mb-6 inline-block transition-colors"
         >
           ← Back to Blog
         </Link>
@@ -52,9 +92,19 @@ export default async function BlogPostEn({ params }) {
           {post.title}
         </h1>
 
-        <div className="mt-8 text-gray-300 space-y-4 font-light leading-relaxed whitespace-pre-line border-t border-[#2c2f3a] pt-8">
-          {post.content}
-        </div>
+        {post.image && (
+          <div className="relative w-full max-w-md mx-auto aspect-square mt-8 rounded-2xl overflow-hidden border border-[#2c2f3a] shadow-2xl">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
+
+        <PostContent content={post.content} />
       </article>
 
       <Footer lang="en" />

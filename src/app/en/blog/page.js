@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Footer from "../../components/footer";
 import { getPosts } from "../../data/blogData";
 
@@ -33,15 +34,27 @@ export default function BlogIndexEn() {
             <Link
               key={post.slug}
               href={`/en/blog/${post.slug}`}
-              className="block p-6 rounded-xl border border-[#2c2f3a] bg-[#121324] hover:border-pink-500/50 transition-all duration-300 group"
+              className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl border border-[#2c2f3a] bg-[#121324] hover:border-pink-500/50 transition-all duration-300 group overflow-hidden shadow-lg"
             >
-              <span className="text-xs text-pink-400 font-mono">{post.date}</span>
-              <h2 className="text-xl font-bold text-white mt-1 group-hover:text-cyan-400 transition-colors">
-                {post.title}
-              </h2>
-              <p className="text-gray-300 text-sm mt-2 font-light leading-relaxed">
-                {post.excerpt}
-              </p>
+              {post.image && (
+                <div className="relative w-full sm:w-44 h-44 shrink-0 rounded-xl overflow-hidden border border-[#2c2f3a] aspect-square">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              )}
+              <div className="flex-1 flex flex-col justify-center">
+                <span className="text-xs text-pink-400 font-mono">{post.date}</span>
+                <h2 className="text-xl font-bold text-white mt-1 group-hover:text-cyan-400 transition-colors leading-snug">
+                  {post.title}
+                </h2>
+                <p className="text-gray-300 text-sm mt-2 font-light leading-relaxed">
+                  {post.excerpt}
+                </p>
+              </div>
             </Link>
           ))}
         </div>
