@@ -51,15 +51,34 @@ export default function BlogIndexEs() {
                 </div>
               )}
               <div className="flex-1 flex flex-col justify-center">
-                <span className="text-xs text-pink-400 font-mono">
-                  {post.date}
-                </span>
+                <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                  {post.category && (
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                      {post.category}
+                    </span>
+                  )}
+                  <span className="text-xs text-pink-400 font-mono">
+                    {post.date}
+                  </span>
+                </div>
                 <h2 className="text-xl font-bold text-white mt-1 group-hover:text-cyan-400 transition-colors leading-snug">
                   {post.title}
                 </h2>
                 <p className="text-gray-300 text-sm mt-2 font-light leading-relaxed">
                   {post.excerpt}
                 </p>
+                {post.tags && post.tags.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {post.tags.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-gray-400 border border-white/5"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </Link>
           ))}

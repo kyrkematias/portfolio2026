@@ -3,6 +3,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Footer from "../../../components/footer";
 import BlogContactCTA from "../../../components/BlogContactCTA";
+import PostContent from "../../../components/PostContent";
+import RelatedPosts from "../../../components/RelatedPosts";
 import { getPostBySlug, getPosts } from "../../../data/blogData";
 
 export async function generateStaticParams() {
@@ -32,43 +34,6 @@ export async function generateMetadata({ params }) {
   };
 }
 
-function PostContent({ content }) {
-  const paragraphs = content.split("\n\n").filter(Boolean);
-  return (
-    <div className="mt-8 text-gray-300 space-y-5 font-light leading-relaxed border-t border-[#2c2f3a] pt-8">
-      {paragraphs.map((p, idx) => {
-        const trimmed = p.trim();
-        if (trimmed.startsWith("## ")) {
-          return (
-            <h2 key={idx} className="text-xl sm:text-2xl font-bold text-cyan-400 pt-4 pb-1">
-              {trimmed.replace(/^##\s+/, "")}
-            </h2>
-          );
-        }
-        if (trimmed.startsWith("### ")) {
-          return (
-            <h3 key={idx} className="text-lg font-semibold text-pink-400 pt-3 pb-1">
-              {trimmed.replace(/^###\s+/, "")}
-            </h3>
-          );
-        }
-        if (trimmed.startsWith("# ")) {
-          return (
-            <h1 key={idx} className="text-2xl sm:text-3xl font-extrabold text-white pt-4 pb-2">
-              {trimmed.replace(/^#\s+/, "")}
-            </h1>
-          );
-        }
-        return (
-          <p key={idx} className="whitespace-pre-line">
-            {trimmed}
-          </p>
-        );
-      })}
-    </div>
-  );
-}
-
 export default async function BlogPostEn({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug, "en");
@@ -86,12 +51,36 @@ export default async function BlogPostEn({ params }) {
         >
           ← Back to Blog
         </Link>
-        <span className="block text-xs text-gray-500 font-mono mb-2">
-          {post.date}
-        </span>
+
+        {/* Category & Date */}
+        <div className="flex flex-wrap items-center gap-3 mb-3">
+          {post.category && (
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              {post.category}
+            </span>
+          )}
+          <span className="text-xs text-gray-500 font-mono">
+            {post.date}
+          </span>
+        </div>
+
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
           {post.title}
         </h1>
+
+        {/* Tags */}
+        {post.tags && post.tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {post.tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-gray-400 border border-white/5"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
 
         {post.image && (
           <div className="relative w-full max-w-md mx-auto aspect-square mt-8 rounded-2xl overflow-hidden border border-[#2c2f3a] shadow-2xl">
@@ -106,6 +95,10 @@ export default async function BlogPostEn({ params }) {
         )}
 
         <PostContent content={post.content} />
+        
+        {/* Related Posts Section */}
+        <RelatedPosts currentSlug={slug} lang="en" />
+
         <BlogContactCTA lang="en" />
       </article>
 
