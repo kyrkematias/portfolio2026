@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../components/footer";
+import JsonLd from "../components/JsonLd";
 import { getPosts } from "../data/blogData";
 
 export const metadata = {
   title: "Blog de Desarrollo Web & SEO | Martín Matías",
   description:
-    "Artículos sobre desarrollo frontend, optimización SEO técnica y mejores prácticas web.",
+    "Artículos sobre desarrollo frontend, optimización SEO técnica, GEO y mejores prácticas de rendimiento.",
   alternates: {
     canonical: "/blog",
     languages: {
@@ -14,13 +15,63 @@ export const metadata = {
       "en-US": "/en/blog",
     },
   },
+  openGraph: {
+    title: "Blog de Desarrollo Web & SEO | Martín Matías",
+    description:
+      "Artículos sobre desarrollo frontend, optimización SEO técnica, GEO y mejores prácticas de rendimiento.",
+    url: "https://www.martinmatias.com.ar/blog",
+    siteName: "Martín Matías",
+    locale: "es_AR",
+    alternateLocale: ["en_US"],
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Blog de Desarrollo Web & SEO - Martín Matías",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog de Desarrollo Web & SEO | Martín Matías",
+    description:
+      "Artículos sobre desarrollo frontend, optimización SEO técnica, GEO y mejores prácticas de rendimiento.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function BlogIndexEs() {
   const posts = getPosts("es");
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog de Desarrollo Web & SEO | Martín Matías",
+    "description":
+      "Artículos sobre desarrollo frontend, optimización SEO técnica, GEO y mejores prácticas de rendimiento.",
+    "url": "https://www.martinmatias.com.ar/blog",
+    "publisher": {
+      "@type": "Person",
+      "name": "Martín Matías",
+      "url": "https://www.martinmatias.com.ar",
+    },
+    "blogPost": posts.map((post) => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": `https://www.martinmatias.com.ar/blog/${post.slug}`,
+      "datePublished": post.date,
+      "image": post.image
+        ? `https://www.martinmatias.com.ar${post.image}`
+        : "https://www.martinmatias.com.ar/og-image.png",
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-[#0e0f1a] text-white pt-28 pb-16 flex flex-col justify-between">
+      <JsonLd data={blogSchema} />
       <div className="max-w-4xl mx-auto px-6 w-full">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
           Blog &{" "}

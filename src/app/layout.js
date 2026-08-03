@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://www.martinmatias.com.ar"),
-  title: "Desarrollo Web & Optimización SEO | Martín Matías",
+  title: {
+    default: "Desarrollo Web & Optimización SEO | Martín Matías",
+    template: "%s | Martín Matías",
+  },
   description:
     "Especialista en desarrollo web & optimización SEO. Creo sitios web modernos, ultrarrápidos y enfocados en posicionar en Google para potenciar tu negocio.",
   authors: [{ name: "Martín Matías", url: "https://www.martinmatias.com.ar" }],
@@ -46,15 +49,26 @@ export const metadata = {
     description:
       "Especialista en desarrollo web & optimización SEO. Creo sitios web modernos, ultrarrápidos y enfocados en posicionar en Google para potenciar tu negocio.",
     url: "https://www.martinmatias.com.ar",
-    siteName: "Martín Matías Portfolio",
+    siteName: "Martín Matías",
     locale: "es_AR",
+    alternateLocale: ["en_US"],
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Martín Matías - Desarrollo Web & Optimización SEO",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Desarrollo Web & Optimización SEO | Martín Matías",
     description:
       "Especialista en desarrollo web & optimización SEO. Creo sitios web modernos, ultrarrápidos y enfocados en posicionar en Google para potenciar tu negocio.",
+    images: ["/og-image.png"],
+    creator: "@martinmatias",
   },
 };
 

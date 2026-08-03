@@ -5,6 +5,7 @@ import Footer from "../../components/footer";
 import BlogContactCTA from "../../components/BlogContactCTA";
 import PostContent from "../../components/PostContent";
 import RelatedPosts from "../../components/RelatedPosts";
+import JsonLd from "../../components/JsonLd";
 import { getPostBySlug, getPosts } from "../../data/blogData";
 
 export async function generateStaticParams() {
@@ -20,6 +21,9 @@ export async function generateMetadata({ params }) {
   if (!post) return {};
 
   const altSlug = post.alternateSlug || "entry";
+  const postImage = post.image
+    ? `https://www.martinmatias.com.ar${post.image}`
+    : "https://www.martinmatias.com.ar/og-image.png";
 
   return {
     title: `${post.title} | Martín Matías Blog`,
@@ -30,6 +34,32 @@ export async function generateMetadata({ params }) {
         "es-AR": `/blog/${slug}`,
         "en-US": `/en/blog/${altSlug}`,
       },
+    },
+    openGraph: {
+      title: `${post.title} | Martín Matías Blog`,
+      description: post.excerpt,
+      url: `https://www.martinmatias.com.ar/blog/${slug}`,
+      siteName: "Martín Matías",
+      locale: "es_AR",
+      alternateLocale: ["en_US"],
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Martín Matías"],
+      tags: post.tags || [],
+      images: [
+        {
+          url: postImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Martín Matías Blog`,
+      description: post.excerpt,
+      images: [postImage],
     },
   };
 }
@@ -42,8 +72,70 @@ export default async function BlogPostEs({ params }) {
     notFound();
   }
 
+  const articleUrl = `https://www.martinmatias.com.ar/blog/${slug}`;
+  const imageUrl = post.image
+    ? `https://www.martinmatias.com.ar${post.image}`
+    : "https://www.martinmatias.com.ar/og-image.png";
+
+  const postSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "image": [imageUrl],
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "author": {
+        "@type": "Person",
+        "name": "Martín Matías",
+        "url": "https://www.martinmatias.com.ar",
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Martín Matías",
+        "url": "https://www.martinmatias.com.ar",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.martinmatias.com.ar/logo.png",
+        },
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": articleUrl,
+      },
+      "keywords": post.tags ? post.tags.join(", ") : "",
+      "articleSection": post.category || "Desarrollo Web & SEO",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.martinmatias.com.ar",
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.martinmatias.com.ar/blog",
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": post.title,
+          "item": articleUrl,
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#0e0f1a] text-white pt-28 pb-16 flex flex-col justify-between">
+      <JsonLd data={postSchema} />
       <article className="max-w-3xl mx-auto px-6 w-full">
         <Link
           href="/blog"

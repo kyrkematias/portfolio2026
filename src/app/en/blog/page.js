@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../components/footer";
+import JsonLd from "../../components/JsonLd";
 import { getPosts } from "../../data/blogData";
 
 export const metadata = {
   title: "Web Development & SEO Blog | Martín Matías",
   description:
-    "Articles on frontend development, technical SEO optimization, web speed, and digital growth.",
+    "Articles on frontend development, technical SEO optimization, GEO, and web speed.",
   alternates: {
     canonical: "/en/blog",
     languages: {
@@ -14,16 +15,69 @@ export const metadata = {
       "en-US": "/en/blog",
     },
   },
+  openGraph: {
+    title: "Web Development & SEO Blog | Martín Matías",
+    description:
+      "Articles on frontend development, technical SEO optimization, GEO, and web speed.",
+    url: "https://www.martinmatias.com.ar/en/blog",
+    siteName: "Martín Matías",
+    locale: "en_US",
+    alternateLocale: ["es_AR"],
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Web Development & SEO Blog - Martín Matías",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Development & SEO Blog | Martín Matías",
+    description:
+      "Articles on frontend development, technical SEO optimization, GEO, and web speed.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function BlogIndexEn() {
   const posts = getPosts("en");
 
+  const blogSchemaEn = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Web Development & SEO Blog | Martín Matías",
+    "description":
+      "Articles on frontend development, technical SEO optimization, GEO, and web speed.",
+    "url": "https://www.martinmatias.com.ar/en/blog",
+    "publisher": {
+      "@type": "Person",
+      "name": "Martín Matías",
+      "url": "https://www.martinmatias.com.ar/en",
+    },
+    "blogPost": posts.map((post) => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": `https://www.martinmatias.com.ar/en/blog/${post.slug}`,
+      "datePublished": post.date,
+      "image": post.image
+        ? `https://www.martinmatias.com.ar${post.image}`
+        : "https://www.martinmatias.com.ar/og-image.png",
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-[#0e0f1a] text-white pt-28 pb-16 flex flex-col justify-between">
+      <JsonLd data={blogSchemaEn} />
       <div className="max-w-4xl mx-auto px-6 w-full">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-          Blog & <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-400">Articles</span>
+          Blog &{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-400">
+            Articles
+          </span>
         </h1>
         <p className="mt-4 text-gray-400 text-base font-light">
           Insights, guides, and strategies on modern web development, technical SEO, and web performance optimization.
