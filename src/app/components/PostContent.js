@@ -1,16 +1,53 @@
 import React from "react";
 
 function renderInline(text) {
-  if (!text) return "";
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+  if (!text) return null;
+
+  const regex = /(\*\*.*?\*\*|\[.*?\]\(.*?\)|\`.*?\`)/g;
+  const parts = text.split(regex);
+
   return parts.map((part, i) => {
+    if (!part) return null;
+
     if (part.startsWith("**") && part.endsWith("**")) {
+      const inner = part.slice(2, -2);
       return (
         <strong key={i} className="font-semibold text-white">
-          {part.slice(2, -2)}
+          {renderInline(inner)}
         </strong>
       );
     }
+
+    if (part.startsWith("`") && part.endsWith("`")) {
+      const codeText = part.slice(1, -1);
+      return (
+        <code
+          key={i}
+          className="px-1.5 py-0.5 rounded bg-white/10 text-cyan-300 font-mono text-xs border border-white/10"
+        >
+          {codeText}
+        </code>
+      );
+    }
+
+    const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
+    if (linkMatch) {
+      const label = linkMatch[1];
+      const url = linkMatch[2];
+      const isExternal = url.startsWith("http");
+      return (
+        <a
+          key={i}
+          href={url}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="text-cyan-400 hover:text-pink-400 underline font-medium transition-colors"
+        >
+          {renderInline(label)}
+        </a>
+      );
+    }
+
     return part;
   });
 }
@@ -29,30 +66,55 @@ export default function PostContent({ content }) {
           return <hr key={idx} className="border-t border-[#2c2f3a] my-8" />;
         }
 
-        // 2. Headings
+        // 2. Code blocks
+        if (trimmed.startsWith("```") && trimmed.endsWith("```")) {
+          const lines = trimmed.split("\n");
+          const codeLines = lines.slice(1, -1).join("\n");
+          return (
+            <div
+              key={idx}
+              className="my-6 rounded-xl border border-[#2c2f3a] bg-[#090a14] overflow-hidden shadow-xl"
+            >
+              <pre className="p-4 font-mono text-sm text-cyan-300 overflow-x-auto leading-relaxed whitespace-pre">
+                <code>{codeLines}</code>
+              </pre>
+            </div>
+          );
+        }
+
+        // 3. Headings
         if (trimmed.startsWith("## ")) {
           return (
-            <h2 key={idx} className="text-xl sm:text-2xl font-bold text-cyan-400 pt-6 pb-2 border-b border-[#2c2f3a]/40">
+            <h2
+              key={idx}
+              className="text-xl sm:text-2xl font-bold text-cyan-400 pt-6 pb-2 border-b border-[#2c2f3a]/40"
+            >
               {renderInline(trimmed.replace(/^##\s+/, ""))}
             </h2>
           );
         }
         if (trimmed.startsWith("### ")) {
           return (
-            <h3 key={idx} className="text-lg sm:text-xl font-semibold text-pink-400 pt-4 pb-1">
+            <h3
+              key={idx}
+              className="text-lg sm:text-xl font-semibold text-pink-400 pt-4 pb-1"
+            >
               {renderInline(trimmed.replace(/^###\s+/, ""))}
             </h3>
           );
         }
         if (trimmed.startsWith("# ")) {
           return (
-            <h2 key={idx} className="text-2xl sm:text-3xl font-extrabold text-white pt-6 pb-2">
+            <h2
+              key={idx}
+              className="text-2xl sm:text-3xl font-extrabold text-white pt-6 pb-2"
+            >
               {renderInline(trimmed.replace(/^#\s+/, ""))}
             </h2>
           );
         }
 
-        // 3. Blockquote
+        // 4. Blockquote
         if (trimmed.startsWith("> ")) {
           const quoteText = trimmed.replace(/^>\s*/gm, "").trim();
           return (
@@ -65,8 +127,11 @@ export default function PostContent({ content }) {
           );
         }
 
-        // 4. Table
-        if (trimmed.includes("|") && trimmed.split("\n").some((line) => line.trim().startsWith("|"))) {
+        // 5. Table
+        if (
+          trimmed.includes("|") &&
+          trimmed.split("\n").some((line) => line.trim().startsWith("|"))
+        ) {
           const rawLines = trimmed.split("\n").map((l) => l.trim()).filter(Boolean);
           const parsedRows = rawLines.map((line) => {
             let cells = line.split("|").map((c) => c.trim());
@@ -76,10 +141,13 @@ export default function PostContent({ content }) {
           });
 
           const isDelimiterRow = (row) =>
-            row.length > 0 && row.every((cell) => cell.replace(/[:\-\s]/g, "").length === 0);
+            row.length > 0 &&
+            row.every((cell) => cell.replace(/[:\-\s]/g, "").length === 0);
 
           const headerRow = parsedRows[0];
-          const bodyRows = parsedRows.slice(1).filter((row) => !isDelimiterRow(row));
+          const bodyRows = parsedRows
+            .slice(1)
+            .filter((row) => !isDelimiterRow(row));
 
           if (headerRow && headerRow.length > 0) {
             return (
@@ -91,7 +159,10 @@ export default function PostContent({ content }) {
                   <thead>
                     <tr className="bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20 border-b border-[#2c2f3a] text-cyan-300 font-bold uppercase text-xs sm:text-sm tracking-wider">
                       {headerRow.map((cell, i) => (
-                        <th key={i} className="px-6 py-4 border-r border-[#2c2f3a]/50 last:border-r-0">
+                        <th
+                          key={i}
+                          className="px-6 py-4 border-r border-[#2c2f3a]/50 last:border-r-0"
+                        >
                           {renderInline(cell)}
                         </th>
                       ))}
@@ -120,11 +191,16 @@ export default function PostContent({ content }) {
           }
         }
 
-        // 5. Lists (unordered/ordered list)
+        // 6. Lists (unordered/ordered list)
         const lines = trimmed.split("\n");
         const isList = lines.every((line) => {
           const l = line.trim();
-          return l.startsWith("* ") || l.startsWith("- ") || l.startsWith("• ") || /^\d+\.\s+/.test(l);
+          return (
+            l.startsWith("* ") ||
+            l.startsWith("- ") ||
+            l.startsWith("• ") ||
+            /^\d+\.\s+/.test(l)
+          );
         });
 
         if (isList) {
@@ -133,9 +209,14 @@ export default function PostContent({ content }) {
               {lines.map((line, lIdx) => {
                 const isNumbered = /^\d+\.\s+/.test(line.trim());
                 const numMatch = line.trim().match(/^\d+\./);
-                const itemText = line.trim().replace(/^([*•-]|(\d+\.))\s*/, "");
+                const itemText = line
+                  .trim()
+                  .replace(/^([*•-]|(\d+\.))\s*/, "");
                 return (
-                  <li key={lIdx} className="flex items-start gap-3 text-gray-300">
+                  <li
+                    key={lIdx}
+                    className="flex items-start gap-3 text-gray-300"
+                  >
                     <span className="text-pink-400 font-bold mt-1 text-xs">
                       {isNumbered && numMatch ? numMatch[0] : "◆"}
                     </span>
@@ -147,9 +228,12 @@ export default function PostContent({ content }) {
           );
         }
 
-        // 6. Paragraph
+        // 7. Paragraph
         return (
-          <p key={idx} className="whitespace-pre-line leading-relaxed text-gray-300">
+          <p
+            key={idx}
+            className="whitespace-pre-line leading-relaxed text-gray-300"
+          >
             {renderInline(trimmed)}
           </p>
         );
@@ -157,3 +241,4 @@ export default function PostContent({ content }) {
     </div>
   );
 }
+

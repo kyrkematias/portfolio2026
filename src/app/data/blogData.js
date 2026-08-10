@@ -1,5 +1,850 @@
 export const postsEs = [
   {
+    slug: "qstools-utm-builder-como-crear-urls-de-campana",
+    alternateSlug: "qstools-utm-builder-how-to-create-campaign-urls",
+    title:
+      "QSTools UTM Builder: cómo crear URLs de campaña y medir mejor de dónde viene tu tráfico",
+    date: "2026-08-10",
+    image: "/blog/3.jpg",
+    category: "Analítica & SEO",
+    tags: ["UTM", "QSTools", "Analytics", "SEO", "Marketing Digital"],
+    excerpt:
+      "Descubre cómo utilizar QSTools UTM Builder para generar URLs de campaña etiquetadas directamente en tu navegador, medir el origen de tu tráfico y optimizar tu atribución en Google Analytics y otras plataformas.",
+    content: `Cuando trabajás con SEO, SEM, email marketing o redes sociales, una de las preguntas más importantes es también una de las más difíciles de responder: **¿De dónde vienen realmente las visitas que recibe mi sitio?** Saber que una campaña generó tráfico es útil. Saber exactamente **qué plataforma, campaña, anuncio, newsletter o variante consiguió esas visitas** es mucho más valioso.
+
+Ahí entran en juego los parámetros **UTM**.
+
+Las UTM permiten agregar información a una URL para que las herramientas de analítica puedan identificar el origen de una visita y asociarla con una campaña determinada. Google Analytics, por ejemplo, utiliza estos parámetros para atribuir tráfico a distintas fuentes, medios y campañas.
+
+El problema es que crear estas URLs manualmente puede ser incómodo, especialmente cuando empezás a trabajar con múltiples campañas y variantes.
+
+Para simplificar este proceso existe **QSTools UTM Builder**, una herramienta desarrollada para generar URLs etiquetadas directamente desde el navegador.
+
+👉 **[Probá QSTools UTM Builder](https://qsitools.dev/es/utm-builder/)**
+
+En este artículo vamos a ver qué son las UTM, para qué sirven, cómo utilizar la herramienta, qué hacer con las URLs generadas y qué diferencia a QSTools de otros generadores disponibles.
+
+---
+
+## ¿Qué es una URL con parámetros UTM?
+
+Una URL con parámetros UTM es simplemente una dirección web a la que se le agregan etiquetas que permiten identificar el origen del tráfico.
+
+Por ejemplo, una URL normal podría ser:
+
+\`\`\`text
+https://www.ejemplo.com/servicio
+\`\`\`
+
+Mientras que una URL etiquetada podría verse así:
+
+\`\`\`text
+https://www.ejemplo.com/servicio?utm_source=linkedin&utm_medium=social&utm_campaign=lanzamiento
+\`\`\`
+
+La página de destino sigue siendo la misma.
+
+Los parámetros no cambian el contenido de la página. Lo que hacen es agregar información sobre **cómo llegó el usuario hasta ella**.
+
+Cuando alguien hace click en ese enlace, la herramienta de analítica puede utilizar esos valores para clasificar la visita.
+
+En Google Analytics, por ejemplo, los parámetros \`utm_source\`, \`utm_medium\` y \`utm_campaign\` permiten identificar la fuente, el medio y la campaña asociada al tráfico.
+
+---
+
+## ¿Para qué sirven las UTM?
+
+Imaginemos que publicás el mismo enlace en cinco lugares diferentes:
+
+* Una campaña de Google Ads.
+* Una publicación de LinkedIn.
+* Un newsletter.
+* Una publicación de Reddit.
+* Un banner dentro de otro sitio.
+
+Si todos utilizan exactamente la misma URL, después puede resultar difícil determinar qué acción generó cada visita.
+
+Con UTM podemos diferenciar cada origen.
+
+Por ejemplo:
+
+\`\`\`text
+utm_source=google
+utm_medium=cpc
+utm_campaign=servicios-seo
+\`\`\`
+
+o:
+
+\`\`\`text
+utm_source=linkedin
+utm_medium=social
+utm_campaign=servicios-seo
+\`\`\`
+
+De esta forma, la herramienta de analítica puede diferenciar ambos tráficos.
+
+Esto permite pasar de una pregunta genérica:
+
+> "¿Cuánto tráfico consiguió mi campaña?"
+
+a preguntas mucho más útiles:
+
+> "¿Qué canal generó más visitas?"
+
+> "¿Qué campaña consiguió más conversiones?"
+
+> "¿Qué variante del anuncio tuvo mejor rendimiento?"
+
+Ese nivel de información es fundamental para tomar decisiones de marketing basadas en datos.
+
+---
+
+## Los cinco parámetros que podés utilizar
+
+QSTools permite trabajar con los parámetros UTM estándar más utilizados:
+
+* \`utm_source\`
+* \`utm_medium\`
+* \`utm_campaign\`
+* \`utm_term\`
+* \`utm_content\`
+
+Los primeros tres son los principales y permiten identificar **fuente, medio y campaña**.
+
+Los otros dos son opcionales y resultan especialmente útiles para campañas publicitarias y experimentos.
+
+---
+
+## 1. UTM Source: ¿de dónde viene el tráfico?
+
+\`utm_source\` identifica la fuente que envía al usuario.
+
+Algunos ejemplos:
+
+\`\`\`text
+google
+linkedin
+facebook
+reddit
+newsletter
+bing
+devto
+\`\`\`
+
+Por ejemplo:
+
+\`\`\`text
+utm_source=linkedin
+\`\`\`
+
+indica que el tráfico proviene de LinkedIn.
+
+La recomendación más importante es mantener una nomenclatura consistente. \`linkedin\` y \`LinkedIn\`, por ejemplo, pueden terminar tratándose como valores diferentes en determinados informes porque los valores UTM distinguen entre mayúsculas y minúsculas.
+
+---
+
+## 2. UTM Medium: ¿qué tipo de canal es?
+
+\`utm_medium\` describe el medio utilizado para conseguir el tráfico.
+
+Algunos valores habituales son:
+
+\`\`\`text
+cpc
+email
+social
+referral
+organic
+affiliate
+\`\`\`
+
+Por ejemplo:
+
+\`\`\`text
+utm_medium=cpc
+\`\`\`
+
+indica que estamos identificando tráfico asociado a una campaña de costo por clic.
+
+Mientras que:
+
+\`\`\`text
+utm_medium=email
+\`\`\`
+
+indicaría tráfico proveniente de email marketing.
+
+Lo importante es establecer una convención y mantenerla a lo largo del tiempo. Google recomienda utilizar valores consistentes para evitar fragmentar los informes.
+
+---
+
+## 3. UTM Campaign: ¿a qué campaña pertenece?
+
+\`utm_campaign\` identifica la iniciativa específica.
+
+Por ejemplo:
+
+\`\`\`text
+utm_campaign=lanzamiento-producto
+\`\`\`
+
+o:
+
+\`\`\`text
+utm_campaign=promo-invierno
+\`\`\`
+
+Este parámetro permite agrupar diferentes fuentes y medios dentro de una misma campaña.
+
+Por ejemplo:
+
+\`\`\`text
+google / cpc / promo-invierno
+linkedin / social / promo-invierno
+newsletter / email / promo-invierno
+\`\`\`
+
+Todos pertenecen a la misma iniciativa, pero provienen de canales diferentes.
+
+---
+
+## 4. UTM Term: ¿qué keyword activó el tráfico?
+
+\`utm_term\` está pensado principalmente para identificar términos o keywords asociados a campañas de pago.
+
+Por ejemplo:
+
+\`\`\`text
+utm_term=seo-tecnico
+\`\`\`
+
+Puede resultar especialmente útil cuando necesitás diferenciar palabras clave dentro de una campaña.
+
+Sin embargo, no siempre es necesario utilizarlo. Para muchas campañas, \`source\`, \`medium\` y \`campaign\` son suficientes.
+
+---
+
+## 5. UTM Content: ¿qué variante consiguió el clic?
+
+\`utm_content\` permite diferenciar distintas versiones de un anuncio o contenido que llevan a la misma página.
+
+Por ejemplo:
+
+\`\`\`text
+utm_content=imagen-a
+\`\`\`
+
+y:
+
+\`\`\`text
+utm_content=video-b
+\`\`\`
+
+Podés utilizarlo para comparar:
+
+* anuncios
+* imágenes
+* CTAs
+* botones
+* copies
+* newsletters
+* variantes A/B
+
+Google también recomienda utilizar este parámetro para diferenciar creatividades o enlaces que forman parte de una misma campaña.
+
+---
+
+## ¿Cómo funciona QSTools UTM Builder?
+
+La herramienta busca simplificar todo este proceso.
+
+En lugar de construir manualmente una URL y preocuparte por escribir correctamente cada parámetro, simplemente completás los campos correspondientes.
+
+La interfaz parte de una URL de destino y permite seleccionar o introducir:
+
+### URL del sitio
+
+La página a la que querés enviar al usuario.
+
+Por ejemplo:
+
+\`\`\`text
+https://www.misitio.com/servicios
+\`\`\`
+
+### Fuente
+
+De dónde viene el tráfico.
+
+\`\`\`text
+linkedin
+\`\`\`
+
+### Medio
+
+Qué tipo de canal estás utilizando.
+
+\`\`\`text
+social
+\`\`\`
+
+### Nombre de campaña
+
+La iniciativa que querés medir.
+
+\`\`\`text
+servicios-2026
+\`\`\`
+
+Y opcionalmente:
+
+### Término
+
+La keyword asociada a la campaña.
+
+### Contenido
+
+La variante concreta del anuncio o contenido.
+
+Una vez completados los datos, QSTools genera automáticamente la URL final.
+
+---
+
+## Un ejemplo práctico
+
+Supongamos que tenés una página de servicios SEO:
+
+\`\`\`text
+https://www.misitio.com/seo
+\`\`\`
+
+Querés promocionarla en LinkedIn como parte de una campaña llamada \`servicios-seo\`.
+
+Podrías configurar:
+
+**Fuente**
+
+\`\`\`text
+linkedin
+\`\`\`
+
+**Medio**
+
+\`\`\`text
+social
+\`\`\`
+
+**Campaña**
+
+\`\`\`text
+servicios-seo
+\`\`\`
+
+QSTools generaría una URL similar a:
+
+\`\`\`text
+https://www.misitio.com/seo?utm_source=linkedin&utm_medium=social&utm_campaign=servicios-seo
+\`\`\`
+
+Ese es el enlace que deberías utilizar en la publicación.
+
+---
+
+## ¿Qué hago con la URL que genera?
+
+Esta es una de las partes más importantes. La URL generada **no es una URL para guardar solamente como referencia**. Es la URL que tenés que utilizar en el lugar donde querés medir el tráfico.
+
+Por ejemplo:
+
+### Google Ads
+
+Podés utilizarla como URL de destino cuando corresponda al esquema de medición de tu campaña.
+
+### Email marketing
+
+Podés colocarla detrás de un botón:
+
+**Conocé nuestros servicios**
+
+El usuario verá el texto del botón, pero el enlace que contiene será la URL etiquetada.
+
+### Redes sociales
+
+Podés utilizarla en:
+
+* publicaciones
+* perfiles
+* campañas
+* anuncios
+* stories cuando la plataforma permita enlaces
+
+### Banners
+
+Si tenés un banner publicado en otro sitio, la URL etiquetada permite identificar ese tráfico como referral o mediante la nomenclatura que hayas definido.
+
+### Newsletters
+
+Podés incluso utilizar diferentes \`utm_content\` para saber qué enlace dentro del mismo correo consiguió más interacciones.
+
+---
+
+## La URL no necesita una configuración especial en tu sitio
+
+Una ventaja importante de las UTM es que **no necesitás crear una página nueva para cada campaña**.
+
+Si tenés:
+
+\`\`\`text
+https://www.misitio.com/contacto
+\`\`\`
+
+podés utilizar:
+
+\`\`\`text
+https://www.misitio.com/contacto?utm_source=linkedin&utm_medium=social&utm_campaign=servicios
+\`\`\`
+
+La página de destino continúa siendo \`/contacto\`.
+
+Los parámetros simplemente viajan junto con la URL para que la herramienta de analítica pueda interpretarlos. Cuando el usuario entra, el sistema de analítica registra esos valores y los utiliza para clasificar la adquisición del tráfico.
+
+---
+
+## ¿Dónde veo después esos datos?
+
+Depende de la herramienta de analítica que estés utilizando. Las UTM son un estándar ampliamente utilizado y pueden ser interpretadas por diferentes plataformas.
+
+QSTools está pensado para funcionar con herramientas como:
+
+* Google Analytics 4
+* Umami
+* Plausible
+* Cloudflare Analytics
+* otras plataformas que soporten parámetros UTM
+
+En **Google Analytics 4**, por ejemplo, podés consultar dimensiones relacionadas con fuente, medio y campaña dentro de los informes de adquisición.
+
+Esto permite analizar qué campañas generan tráfico y, combinado con eventos y conversiones, qué campañas generan resultados reales.
+
+---
+
+## Una distinción importante: medir tráfico no es medir conversiones
+
+Agregar UTM no significa automáticamente que vas a saber cuánto dinero generó una campaña. Las UTM responden principalmente **¿De dónde vino este usuario?**
+
+Para responder **¿Qué hizo después?** necesitás tener correctamente configurados eventos y conversiones en tu herramienta de analítica.
+
+Por ejemplo:
+
+\`\`\`text
+LinkedIn
+↓
+Landing page
+↓
+Formulario enviado
+↓
+Lead
+\`\`\`
+
+La UTM permite identificar el origen. La configuración de analítica permite registrar la conversión. Combinando ambas cosas podés saber, por ejemplo:
+
+> LinkedIn generó 350 visitas y 12 leads.
+
+Ese dato es mucho más útil que saber simplemente que la publicación recibió clics.
+
+---
+
+## ¿Qué tiene de diferente QSTools?
+
+Existen muchas herramientas para generar URLs UTM. Incluso Google tiene su propio **Campaign URL Builder**, que permite introducir la URL y los parámetros de campaña para generar el enlace final.
+
+Entonces, ¿por qué utilizar otra herramienta? La respuesta no está necesariamente en que QSTools tenga parámetros diferentes. Utiliza los mismos estándares UTM. El diferencial está en **cómo resuelve el problema**.
+
+---
+
+## Una herramienta simple y enfocada
+
+El generador de QSTools elimina buena parte de la interfaz y las opciones que pueden resultar innecesarias para alguien que simplemente quiere crear una URL etiquetada.
+
+El flujo es directo:
+
+**URL → parámetros → URL final**
+
+No necesitás una cuenta.
+
+No necesitás configurar una propiedad de Google Analytics.
+
+No necesitás entrar en un panel de analytics.
+
+Simplemente generás el enlace y lo utilizás.
+
+Esto puede resultar especialmente práctico cuando estás trabajando rápidamente en una campaña y necesitás preparar varios enlaces.
+
+---
+
+## El diferencial técnico: Client-Side
+
+Uno de los aspectos más interesantes de QSTools es que **la generación de la URL se realiza directamente en tu navegador**.
+
+Esto es lo que se conoce como procesamiento **client-side**.
+
+En términos simples:
+
+> Los datos que introducís no necesitan viajar a un servidor para que la herramienta pueda generar el enlace.
+
+El navegador recibe la aplicación, procesa los valores y construye la URL localmente.
+
+Esto tiene varias ventajas.
+
+### Mayor privacidad
+
+Si estás preparando URLs con nombres internos de campañas, productos, promociones o estructuras de tracking, no necesariamente necesitás enviar esa información a un servidor externo. El procesamiento ocurre en tu propio navegador.
+
+### Menos infraestructura
+
+La herramienta no necesita un backend para realizar una operación que puede resolverse localmente.
+
+### Respuesta inmediata
+
+No dependés de una petición al servidor para generar cada URL.
+
+### Arquitectura más simple
+
+La generación de parámetros es una operación determinista que puede realizarse completamente en el cliente.
+
+Y, sobre todo, existe una ventaja conceptual importante:
+
+**La herramienta no necesita conocer tus campañas para cumplir su función.**
+
+---
+
+## Las URLs no salen de la página
+
+Este punto merece especial atención. QSTools indica explícitamente que la generación se realiza en el navegador y que **las URLs que armás no se guardan ni se suben desde la herramienta**.
+
+Eso cambia bastante la relación con el usuario. No estás creando una cuenta para almacenar campañas. No estás creando un historial obligatorio. No estás enviando tus enlaces a una plataforma central para poder generar la URL. Abrís la herramienta, completás los datos, obtenés el enlace y seguís trabajando. Para una herramienta pequeña y específica, esa simplicidad es una ventaja.
+
+---
+
+## También podés cargar una URL existente
+
+Otra función interesante es la posibilidad de **cargar una URL de campaña existente**. Esto resulta útil cuando ya tenés un enlace etiquetado y querés modificar alguno de sus parámetros.
+
+Por ejemplo, podés pegar:
+
+\`\`\`text
+https://www.misitio.com/?utm_source=linkedin&utm_medium=social&utm_campaign=lanzamiento
+\`\`\`
+
+y trabajar sobre esa configuración en lugar de reconstruir todos los parámetros desde cero.
+
+Es una pequeña funcionalidad, pero puede ahorrar tiempo cuando trabajás con URLs que ya están en circulación.
+
+---
+
+## QSTools vs. construir las UTM manualmente
+
+También podrías crear una URL UTM directamente escribiendo los parámetros.
+
+Por ejemplo:
+
+\`\`\`text
+https://www.misitio.com/?utm_source=linkedin&utm_medium=social&utm_campaign=lanzamiento
+\`\`\`
+
+No hay nada técnicamente complicado en hacerlo. El problema aparece cuando empezás a trabajar con muchas URLs. Un error de escritura puede provocar:
+
+\`\`\`text
+linkedin
+\`\`\`
+
+y:
+
+\`\`\`text
+LinkedIn
+\`\`\`
+
+como valores diferentes.
+
+O:
+
+\`\`\`text
+social
+\`\`\`
+
+y:
+
+\`\`\`text
+social-media
+\`\`\`
+
+como medios diferentes.
+
+Google recomienda precisamente mantener una nomenclatura consistente para evitar fragmentar los informes de campañas.
+
+Un generador reduce la posibilidad de cometer errores manuales y hace que el proceso sea mucho más rápido.
+
+---
+
+## QSTools vs. Google Campaign URL Builder
+
+Google ofrece una herramienta oficial para generar URLs de campaña. No tendría sentido decir que QSTools la reemplaza. Ambas utilizan los parámetros UTM estándar. La diferencia está principalmente en el enfoque.
+
+| Característica | QSTools | Google Campaign URL Builder |
+| --- | --- | --- |
+| Parámetros UTM estándar | ✅ | ✅ |
+| URL de destino | ✅ | ✅ |
+| Source / Medium / Campaign | ✅ | ✅ |
+| Term / Content | ✅ | ✅ |
+| Uso sencillo | ✅ | ✅ |
+| Enfoque específico en UTM | ✅ | ✅ |
+| Procesamiento client-side | ✅ | — |
+| Necesidad de trabajar dentro de Google Analytics | No | Orientado al ecosistema Google |
+| URL existente para editar | ✅ | No es su flujo principal |
+
+Google tiene además otras ventajas cuando estás profundamente integrado con su ecosistema publicitario y de medición.
+
+Por ejemplo, Google recomienda utilizar el **auto-tagging** disponible en las integraciones publicitarias cuando corresponda, ya que proporciona información adicional que el etiquetado manual no ofrece.
+
+Por eso, la elección no tiene por qué ser excluyente.
+
+Podés utilizar el etiquetado automático de las plataformas publicitarias cuando sea apropiado y utilizar UTM manuales para otros canales, como newsletters, redes sociales o enlaces externos.
+
+---
+
+## UTM no significa únicamente Google Analytics
+
+Este es otro punto importante.
+
+El concepto de UTM no pertenece exclusivamente a Google Analytics.
+
+Las etiquetas son parámetros incluidos en la URL y pueden ser interpretadas por diferentes herramientas de analítica.
+
+Por eso QSTools plantea una solución más amplia:
+
+**crear la URL independientemente de qué plataforma vas a utilizar después para analizar el tráfico.**
+
+Esto resulta especialmente interesante para proyectos que utilizan alternativas como Umami, Plausible o Cloudflare Analytics, o que combinan varias herramientas.
+
+---
+
+## Cómo crear una buena estrategia de nomenclatura UTM
+
+Tener un generador no resuelve por sí solo un problema importante: **qué nombres utilizar**.
+
+La consistencia es fundamental.
+
+Podés establecer una convención como:
+
+### Source
+
+Siempre minúsculas:
+
+\`\`\`text
+google
+linkedin
+facebook
+newsletter
+reddit
+\`\`\`
+
+### Medium
+
+Utilizar categorías claras:
+
+\`\`\`text
+cpc
+social
+email
+referral
+\`\`\`
+
+### Campaign
+
+Utilizar nombres descriptivos:
+
+\`\`\`text
+lanzamiento-producto
+promo-invierno
+servicios-seo
+\`\`\`
+
+### Content
+
+Identificar la variante:
+
+\`\`\`text
+imagen-a
+imagen-b
+cta-header
+cta-footer
+\`\`\`
+
+### Term
+
+Utilizar la keyword:
+
+\`\`\`text
+seo-tecnico
+seo-wordpress
+seo-local
+\`\`\`
+
+No existe una única nomenclatura universalmente correcta.
+
+Lo importante es definir una y mantenerla.
+
+Google también recomienda utilizar nombres consistentes y evitar variaciones que puedan fragmentar una misma campaña en distintos valores dentro de los informes.
+
+---
+
+## Errores frecuentes al utilizar UTM
+
+### Utilizar mayúsculas y minúsculas sin criterio
+
+\`\`\`text
+LinkedIn
+linkedin
+LINKEDIN
+\`\`\`
+
+Mejor elegir una única convención.
+
+---
+
+### Cambiar el nombre de una campaña a mitad de camino
+
+Si una misma campaña empieza como:
+
+\`\`\`text
+promo-verano
+\`\`\`
+
+y después pasa a:
+
+\`\`\`text
+promoverano
+\`\`\`
+
+podés terminar dividiendo los datos.
+
+---
+
+### Utilizar demasiados parámetros
+
+No todo necesita \`utm_term\` y \`utm_content\`.
+
+Agregá información cuando realmente aporte valor.
+
+---
+
+### Etiquetar absolutamente todo
+
+No siempre necesitás UTM para cada enlace.
+
+Por ejemplo, si estás trabajando con una plataforma que ya proporciona un sistema automático de atribución, agregar parámetros manuales sin una estrategia puede generar confusión.
+
+---
+
+### No medir conversiones
+
+Saber de dónde viene el tráfico es solamente el primer paso.
+
+El verdadero valor aparece cuando podés relacionar:
+
+**Fuente → visita → interacción → conversión → resultado**
+
+---
+
+## Una UTM bien implementada es pequeña, pero estratégica
+
+A primera vista, una UTM parece simplemente una cadena de texto agregada al final de una URL.
+
+Y técnicamente lo es.
+
+Pero detrás de esos parámetros existe algo mucho más importante: **la capacidad de atribuir correctamente el tráfico**.
+
+Cuando una estrategia digital empieza a crecer, pequeñas inconsistencias en la medición pueden convertirse en grandes problemas.
+
+Si una campaña aparece dividida entre diferentes nombres, si una fuente está mal identificada o si varias variantes utilizan exactamente el mismo parámetro \`utm_content\`, después será mucho más difícil analizar qué funcionó.
+
+Por eso el etiquetado debe formar parte de la estrategia de medición desde el principio.
+
+---
+
+## ¿Para quién puede resultar útil QSTools?
+
+La herramienta puede ser especialmente práctica para:
+
+* especialistas SEO
+* profesionales SEM
+* equipos de marketing
+* desarrolladores
+* agencias digitales
+* responsables de e-commerce
+* creadores de contenido
+* equipos de growth
+* responsables de analítica
+* emprendedores que gestionan sus propias campañas
+
+También puede ser útil simplemente para alguien que necesita crear una URL etiquetada ocasionalmente sin querer configurar una herramienta de analítica completa.
+
+---
+
+## Una herramienta pequeña para un problema muy concreto
+
+Lo interesante de QSTools UTM Builder no es que intente reinventar el estándar UTM. De hecho, **no lo necesita**.
+
+Los parámetros estándar funcionan precisamente porque son un lenguaje común que distintas herramientas pueden interpretar. El valor está en reducir la fricción alrededor de ese estándar.
+
+Una interfaz simple.
+
+Sin cuentas.
+
+Sin configuraciones innecesarias.
+
+Sin necesidad de enviar las URLs a un servidor.
+
+Y con la posibilidad de generar o modificar rápidamente un enlace que después podés utilizar en prácticamente cualquier canal donde necesitás medir adquisición.
+
+👉 **[Podés probar QSTools UTM Builder directamente desde su web](https://qsitools.dev/es/utm-builder/).**
+
+---
+
+## QSTools: más herramientas para desarrolladores
+
+El UTM Builder es solamente una de las herramientas disponibles en **QSTools**, un proyecto orientado a crear pequeñas utilidades para resolver problemas concretos del trabajo diario de desarrolladores y profesionales digitales.
+
+La idea detrás de este tipo de herramientas es bastante simple:
+
+**resolver una tarea específica sin obligarte a utilizar una plataforma enorme para hacerlo.**
+
+Si trabajás habitualmente con desarrollo web, SEO, marketing, datos o herramientas digitales, vale la pena explorar el resto del proyecto.
+
+👉 **[Conocé las demás herramientas para desarrolladores de QSTools](https://qsitools.dev/es/)**
+
+---
+
+## Una herramienta, muchas ventajas.
+
+Las UTM no son una tecnología nueva ni complicada, pero siguen siendo una pieza importante de una estrategia de medición bien implementada.
+
+Permiten identificar de dónde proviene el tráfico y asociarlo con campañas, canales, keywords o variantes específicas.
+
+El desafío está en utilizarlas correctamente y mantener una nomenclatura consistente.
+
+**QSTools UTM Builder simplifica justamente esa parte del proceso:** introducís la URL, definís los parámetros, obtenés el enlace y lo utilizás en tu campaña.
+
+Su principal diferencial técnico es que todo el proceso de generación ocurre **client-side**, directamente en el navegador. No necesitás crear una cuenta ni enviar los enlaces a un servidor para obtener el resultado.
+
+No reemplaza las herramientas de analítica ni pretende hacerlo.
+
+Es una pieza pequeña dentro de un proceso mucho más grande: **crear campañas, etiquetarlas correctamente, medir su rendimiento y utilizar esos datos para tomar mejores decisiones.**
+
+Y, en marketing digital, poder medir correctamente qué funciona es muchas veces tan importante como ejecutar la campaña.`,
+  },
+  {
     slug: "geo-la-evolucion-del-seo-para-ia",
     alternateSlug: "geo-the-evolution-of-seo-for-ai",
     title: "GEO: la evolución del SEO",
@@ -645,6 +1490,605 @@ Contactame y te explico cómo mejorar tu presencia online mediante una estrategi
 ];
 
 export const postsEn = [
+  {
+    slug: "qstools-utm-builder-how-to-create-campaign-urls",
+    alternateSlug: "qstools-utm-builder-como-crear-urls-de-campana",
+    title:
+      "QSTools UTM Builder: How to Create Campaign URLs and Measure Traffic Sources",
+    date: "2026-08-10",
+    image: "/blog/3.png",
+    category: "Analytics & SEO",
+    tags: ["UTM", "QSTools", "Analytics", "SEO", "Digital Marketing"],
+    excerpt:
+      "Discover how to use QSTools UTM Builder to generate tagged campaign URLs directly in your browser, accurately measure your traffic sources, and optimize your attribution in Google Analytics and other platforms.",
+    content: `When you work with SEO, SEM, email marketing, or social media, one of the most important questions is also one of the hardest to answer:
+
+**Where do the visits to my website actually come from?**
+
+Knowing that a campaign generated traffic is helpful. Knowing exactly **which platform, campaign, ad, newsletter, or variant brought those visits** is far more valuable.
+
+That is where **UTM** parameters come into play.
+
+UTMs allow you to add tracking parameters to a URL so that analytics tools can identify the source of a visit and associate it with a specific campaign. Google Analytics, for example, uses these parameters to attribute traffic across different sources, mediums, and campaigns.
+
+The problem is that creating these URLs manually can be tedious and prone to errors, especially when managing multiple campaigns and variations.
+
+To simplify this process, **QSTools UTM Builder** was created—a developer tool designed to generate tagged URLs directly inside your browser.
+
+👉 **[Try QSTools UTM Builder](https://qsitools.dev/es/utm-builder/)**
+
+In this article, we will explore what UTMs are, what they are used for, how to use the tool, what to do with the generated URLs, and what sets QSTools apart from other available generators.
+
+---
+
+## What is a URL with UTM Parameters?
+
+A URL with UTM parameters is simply a web address tagged with query parameters that identify the origin of the traffic.
+
+For example, a standard URL might look like:
+
+\`\`\`text
+https://www.example.com/service
+\`\`\`
+
+While a tagged URL would look like this:
+
+\`\`\`text
+https://www.example.com/service?utm_source=linkedin&utm_medium=social&utm_campaign=launch
+\`\`\`
+
+The destination page remains identical.
+
+The parameters do not change the page's content. Instead, they attach metadata explaining **how the user got there**.
+
+When someone clicks that link, your analytics platform reads those values to classify the visit.
+
+In Google Analytics, for example, \`utm_source\`, \`utm_medium\`, and \`utm_campaign\` help identify the source, medium, and campaign associated with the visit.
+
+---
+
+## What are UTMs Used For?
+
+Imagine you post the exact same link in five different places:
+
+* A Google Ads campaign.
+* A LinkedIn post.
+* An email newsletter.
+* A Reddit post.
+* A banner on an external website.
+
+If all of them use the exact same plain URL, it becomes nearly impossible to determine which action generated which visit.
+
+With UTMs, we can distinguish every single origin.
+
+For example:
+
+\`\`\`text
+utm_source=google
+utm_medium=cpc
+utm_campaign=seo-services
+\`\`\`
+
+or:
+
+\`\`\`text
+utm_source=linkedin
+utm_medium=social
+utm_campaign=seo-services
+\`\`\`
+
+This allows your analytics platform to separate both traffic streams.
+
+You move from a generic question:
+
+> "How much traffic did my campaign generate?"
+
+To much more actionable insights:
+
+> "Which channel drove the highest volume of visits?"
+
+> "Which specific campaign brought the most conversions?"
+
+> "Which ad variation had the best performance?"
+
+This level of granular data is fundamental for making data-driven marketing decisions.
+
+---
+
+## The Five UTM Parameters You Can Use
+
+QSTools supports the five standard UTM parameters:
+
+* \`utm_source\`
+* \`utm_medium\`
+* \`utm_campaign\`
+* \`utm_term\`
+* \`utm_content\`
+
+The first three are the primary parameters used to identify **source, medium, and campaign**.
+
+The remaining two are optional and particularly helpful for paid campaigns and A/B testing experiments.
+
+---
+
+## 1. UTM Source: Where is the traffic coming from?
+
+\`utm_source\` identifies the referring entity or platform.
+
+Examples:
+
+\`\`\`text
+google
+linkedin
+facebook
+reddit
+newsletter
+bing
+devto
+\`\`\`
+
+For instance:
+
+\`\`\`text
+utm_source=linkedin
+\`\`\`
+
+indicates the traffic originates from LinkedIn.
+
+The most critical recommendation is maintaining a consistent naming convention. \`linkedin\` and \`LinkedIn\` can be treated as separate values in reports because UTM parameters are case-sensitive.
+
+---
+
+## 2. UTM Medium: What type of channel is it?
+
+\`utm_medium\` describes the marketing medium used to acquire the traffic.
+
+Common values include:
+
+\`\`\`text
+cpc
+email
+social
+referral
+organic
+affiliate
+\`\`\`
+
+For example:
+
+\`\`\`text
+utm_medium=cpc
+\`\`\`
+
+identifies traffic associated with a cost-per-click advertising campaign.
+
+While:
+
+\`\`\`text
+utm_medium=email
+\`\`\`
+
+represents traffic from email marketing.
+
+Google recommends using consistent values across all campaigns to avoid fragmenting analytics data.
+
+---
+
+## 3. UTM Campaign: Which campaign does it belong to?
+
+\`utm_campaign\` identifies the specific marketing initiative or promotion.
+
+Examples:
+
+\`\`\`text
+utm_campaign=product-launch
+\`\`\`
+
+or:
+
+\`\`\`text
+utm_campaign=winter-promo
+\`\`\`
+
+This parameter allows you to group different sources and mediums under a single overarching initiative.
+
+\`\`\`text
+google / cpc / winter-promo
+linkedin / social / winter-promo
+newsletter / email / winter-promo
+\`\`\`
+
+All belong to the same campaign but come from different channels.
+
+---
+
+## 4. UTM Term: Which keyword triggered the visit?
+
+\`utm_term\` is designed primarily to track paid search keywords or targeting terms.
+
+Example:
+
+\`\`\`text
+utm_term=technical-seo
+\`\`\`
+
+It is especially useful when differentiating keywords within a paid campaign.
+
+However, it is optional—for many organic and social campaigns, \`source\`, \`medium\`, and \`campaign\` are sufficient.
+
+---
+
+## 5. UTM Content: Which content variation won the click?
+
+\`utm_content\` differentiates variations of an ad, link, or call to action pointing to the same URL.
+
+For example:
+
+\`\`\`text
+utm_content=image-a
+\`\`\`
+
+and:
+
+\`\`\`text
+utm_content=video-b
+\`\`\`
+
+You can use it to compare:
+
+* Ads & creatives
+* Images vs. videos
+* CTAs & button text
+* Newsletter link placement
+* A/B test variations
+
+Google recommends using this parameter to distinguish creatives or links within the same campaign.
+
+---
+
+## How Does QSTools UTM Builder Work?
+
+The tool is designed to streamline the entire process.
+
+Instead of manually constructing URLs and worrying about syntax, you simply fill in the relevant fields.
+
+Starting from a target URL, you can enter or select:
+
+### Target URL
+
+The page you want users to land on.
+
+\`\`\`text
+https://www.mysite.com/services
+\`\`\`
+
+### Source
+
+Where the traffic originates.
+
+\`\`\`text
+linkedin
+\`\`\`
+
+### Medium
+
+The marketing channel type.
+
+\`\`\`text
+social
+\`\`\`
+
+### Campaign Name
+
+The name of the initiative.
+
+\`\`\`text
+services-2026
+\`\`\`
+
+And optionally:
+
+### Term
+
+Keyword associated with paid search.
+
+### Content
+
+Specific ad creative or link placement.
+
+Once entered, QSTools automatically constructs and formats the final URL.
+
+---
+
+## A Practical Example
+
+Suppose you have an SEO services page:
+
+\`\`\`text
+https://www.mysite.com/seo
+\`\`\`
+
+You want to promote it on LinkedIn as part of a campaign named \`seo-services\`.
+
+You configure:
+
+**Source**
+
+\`\`\`text
+linkedin
+\`\`\`
+
+**Medium**
+
+\`\`\`text
+social
+\`\`\`
+
+**Campaign**
+
+\`\`\`text
+seo-services
+\`\`\`
+
+QSTools generates a URL like:
+
+\`\`\`text
+https://www.mysite.com/seo?utm_source=linkedin&utm_medium=social&utm_campaign=seo-services
+\`\`\`
+
+This is the tagged link you place in your LinkedIn post.
+
+---
+
+## What Do You Do With the Generated URL?
+
+This is a crucial point: the generated URL is **not meant to be saved just for reference**.
+
+It is the link you must actually insert wherever you want to track user clicks.
+
+For example:
+
+### Google Ads
+
+Use it as your final destination URL when custom tracking template parameters are required.
+
+### Email Marketing
+
+Attach it behind your CTA buttons:
+
+**Explore Our Services**
+
+The user sees clean button text, but clicking navigates through the tagged URL.
+
+### Social Networks
+
+Use it in posts, profile bio links, ad campaigns, or stories.
+
+### Banners
+
+When advertising on external blogs or partner sites, tagged URLs classify that traffic as referral or paid banners according to your taxonomy.
+
+### Newsletters
+
+Use different \`utm_content\` values to determine which link placement inside the email drove the most clicks.
+
+---
+
+## No Special Server Configuration Required
+
+A major advantage of UTM parameters is that **you do not need to create separate landing pages for each campaign**.
+
+If your page is:
+
+\`\`\`text
+https://www.mysite.com/contact
+\`\`\`
+
+You can use:
+
+\`\`\`text
+https://www.mysite.com/contact?utm_source=linkedin&utm_medium=social&utm_campaign=services
+\`\`\`
+
+The destination page remains \`/contact\`.
+
+The parameters travel with the URL for your web analytics tool to interpret.
+
+When a user visits, your analytics script logs the parameters and classifies traffic acquisition accordingly.
+
+---
+
+## Where Do You View the Data Afterwards?
+
+It depends on your analytics platform.
+
+UTMs are a universal web standard supported by virtually all analytics platforms.
+
+QSTools works seamlessly with:
+
+* Google Analytics 4
+* Umami
+* Plausible
+* Cloudflare Analytics
+* Any platform supporting standard query strings
+
+In **Google Analytics 4**, for instance, you can analyze Source, Medium, and Campaign dimensions under Acquisition reports to evaluate campaign performance alongside event conversions.
+
+---
+
+## An Important Distinction: Tracking Traffic vs. Tracking Conversions
+
+Adding UTMs does not automatically calculate revenue or lead submission by itself.
+
+UTMs answer:
+
+**"Where did this user come from?"**
+
+To answer:
+
+**"What did they do after landing?"**
+
+You need goal events and conversion tracking set up in your analytics suite.
+
+For example:
+
+\`\`\`text
+LinkedIn
+↓
+Landing page
+↓
+Form submission
+↓
+Lead
+\`\`\`
+
+The UTM identifies the acquisition channel.
+
+Your analytics event configuration records the conversion.
+
+Combining both reveals actionable outcomes:
+
+> LinkedIn drove 350 visits and 12 lead conversions.
+
+---
+
+## What Makes QSTools Different?
+
+Many UTM builders exist, including Google's official **Campaign URL Builder**.
+
+So why use QSTools?
+
+The difference lies in **how it solves the problem**.
+
+---
+
+## A Simple, Focused Tool
+
+QSTools strips away unnecessary clutter for users who simply want to generate a tagged link fast.
+
+The flow is direct:
+
+**URL → Parameters → Final Tagged Link**
+
+No account required.
+
+No Google Analytics property configuration needed.
+
+No dashboard logins.
+
+Generate your link and keep moving.
+
+---
+
+## The Technical Advantage: Client-Side Processing
+
+One of the key technical features of QSTools is that **URL generation occurs entirely in your browser**.
+
+This is known as **client-side processing**.
+
+In simple terms:
+
+> The data you type never leaves your browser to be processed on a remote server.
+
+The web application executes locally inside your browser tab.
+
+Benefits include:
+
+### Enhanced Privacy
+
+Internal campaign names, product names, or draft URL structures are not sent to third-party backends.
+
+### Zero Infrastructure Delays
+
+Instant calculation without network latency.
+
+### Offline & Lightweight
+
+Deterministic client-side calculation requires no server payload.
+
+**The tool does not need to store or monitor your campaigns to fulfill its purpose.**
+
+---
+
+## Your URLs Never Leave the Page
+
+QSTools explicitly guarantees that **your generated URLs are neither saved nor uploaded anywhere**.
+
+You open the tool, input your values, copy the output URL, and continue your workflow.
+
+---
+
+## Edit Existing Tagged URLs
+
+Another convenient feature is the ability to **load an existing tagged URL**.
+
+Paste a URL like:
+
+\`\`\`text
+https://www.mysite.com/?utm_source=linkedin&utm_medium=social&utm_campaign=launch
+\`\`\`
+
+and QSTools automatically parses the parameters into editable fields.
+
+---
+
+## QSTools vs. Manual UTM Construction
+
+While you can write query parameters by hand:
+
+\`\`\`text
+https://www.mysite.com/?utm_source=linkedin&utm_medium=social&utm_campaign=launch
+\`\`\`
+
+doing so manually across dozens of links leads to typos and fragmented reports (\`linkedin\` vs. \`LinkedIn\`, \`cpc\` vs. \`CPC\`).
+
+A generator eliminates syntax errors and enforces standard conventions.
+
+---
+
+## QSTools vs. Google Campaign URL Builder
+
+| Feature | QSTools | Google Campaign URL Builder |
+| --- | --- | --- |
+| Standard UTM parameters | ✅ | ✅ |
+| Destination URL | ✅ | ✅ |
+| Source / Medium / Campaign | ✅ | ✅ |
+| Term / Content | ✅ | ✅ |
+| Simple UI | ✅ | ✅ |
+| Dedicated UTM focus | ✅ | ✅ |
+| 100% Client-side processing | ✅ | — |
+| No Google ecosystem lock-in | Yes | Tailored for Google |
+| Parse & edit existing URLs | ✅ | Secondary |
+
+---
+
+## UTM Belongs to the Web, Not Just Google Analytics
+
+UTM tags are open web query parameters. They are not proprietary to Google.
+
+Whether you use **Umami**, **Plausible**, **Cloudflare Analytics**, or **GA4**, QSTools provides an open, privacy-first generator for any analytics stack.
+
+---
+
+## Best Practices for UTM Naming Conventions
+
+* **Use lowercase strictly**: \`linkedin\`, \`google\`, \`facebook\`.
+* **Standardize mediums**: \`cpc\`, \`social\`, \`email\`, \`referral\`.
+* **Descriptive campaigns**: \`product-launch-2026\`, \`summer-sale\`.
+* **Specific content tags**: \`header-cta\`, \`footer-banner\`, \`variant-b\`.
+
+---
+
+## Summary
+
+UTMs remain a vital building block for digital marketing and analytics attribution.
+
+**QSTools UTM Builder** makes creating and editing UTM links fast, effortless, and private with 100% client-side execution directly in your browser.
+
+👉 **[Try QSTools UTM Builder](https://qsitools.dev/es/utm-builder/)**
+
+👉 **[Explore more developer tools on QSTools](https://qsitools.dev/es/)**`,
+  },
   {
     slug: "geo-the-evolution-of-seo-for-ai",
     alternateSlug: "geo-la-evolucion-del-seo-para-ia",
@@ -1327,12 +2771,21 @@ export function getRelatedPosts(currentSlug, lang = "es", limit = 2) {
     let score = 0;
 
     // Category match
-    if (currentPost.category && p.category && currentPost.category === p.category) {
+    if (
+      currentPost.category &&
+      p.category &&
+      currentPost.category === p.category
+    ) {
       score += 5;
     }
 
     // Shared tags
-    if (currentPost.tags && p.tags && Array.isArray(p.tags) && Array.isArray(currentPost.tags)) {
+    if (
+      currentPost.tags &&
+      p.tags &&
+      Array.isArray(p.tags) &&
+      Array.isArray(currentPost.tags)
+    ) {
       const sharedTags = p.tags.filter((t) => currentPost.tags.includes(t));
       score += sharedTags.length * 2;
     }
@@ -1341,7 +2794,9 @@ export function getRelatedPosts(currentSlug, lang = "es", limit = 2) {
   });
 
   // Separate matches (score > 0) and unmatched (score === 0)
-  const matched = scored.filter((item) => item.score > 0).sort((a, b) => b.score - a.score);
+  const matched = scored
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score);
   const unmatched = scored.filter((item) => item.score === 0);
 
   const selected = matched.map((item) => item.post).slice(0, limit);
@@ -1352,7 +2807,9 @@ export function getRelatedPosts(currentSlug, lang = "es", limit = 2) {
     const remainingCandidates = unmatched.map((item) => item.post);
 
     // Deterministic selection based on slug character codes to prevent hydration mismatch
-    const seed = currentSlug.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    const seed = currentSlug
+      .split("")
+      .reduce((acc, char) => acc + char.charCodeAt(0), 0);
 
     for (let i = 0; i < needed && remainingCandidates.length > 0; i++) {
       const index = Math.abs(seed + i) % remainingCandidates.length;
