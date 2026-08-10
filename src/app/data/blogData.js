@@ -20,7 +20,7 @@ El problema es que crear estas URLs manualmente puede ser incómodo, especialmen
 
 Para simplificar este proceso existe **QSTools UTM Builder**, una herramienta desarrollada para generar URLs etiquetadas directamente desde el navegador.
 
-👉 **[Probá QSTools UTM Builder](https://qsitools.dev/es/utm-builder/)**
+👉 **[Probá QSTools UTM Builder](https://qsitools.dev/es/utm-builder/?utm_source=martinmatias&utm_medium=referral&utm_campaign=utm-builder-post&utm_content=es)**
 
 En este artículo vamos a ver qué son las UTM, para qué sirven, cómo utilizar la herramienta, qué hacer con las URLs generadas y qué diferencia a QSTools de otros generadores disponibles.
 
@@ -808,7 +808,7 @@ Sin necesidad de enviar las URLs a un servidor.
 
 Y con la posibilidad de generar o modificar rápidamente un enlace que después podés utilizar en prácticamente cualquier canal donde necesitás medir adquisición.
 
-👉 **[Podés probar QSTools UTM Builder directamente desde su web](https://qsitools.dev/es/utm-builder/).**
+👉 **[Podés probar QSTools UTM Builder directamente desde su web](https://qsitools.dev/es/utm-builder/?utm_source=martinmatias&utm_medium=referral&utm_campaign=utm-builder-post&utm_content=es).**
 
 ---
 
@@ -1496,7 +1496,7 @@ export const postsEn = [
     title:
       "QSTools UTM Builder: How to Create Campaign URLs and Measure Traffic Sources",
     date: "2026-08-10",
-    image: "/blog/3.png",
+    image: "/blog/3.jpg",
     category: "Analytics & SEO",
     tags: ["UTM", "QSTools", "Analytics", "SEO", "Digital Marketing"],
     excerpt:
@@ -1515,7 +1515,7 @@ The problem is that creating these URLs manually can be tedious and prone to err
 
 To simplify this process, **QSTools UTM Builder** was created—a developer tool designed to generate tagged URLs directly inside your browser.
 
-👉 **[Try QSTools UTM Builder](https://qsitools.dev/es/utm-builder/)**
+👉 **[Try QSTools UTM Builder](https://qsitools.dev/utm-builder/?utm_source=martinmatias&utm_medium=referral&utm_campaign=utm-builder-post&utm_content=en)**
 
 In this article, we will explore what UTMs are, what they are used for, how to use the tool, what to do with the generated URLs, and what sets QSTools apart from other available generators.
 
@@ -2085,9 +2085,9 @@ UTMs remain a vital building block for digital marketing and analytics attributi
 
 **QSTools UTM Builder** makes creating and editing UTM links fast, effortless, and private with 100% client-side execution directly in your browser.
 
-👉 **[Try QSTools UTM Builder](https://qsitools.dev/es/utm-builder/)**
+👉 **[Try QSTools UTM Builder](https://qsitools.dev/utm-builder/?utm_source=martinmatias&utm_medium=referral&utm_campaign=utm-builder-post&utm_content=en)**
 
-👉 **[Explore more developer tools on QSTools](https://qsitools.dev/es/)**`,
+👉 **[Explore more developer tools on QSTools](https://qsitools.dev/)**`,
   },
   {
     slug: "geo-the-evolution-of-seo-for-ai",
