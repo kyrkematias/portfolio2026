@@ -92,6 +92,7 @@ export default function RootLayout({ children }) {
         <Script
           src="https://analytics.quicksolutionsit.com.ar/script.js"
           data-website-id="2879b1f0-6326-47cb-ac1d-ffc922b0ab02"
+          data-performance="true"
           strategy="afterInteractive"
           defer
         />
