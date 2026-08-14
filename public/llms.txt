@@ -1,0 +1,45 @@
+# Martín Matías - Desarrollo Web & Optimización SEO
+
+> Desarrollador Frontend y Especialista en Optimización SEO Técnica y GEO (Generative Engine Optimization).
+
+Martín Matías es un desarrollador web y consultor SEO de Argentina especializado en la creación de aplicaciones y sitios web modernos, ultrarrápidos y de alto rendimiento utilizando Next.js y React, así como en optimización SEO técnica y GEO (Generative Engine Optimization) para motores de respuesta de inteligencia artificial.
+
+## Servicios
+
+- **Desarrollo Web Frontend**: Sitios web modernos, rápidos y escalables con Next.js, React, Tailwind CSS y JavaScript.
+- **Optimización SEO Técnica**: Core Web Vitals, arquitectura web, marcado estructurado Schema.org, velocidad y rastreo.
+- **Generative Engine Optimization (GEO)**: Optimización y estructuración de contenido para motores de respuesta de IA (ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude).
+- **Diseño UX / UI**: Sistemas de diseño consistentes, accesibles y orientados a la conversión.
+- **Campañas SEM / Google Ads**: Estrategias de adquisición y atribución con analítica avanzada.
+
+## Enlaces Principales
+
+- [Sitio Principal (Español)](https://www.martinmatias.com.ar/): Portafolio, servicios, proyectos destacados y contacto.
+- [Main Website (English)](https://www.martinmatias.com.ar/en): Portfolio, services, featured projects, and contact.
+- [Blog de Desarrollo Web & SEO (Español)](https://www.martinmatias.com.ar/blog): Artículos y guías sobre desarrollo frontend, SEO técnico y GEO.
+- [Web Development & SEO Blog (English)](https://www.martinmatias.com.ar/en/blog): Technical articles on frontend engineering, SEO, and GEO.
+
+## Artículos del Blog
+
+- [GEO: La evolución del SEO para la era de la inteligencia artificial](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia): Guía completa sobre optimización para motores generativos (RAG, fan-out, SSR).
+- [GEO: The Evolution of SEO for the AI Era](https://www.martinmatias.com.ar/en/blog/geo-the-evolution-of-seo-for-ai): Comprehensive guide on Generative Engine Optimization for AI answer engines.
+- [Presencia digital y estrategia integral](https://www.martinmatias.com.ar/blog/el-seo-ya-no-alcanza): Por qué la presencia digital necesita combinar UX, desarrollo web, SEO y publicidad.
+- [Digital Presence and Comprehensive Strategy](https://www.martinmatias.com.ar/en/blog/seo-is-no-longer-enough): Why modern digital presence requires combining UX, web development, SEO, and paid media.
+- [QSTools UTM Builder: cómo crear URLs de campaña](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana): Herramienta y guía práctica para generar URLs de campaña y medir atribución de tráfico.
+- [QSTools UTM Builder: How to Create Campaign URLs](https://www.martinmatias.com.ar/en/blog/qstools-utm-builder-how-to-create-campaign-urls): Guide on creating tagged campaign URLs and measuring traffic sources in analytics.
+
+## Proyectos Destacados
+
+- [EQUITRAC](https://www.martinmatias.com.ar/#portfolio): Posicionamiento web y campañas Google Ads.
+- [Agencia Noon](https://www.martinmatias.com.ar/#portfolio): Posicionamiento web internacional y SEO técnico.
+- [Carpe Diem](https://www.martinmatias.com.ar/#portfolio): Posicionamiento web y campañas SEM.
+- [Marcbon](https://www.martinmatias.com.ar/#portfolio): SEO, UX y desarrollo web.
+- [Centro Argentino de Urología](https://www.martinmatias.com.ar/#portfolio): SEO y SEM.
+- [Litotricia San Camilo](https://www.martinmatias.com.ar/#portfolio): SEO y SEM.
+- [Norberto Bernardo](https://www.martinmatias.com.ar/#portfolio): SEO y SEM.
+- [GoingPTZ](https://www.martinmatias.com.ar/#portfolio): SEO técnico.
+
+## Información de Contacto
+
+- Sitio Web: https://www.martinmatias.com.ar
+- Ubicación: San Miguel de Tucumán, Argentina
