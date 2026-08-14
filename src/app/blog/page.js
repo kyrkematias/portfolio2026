@@ -5,7 +5,7 @@ import JsonLd from "../components/JsonLd";
 import { getPosts } from "../data/blogData";
 
 export const metadata = {
-  title: "Blog de Desarrollo Web & SEO | Martín Matías",
+  title: "Blog de Desarrollo Web & SEO",
   description:
     "Artículos sobre desarrollo frontend, optimización SEO técnica, GEO y mejores prácticas de rendimiento.",
   alternates: {

@@ -10,7 +10,9 @@ import Footer from "../components/footer";
 import JsonLd from "../components/JsonLd";
 
 export const metadata = {
-  title: "Web Development & SEO Optimization | Martín Matías",
+  title: {
+    absolute: "Web Development & SEO Optimization | Martín Matías",
+  },
   description:
     "Web development & technical SEO specialist. Building modern, ultra-fast websites designed to rank high on Google and scale digital businesses.",
   alternates: {
@@ -82,6 +84,19 @@ const homeSchemaEn = [
     "logo": "https://www.martinmatias.com.ar/logo.png",
     "image": "https://www.martinmatias.com.ar/og-image.png",
     "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "25 de Mayo 90",
+      "addressLocality": "San Miguel de Tucumán",
+      "addressRegion": "Tucumán",
+      "postalCode": "T4000",
+      "addressCountry": "AR",
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -26.8306,
+      "longitude": -65.2038,
+    },
   },
 ];
 

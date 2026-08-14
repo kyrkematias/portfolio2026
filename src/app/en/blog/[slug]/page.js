@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
     : "https://www.martinmatias.com.ar/og-image.png";
 
   return {
-    title: `${post.title} | Martín Matías Blog`,
+    title: post.title,
     description: post.excerpt,
     alternates: {
       canonical: `/en/blog/${slug}`,
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
-      title: `${post.title} | Martín Matías Blog`,
+      title: `${post.title} | Martín Matías`,
       description: post.excerpt,
       url: `https://www.martinmatias.com.ar/en/blog/${slug}`,
       siteName: "Martín Matías",
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | Martín Matías Blog`,
+      title: `${post.title} | Martín Matías`,
       description: post.excerpt,
       images: [postImage],
     },
@@ -81,7 +81,7 @@ export default async function BlogPostEn({ params }) {
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": post.title,
+      "headline": post.h1 || post.title,
       "description": post.excerpt,
       "image": [imageUrl],
       "datePublished": post.date,
@@ -157,7 +157,7 @@ export default async function BlogPostEn({ params }) {
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-          {post.title}
+          {post.h1 || post.title}
         </h1>
 
         {/* Tags */}
@@ -178,7 +178,7 @@ export default async function BlogPostEn({ params }) {
           <div className="relative w-full max-w-md mx-auto aspect-square mt-8 rounded-2xl overflow-hidden border border-[#2c2f3a] shadow-2xl">
             <Image
               src={post.image}
-              alt={post.title}
+              alt={post.h1 || post.title}
               fill
               className="object-cover"
               priority
