@@ -21,6 +21,8 @@ Martín Matías es un desarrollador web y consultor SEO de Argentina especializa
 
 ## Artículos del Blog
 
+- [Problemas de políticas en Google Ads: cómo detectarlos, resolverlos y recuperar una cuenta](https://www.martinmatias.com.ar/blog/problemas-de-politicas-en-google-ads-como-resolverlos): Guía técnica y caso de estudio para solucionar infracciones, malware, elusión de sistemas y restricciones en Google Ads.
+- [Google Ads Policy Issues: How to Identify, Fix, and Recover an Account](https://www.martinmatias.com.ar/en/blog/google-ads-policy-issues-how-to-fix-them): Technical guide and case study on resolving Google Ads policy violations, malware, circumventing systems, and healthcare restrictions.
 - [GEO: La evolución del SEO para la era de la inteligencia artificial](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia): Guía completa sobre optimización para motores generativos (RAG, fan-out, SSR).
 - [GEO: The Evolution of SEO for the AI Era](https://www.martinmatias.com.ar/en/blog/geo-the-evolution-of-seo-for-ai): Comprehensive guide on Generative Engine Optimization for AI answer engines.
 - [Presencia digital y estrategia integral](https://www.martinmatias.com.ar/blog/el-seo-ya-no-alcanza): Por qué la presencia digital necesita combinar UX, desarrollo web, SEO y publicidad.
