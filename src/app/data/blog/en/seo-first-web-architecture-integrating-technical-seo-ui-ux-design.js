@@ -1,7 +1,6 @@
 export const post = {
-  slug: "seo-first-web-architecture-integrating-technical-seo-ui-ux-design",
-  alternateSlug:
-    "arquitectura-web-seo-first-por-que-integrar-seo-tecnico-desde-el-diseno-ui-ux",
+  slug: "seo-first-web-architecture",
+  alternateSlug: "arquitectura-web-seo-first",
   title: "SEO-First Web Architecture: Integrating Technical SEO in UI/UX",
   h1: "SEO-First Web Architecture: Why Integrate Technical SEO from the UI/UX Design Phase",
   date: "2026-08-31",
