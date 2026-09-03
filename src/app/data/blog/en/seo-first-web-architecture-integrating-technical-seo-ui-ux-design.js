@@ -5,7 +5,7 @@ export const post = {
   title: "SEO-First Web Architecture: Integrating Technical SEO in UI/UX",
   h1: "SEO-First Web Architecture: Why Integrate Technical SEO from the UI/UX Design Phase",
   date: "2026-08-31",
-  image: "/blog/6.jpg",
+  image: "/blog/6-en.jpg",
   category: "Technical SEO & UX",
   tags: [
     "Web Architecture",
