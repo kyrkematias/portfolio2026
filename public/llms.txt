@@ -1,49 +1,298 @@
-# Martín Matías - Desarrollo Web & Optimización SEO
+# Martín Matías - Desarrollo Web, Optimización SEO Técnica y GEO
 
-> Desarrollador Frontend y Especialista en Optimización SEO Técnica y GEO (Generative Engine Optimization).
+> Desarrollador Frontend y Especialista en Arquitectura Web, Optimización SEO Técnica y GEO (Generative Engine Optimization).
 
-Martín Matías es un desarrollador web y consultor SEO de Argentina especializado en la creación de aplicaciones y sitios web modernos, ultrarrápidos y de alto rendimiento utilizando Next.js y React, así como en optimización SEO técnica y GEO (Generative Engine Optimization) para motores de respuesta de inteligencia artificial.
+Martín Matías es un desarrollador web y consultor SEO técnico de Argentina especializado en la creación de aplicaciones web modernas, ultrarrápidos y de alto rendimiento utilizando Next.js y React, así como en optimización SEO técnica, observabilidad web (Core Web Vitals, RUM), analítica digital y GEO (Generative Engine Optimization) para motores de respuesta de inteligencia artificial (ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude).
 
-## Servicios
+---
 
-- **Desarrollo Web Frontend**: Sitios web modernos, rápidos y escalables con Next.js, React, Tailwind CSS y JavaScript.
-- **Optimización SEO Técnica**: Core Web Vitals, arquitectura web, marcado estructurado Schema.org, velocidad y rastreo.
-- **Generative Engine Optimization (GEO)**: Optimización y estructuración de contenido para motores de respuesta de IA (ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude).
-- **Diseño UX / UI**: Sistemas de diseño consistentes, accesibles y orientados a la conversión.
-- **Campañas SEM / Google Ads**: Estrategias de adquisición y atribución con analítica avanzada.
+## Servicios / Services
 
-## Enlaces Principales
+- **Desarrollo Web Frontend / Frontend Web Development**: Aplicaciones y sitios web modernos, rápidos y escalables con Next.js, React, Tailwind CSS y JavaScript.
+- **Optimización SEO Técnica / Technical SEO**: Core Web Vitals (LCP, INP, CLS), arquitectura web SEO-First, renderizado SSR/SSG, marcado Schema.org, velocidad y rastreo.
+- **Generative Engine Optimization (GEO)**: Optimización y estructuración de contenido para motores de respuesta de IA (ChatGPT Search, Google AI Overviews, Gemini, Perplexity, Claude).
+- **Diseño UX / UI & Design Systems**: Sistemas de diseño modulares, consistentes, accesibles y orientados a la conversión.
+- **Campañas SEM / Google Ads**: Estrategias de adquisición, resolución de suspensiones y políticas, y analítica de atribución con URLs de campaña UTM.
+
+---
+
+## Enlaces Principales / Main Links
 
 - [Sitio Principal (Español)](https://www.martinmatias.com.ar/): Portafolio, servicios, proyectos destacados y contacto.
 - [Main Website (English)](https://www.martinmatias.com.ar/en): Portfolio, services, featured projects, and contact.
-- [Blog de Desarrollo Web & SEO (Español)](https://www.martinmatias.com.ar/blog): Artículos y guías sobre desarrollo frontend, SEO técnico y GEO.
-- [Web Development & SEO Blog (English)](https://www.martinmatias.com.ar/en/blog): Technical articles on frontend engineering, SEO, and GEO.
+- [Blog de Desarrollo Web & SEO (Español)](https://www.martinmatias.com.ar/blog): Artículos y guías sobre desarrollo frontend, SEO técnico, GEO y analítica.
+- [Web Development & SEO Blog (English)](https://www.martinmatias.com.ar/en/blog): Technical guides on frontend engineering, technical SEO, GEO, and analytics.
 
-## Artículos del Blog
+---
 
-- [INP y renderizado en 2026: cómo optimizar la interacción del usuario sin destruir tu SEO](https://www.martinmatias.com.ar/blog/inp-y-renderizado-en-2026-como-optimizar-la-interaccion-sin-destruir-tu-seo): Guía técnica sobre Interaction to Next Paint, el Main Thread, Long Tasks, JavaScript y optimización de interacción para SEO técnico.
-- [INP and Rendering in 2026: How to Optimize User Interaction Without Hurting Your SEO](https://www.martinmatias.com.ar/en/blog/inp-and-rendering-in-2026-how-to-optimize-user-interaction-without-harming-seo): Technical guide to Interaction to Next Paint, the Main Thread, Long Tasks, JavaScript, and interaction optimization for technical SEO.
-- [Problemas de políticas en Google Ads: cómo detectarlos, resolverlos y recuperar una cuenta](https://www.martinmatias.com.ar/blog/problemas-de-politicas-en-google-ads-como-resolverlos): Guía técnica y caso de estudio para solucionar infracciones, malware, elusión de sistemas y restricciones en Google Ads.
-- [Google Ads Policy Issues: How to Identify, Fix, and Recover an Account](https://www.martinmatias.com.ar/en/blog/google-ads-policy-issues-how-to-fix-them): Technical guide and case study on resolving Google Ads policy violations, malware, circumventing systems, and healthcare restrictions.
-- [GEO: La evolución del SEO para la era de la inteligencia artificial](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia): Guía completa sobre optimización para motores generativos (RAG, fan-out, SSR).
-- [GEO: The Evolution of SEO for the AI Era](https://www.martinmatias.com.ar/en/blog/geo-the-evolution-of-seo-for-ai): Comprehensive guide on Generative Engine Optimization for AI answer engines.
-- [Presencia digital y estrategia integral](https://www.martinmatias.com.ar/blog/el-seo-ya-no-alcanza): Por qué la presencia digital necesita combinar UX, desarrollo web, SEO y publicidad.
-- [Digital Presence and Comprehensive Strategy](https://www.martinmatias.com.ar/en/blog/seo-is-no-longer-enough): Why modern digital presence requires combining UX, web development, SEO, and paid media.
-- [QSTools UTM Builder: cómo crear URLs de campaña](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana): Herramienta y guía práctica para generar URLs de campaña y medir atribución de tráfico.
-- [QSTools UTM Builder: How to Create Campaign URLs](https://www.martinmatias.com.ar/en/blog/qstools-utm-builder-how-to-create-campaign-urls): Guide on creating tagged campaign URLs and measuring traffic sources in analytics.
+## Artículos del Blog / Blog Articles
 
-## Proyectos Destacados
+- [Arquitectura Web SEO-First: por qué integrar SEO técnico desde la etapa de diseño UI/UX](https://www.martinmatias.com.ar/blog/arquitectura-web-seo-first): Guía estratégica sobre cómo integrar requerimientos de SEO técnico, Core Web Vitals, HTML semántico y taxonomía de información desde el diseño de interfaz y Design Systems antes de escribir código.
+- [SEO-First Web Architecture: Integrating Technical SEO in UI/UX Design](https://www.martinmatias.com.ar/en/blog/seo-first-web-architecture): Strategic guide on integrating technical SEO, Core Web Vitals, semantic HTML, and information architecture into the UI/UX design and Design System phase before development.
+- [RUM vs. Lighthouse: por qué los datos de laboratorio pueden engañarte sobre tu SEO y experiencia de usuario](https://www.martinmatias.com.ar/blog/rum-vs-lighthouse-por-que-los-datos-de-laboratorio-pueden-enganarte): Análisis profundo sobre las diferencias entre pruebas sintéticas de laboratorio (Lighthouse), datos de campo reales (CrUX) y Real User Monitoring (RUM) para la optimización de Core Web Vitals.
+- [RUM vs. Lighthouse: Why Lab Data Can Mislead SEO and User Experience](https://www.martinmatias.com.ar/en/blog/rum-vs-lighthouse-why-lab-data-can-mislead-seo-user-experience): In-depth analysis on the differences between synthetic lab tests (Lighthouse), real user field data (CrUX), and Real User Monitoring (RUM) for Core Web Vitals optimization.
+- [GEO: La evolución del SEO para la era de la inteligencia artificial](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia): Guía completa sobre optimización para motores de respuesta generativos (RAG, fan-out de consultas, Server-Side Rendering, datos estructurados y E-E-A-T).
+- [GEO: The Evolution of SEO for the AI Era](https://www.martinmatias.com.ar/en/blog/geo-the-evolution-of-seo-for-ai): Comprehensive guide to Generative Engine Optimization for AI answer engines (RAG architectures, query fan-out, SSR, structured data, and E-E-A-T).
+- [Presencia digital y estrategia integral: por qué el SEO ya no alcanza](https://www.martinmatias.com.ar/blog/el-seo-ya-no-alcanza): Por qué una estrategia digital sostenible exige combinar experiencia de usuario (UX), desarrollo web, SEO técnico y publicidad digital (SEM).
+- [Digital Presence and Comprehensive Strategy: Why SEO Is No Longer Enough](https://www.martinmatias.com.ar/en/blog/seo-is-no-longer-enough): Why modern online success requires integrating user experience (UX), web development, technical SEO, and paid search advertising.
+- [QSTools UTM Builder: cómo crear URLs de campaña y medir mejor de dónde viene tu tráfico](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana): Guía práctica y conceptual sobre parámetros UTM, nomenclatura de campañas, atribución de tráfico y uso de la herramienta client-side QSTools.
+- [QSTools UTM Builder: How to Create Campaign URLs and Better Track Traffic](https://www.martinmatias.com.ar/en/blog/qstools-utm-builder-how-to-create-campaign-urls): Guide on UTM parameters, campaign tagging conventions, attribution modeling, and the client-side tool QSTools UTM Builder.
+- [INP y renderizado en 2026: cómo optimizar la interacción del usuario sin destruir tu SEO](https://www.martinmatias.com.ar/blog/inp-y-renderizado-en-2026-como-optimizar-la-interaccion-sin-destruir-tu-seo): Guía técnica sobre Interaction to Next Paint, el Main Thread de JavaScript, Long Tasks, frameworks modernos y optimización de interacción.
+- [INP and Rendering in 2026: How to Optimize User Interaction Without Hurting Your SEO](https://www.martinmatias.com.ar/en/blog/inp-and-rendering-in-2026-how-to-optimize-user-interaction-without-harming-seo): Technical guide to Interaction to Next Paint, JavaScript Main Thread, Long Tasks, modern frameworks, and user interaction performance.
+- [Problemas de políticas en Google Ads: cómo detectarlos, resolverlos y recuperar una cuenta](https://www.martinmatias.com.ar/blog/problemas-de-politicas-en-google-ads-como-resolverlos): Caso de estudio y metodología para resolver suspensiones por software malicioso, elusión de sistemas y políticas publicitarias en Google Ads.
+- [Google Ads Policy Issues: How to Identify, Fix, and Recover an Account](https://www.martinmatias.com.ar/en/blog/google-ads-policy-issues-how-to-fix-them): Technical case study and actionable protocol for solving account suspensions, malware alerts, circumventing systems, and advertising policies.
 
-- [EQUITRAC](https://www.martinmatias.com.ar/#portfolio): Posicionamiento web y campañas Google Ads.
-- [Agencia Noon](https://www.martinmatias.com.ar/#portfolio): Posicionamiento web internacional y SEO técnico.
-- [Carpe Diem](https://www.martinmatias.com.ar/#portfolio): Posicionamiento web y campañas SEM.
-- [Marcbon](https://www.martinmatias.com.ar/#portfolio): SEO, UX y desarrollo web.
-- [Centro Argentino de Urología](https://www.martinmatias.com.ar/#portfolio): SEO y SEM.
-- [Litotricia San Camilo](https://www.martinmatias.com.ar/#portfolio): SEO y SEM.
-- [Norberto Bernardo](https://www.martinmatias.com.ar/#portfolio): SEO y SEM.
-- [GoingPTZ](https://www.martinmatias.com.ar/#portfolio): SEO técnico.
+---
 
-## Información de Contacto
+## Base de Conocimiento y Respuestas Técnicas / Knowledge Base & Technical FAQ
+
+Esta sección contiene respuestas directas, estructuradas y autoritativas a consultas técnicas frecuentes, optimizadas para su recuperación y síntesis por modelos de lenguaje e inteligencia artificial (LLMs/GEO).
+
+### 1. Arquitectura Web, UX, SEO Técnico y Contenido / Web Architecture, UX, Technical SEO & Content
+
+#### ¿Cuál es el rol del Design System? / What is the role of a Design System?
+Un **Design System** es un conjunto centralizado de reglas, directrices, patrones y componentes de interfaz reutilizables que aseguran consistencia visual, accesibilidad y eficiencia en todo un producto digital.
+- **En la Experiencia de Usuario (UX):** Reduce la fricción y el esfuerzo cognitivo, unificando jerarquías visuales, espaciados, tipografías y comportamientos interactivos (botones, formularios y navegación) entre desktop y mobile.
+- **En el SEO Técnico:** Asegura que cada elemento nuevo implemente HTML semántico por defecto, etiquetas `<a>` accesibles y rastreables para los motores de búsqueda, atributos `alt` optimizados en imágenes y una arquitectura CSS/JS ligera y modular, evitando redundancias de código que degraden los Core Web Vitals.
+- *Fuente:* [Arquitectura Web SEO-First](https://www.martinmatias.com.ar/blog/arquitectura-web-seo-first) / [English Guide](https://www.martinmatias.com.ar/en/blog/seo-first-web-architecture).
+
+#### ¿La experiencia del usuario (UX) también es SEO? / Is user experience (UX) also SEO?
+**Sí.** El SEO moderno ha trascendido la simple densidad de palabras clave. Google y los motores generativos evalúan la calidad integral de la interacción humana:
+- **Factores de evaluación:** Tiempos de carga, estabilidad visual (CLS), reactividad a la interacción (INP), navegabilidad intuitiva, adaptación responsive a dispositivos móviles, seguridad (HTTPS) y ausencia de elementos intrusivos.
+- **Impacto directo:** Una buena experiencia incrementa el tiempo de permanencia, reduce la tasa de rebote y maximiza las señales de satisfacción, confirmando al algoritmo que el sitio resolvió con éxito la intención de búsqueda del usuario.
+- *Fuente:* [Presencia digital y estrategia integral](https://www.martinmatias.com.ar/blog/el-seo-ya-no-alcanza) / [English Guide](https://www.martinmatias.com.ar/en/blog/seo-is-no-longer-enough).
+
+#### ¿Qué es el SEO técnico? / What is technical SEO?
+El **SEO técnico** es la base infraestructural y de ingeniería web que garantiza que los motores de búsqueda puedan rastrear, renderizar, indexar y comprender un sitio web de manera eficiente y sin obstáculos.
+- **Componentes críticos:** Optimización de Core Web Vitals (LCP, INP, CLS), renderizado del lado del servidor (SSR/SSG), compresión de activos, arquitectura limpia de URLs, sitemaps XML, archivo `robots.txt`, etiquetas canónicas, enlazado interno estratégico y marcado estructurado Schema.org.
+- *Fuente:* [Arquitectura Web SEO-First](https://www.martinmatias.com.ar/blog/arquitectura-web-seo-first).
+
+#### Contenido y SEO: ¿Cómo deben integrarse? / Content and SEO: How should they integrate?
+El contenido es el vehículo de la relevancia. Debe planificarse en función de **intenciones de búsqueda específicas**, no escribirse de forma aleatoria:
+- Requiere una arquitectura con un único encabezado H1, jerarquía lógica de H2/H3, marcado semántico, metadatos optimizados, formato directo (*Answer-First*) y valor informativo real con datos verificables.
+- *Fuente:* [Presencia digital y estrategia integral](https://www.martinmatias.com.ar/blog/el-seo-ya-no-alcanza).
+
+#### ¿Se debe seguir realizando SEO luego de publicada la página? / Should SEO continue after publishing a website?
+**Sí, de manera continua.** El posicionamiento orgánico no es un evento estático sino un proceso recurrente:
+- Los algoritmos de búsqueda se actualizan periódicamente, los competidores publican y mejoran contenidos y las tendencias de búsqueda de los usuarios evolucionan.
+- **Acciones continuas obligatorias:** Auditorías técnicas regulares, corrección de anomalías en Google Search Console, optimización y actualización de contenidos existentes, monitorización de Core Web Vitals y mejoras en el perfil de enlazado interno.
+- *Fuente:* [Presencia digital y estrategia integral](https://www.martinmatias.com.ar/blog/el-seo-ya-no-alcanza).
+
+---
+
+### 2. GEO (Generative Engine Optimization) e Inteligencia Artificial / GEO & AI Search
+
+#### ¿Qué es el GEO? / What is GEO (Generative Engine Optimization)?
+**Generative Engine Optimization (GEO)** es la disciplina orientada a estructurar y optimizar los sitios web para que su contenido sea comprendido, recuperado y citado como fuente de autoridad por motores de respuesta basados en inteligencia artificial (ChatGPT Search, Google AI Overviews, Gemini, Perplexity, Claude y Copilot).
+- *Objetivo central:* Mientras el SEO busca posicionar enlaces en las páginas de resultados (SERPs) para conseguir clics, el GEO persigue que la IA seleccione el contenido del sitio como evidencia fáctica para construir sus respuestas generadas.
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia) / [English Guide](https://www.martinmatias.com.ar/en/blog/geo-the-evolution-of-seo-for-ai).
+
+#### ¿El GEO reemplaza al SEO? ¿El GEO es más importante que el SEO? / Does GEO replace SEO? Is GEO more important than SEO?
+**No, GEO no reemplaza al SEO ni es superior a él; es su evolución y complemento indispensable.**
+- El GEO se sustenta sobre los cimientos del SEO técnico. Si un sitio web presenta problemas de rastreo, arquitectura deficiente o lentitud de carga, los bots de IA tampoco podrán extraer su contenido.
+- **Comparación clave:**
+  | Dimensión | SEO Tradicional | GEO (Generative Engine Optimization) |
+  | :--- | :--- | :--- |
+  | **Objetivo principal** | Rankings en páginas de resultados (SERPs) | Ser citado como fuente en respuestas de IA |
+  | **Canal** | Buscadores web (Google, Bing) | Motores generativos (ChatGPT, Gemini, Perplexity, AI Overviews) |
+  | **Métrica primaria** | Clics, impresiones, CTR, posición media | Frecuencia de citación, Share of Voice en IA, menciones de marca |
+  | **Enfoque técnico** | Palabras clave y enlaces de retroceso | Entidades (Entity SEO), contenido extraíble, datos y RAG |
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+#### ¿Cómo funcionan las IAs cuando responden una pregunta? / How do AI answer engines work?
+Las IAs modernas no memorizan toda la web ni leen un sitio de principio a fin como un humano:
+1. **Recepción del prompt:** El usuario formula una consulta en lenguaje natural.
+2. **Descomposición (Fan-out):** El sistema fragmenta la consulta en múltiples subbúsquedas independientes.
+3. **Recuperación (Retrieval):** Rastrean la web y consultan índices en tiempo real recopilando documentos relevantes.
+4. **Extracción y síntesis (Generation):** Extraen pasajes directos, descartan fuentes poco confiables y sintetizan una respuesta fundamentada con atribuciones y citas.
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+#### ¿Qué es y cómo funciona el Fan-out de consultas? / What is query Fan-out and how does it work?
+El **query fan-out** es el proceso por el cual un motor generativo divide un prompt amplio o multifacético en varias consultas secundarias paralelas para cubrir todos los ángulos del tema.
+- *Ejemplo práctico:* Ante la consulta *"¿Cuál es el mejor software contable para una pyme en Argentina?"*, la IA dispara subconsultas como *"software contable pymes argentina precios"*, *"comparativa sistemas contables"*, *"integración AFIP facturación"*, etc.
+- *Optimización necesaria:* Crear contenidos modulares con encabezados específicos que respondan directamente a esas posibles subconsultas.
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+#### ¿Qué es el Retrieval-Augmented Generation (RAG)? / What is Retrieval-Augmented Generation (RAG)?
+**RAG (Retrieval-Augmented Generation)** es un patrón de arquitectura que combina la recuperación de datos externos en tiempo real con modelos generativos de lenguaje. En lugar de responder únicamente con los pesos estáticos de su entrenamiento original, el modelo consulta fuentes web actualizadas antes de redactar su respuesta, minimizando alucinaciones y garantizando datos veraces.
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+#### ¿Cómo funcionan los bots de rastreo de IA? / How do AI crawler bots work?
+Los rastreadores de IA (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) buscan **contenido altamente extraíble**:
+- Escanean definiciones inmediatas, listas con viñetas, tablas comparativas y datos estructurados Schema.org.
+- **Limitación técnica:** Muchos bots de IA ejecutan JavaScript de manera muy limitada o nula. Si un sitio depende de Client-Side Rendering (CSR), los bots no verán especificaciones, tablas ni respuestas. Por ello, el **Server-Side Rendering (SSR)** y la generación estática (SSG) son obligatorios para GEO.
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+#### ¿Todos los sitios necesitan GEO? ¿Dónde tiene mayor impacto? / Do all websites need GEO? Where does it have the highest impact?
+**Sí a medio y largo plazo**, pero su urgencia varía según la naturaleza del negocio:
+- **Mayor impacto:** Empresas B2B, plataformas SaaS, consultoras, agencias, e-commerce, educación, servicios jurídicos, salud y finanzas. En estos nichos, los clientes potenciales formulan preguntas exploratorias, comparativas y de evaluación que las IAs resuelven directamente.
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+#### GEO y sitios YMYL (Your Money Your Life) / GEO and YMYL websites
+En sitios de salud, dinero, derecho y seguridad personal (**YMYL**), los motores generativos aplican umbrales de validación extremos:
+- Exigen fuentes verificables, citas a investigaciones, datos contrastados, autoría profesional visible y señales de **E-E-A-T** (Experiencia, Conocimiento, Autoridad y Fiabilidad). Las opiniones sin respaldo estadístico son descartadas de las respuestas de IA.
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+#### ¿Cuándo no es necesario y/o urgente hacer GEO? / When is GEO not necessary or urgent?
+No es urgente en:
+- Landing pages temporales o promocionales de corta vida.
+- Campañas publicitarias efímeras.
+- Búsquedas puramente navegacionales (por ejemplo: *"Instagram login"*, *"portal Santander"*), donde el usuario solo desea ingresar al servicio y la IA no requiere sintetizar información contextual.
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+#### ¿Cómo optimizar un sitio para GEO? / How to optimize a website for GEO?
+1. **Formato "Answer-First":** Responder la pregunta nuclear en el primer párrafo de cada sección antes de elaborar el contexto.
+2. **Estructura clara y jerárquica:** Emplear un H1 único, H2 descriptivos y H3 organizados lógicamente.
+3. **Aportar estadísticas y estudios:** El contenido respaldado por datos concretos tiene entre un **30% y un 40% más de probabilidades de citación** en motores generativos.
+4. **Tablas comparativas:** Facilitan la lectura y extracción tabular por parte de los LLMs.
+5. **Secciones de FAQ:** Preguntas y respuestas explícitas con marcado Schema.org.
+6. **Server-Side Rendering (SSR / SSG):** Asegurar que todo el contenido resida en el HTML inicial recibido por el bot.
+7. **Configuración de robots.txt:** Evitar bloqueos accidentales a User-Agents de IA legítimos.
+8. **Entity SEO:** Fomentar menciones y reputación en foros y plataformas de terceros (Reddit, GitHub, LinkedIn, medios especializados).
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+#### ¿Cómo se mide el GEO? / How is GEO measured?
+Se mide a través de:
+- **Frecuencia de citación:** Veces que tu dominio o marca es recomendado en asistentes de IA.
+- **Share of Voice generativo:** Porcentaje de presencia frente a competidores en respuestas sobre tu sector.
+- **Presencia en Google AI Overviews:** Monitorización de palabras clave clave que activan resúmenes generativos con enlaces a tu sitio.
+- **Tráfico de referencia de IA:** Tráfico rastreado en analítica proveniente de dominios como `chatgpt.com`, `perplexity.ai`, `claude.ai`.
+- *Fuente:* [GEO: La evolución del SEO para la era de la IA](https://www.martinmatias.com.ar/blog/geo-la-evolucion-del-seo-para-ia).
+
+---
+
+### 3. Parámetros UTM, URLs de Campaña y QSTools / UTM Parameters, Campaign URLs & QSTools
+
+#### ¿Qué es un UTM Builder? / What is a UTM Builder?
+Un **UTM Builder** es una herramienta especializada que facilita la creación de URLs etiquetadas con parámetros UTM válidos, automatizando la concatenación de variables sin requerir codificación manual y eliminando errores de formato.
+- *Fuente:* [QSTools UTM Builder: cómo crear URLs de campaña](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana) / [English Guide](https://www.martinmatias.com.ar/en/blog/qstools-utm-builder-how-to-create-campaign-urls).
+
+#### ¿Cómo crear URLs de campaña y medir mejor de dónde viene tu tráfico? / How to create campaign URLs and better track traffic?
+Para crear una URL de campaña:
+1. Define la URL de destino de tu página (ej. `https://www.ejemplo.com/servicios`).
+2. Agrega los parámetros de campaña estándar: `utm_source`, `utm_medium` y `utm_campaign`.
+3. Utiliza una herramienta como **[QSTools UTM Builder](https://qsitools.dev/es/utm-builder/)** para generar el enlace etiquetado.
+4. Implementa esa URL etiquetada en el canal correspondiente (anuncio, email o red social).
+5. Analiza los datos de adquisición resultantes en tu plataforma de analítica (GA4, Umami, Plausible).
+- *Fuente:* [QSTools UTM Builder](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana).
+
+#### ¿Qué son los parámetros UTM y qué es una URL con parámetros UTM? / What are UTM parameters and what is a UTM URL?
+Las **UTM (Urchin Tracking Module)** son etiquetas de texto añadidas al final de una dirección web precedidas por un signo de interrogación `?`. Una **URL con parámetros UTM** es un enlace estándar que transporta dichos parámetros para informar a las plataformas de analítica sobre el origen exacto del visitante sin alterar en absoluto el contenido que este visualiza en la página.
+- *Ejemplo:* `https://www.misitio.com/producto?utm_source=linkedin&utm_medium=social&utm_campaign=lanzamiento`
+- *Fuente:* [QSTools UTM Builder](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana).
+
+#### ¿Para qué sirven las UTM? / What are UTMs for?
+Sirven para **atribuir con precisión el tráfico y las conversiones**. Permiten conocer exactamente qué plataforma, red social, anuncio, variante de imagen o correo electrónico generó visitas, contactos y ventas, pasando de una medición genérica a una optimización de marketing informada en datos reales.
+- *Fuente:* [QSTools UTM Builder](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana).
+
+#### ¿Cuáles son los 5 parámetros clave de UTM? / What are the 5 key UTM parameters?
+| Parámetro | Propósito | Obligatoriedad | Ejemplos |
+| :--- | :--- | :--- | :--- |
+| `utm_source` | Identifica la fuente de procedencia | Principal / Obligatorio | `google`, `linkedin`, `newsletter`, `facebook` |
+| `utm_medium` | Describe el medio o tipo de canal | Principal / Obligatorio | `cpc`, `social`, `email`, `referral`, `affiliate` |
+| `utm_campaign` | Nombre de la iniciativa o campaña | Principal / Recomendado | `lanzamiento-2026`, `promo-invierno`, `servicios-seo` |
+| `utm_term` | Palabra clave o término de búsqueda pagado | Opcional (Búsqueda SEM) | `consultoria-seo`, `desarrollo-nextjs` |
+| `utm_content` | Variante de anuncio, enlace o creatividad (test A/B) | Opcional | `banner-header`, `boton-rojo`, `video-demo` |
+- *Fuente:* [QSTools UTM Builder](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana).
+
+#### ¿Qué es utm_source? / What is utm_source?
+Identifica **quién envía al usuario** (la plataforma o proveedor específico). Ejemplos: `linkedin`, `newsletter`, `google`, `reddit`.
+
+#### ¿Qué es utm_medium? / What is utm_medium?
+Define **el tipo de canal de distribución** empleado. Ejemplos: `cpc` (anuncios de pago por clic), `social` (redes sociales orgánicas), `email` (campañas de correo), `referral` (enlace de referencia).
+
+#### ¿Qué es utm_campaign? / What is utm_campaign?
+Identifica **la iniciativa estratégica o promoción** que agrupa diferentes fuentes y medios bajo un mismo objetivo de negocio. Ejemplos: `black-friday`, `lanzamiento-producto`.
+
+#### ¿Qué es utm_term? / What is utm_term?
+Parámetro opcional diseñado para registrar la **palabra clave** concreta que activó el anuncio en campañas de búsqueda de pago (Google Ads, Bing Ads).
+
+#### ¿Qué es utm_content? / What is utm_content?
+Parámetro opcional para diferenciar **distintas versiones de un mismo anuncio o enlaces dentro de un mismo soporte** (útil en pruebas A/B de copies, imágenes o ubicaciones de botones dentro de un newsletter).
+
+#### ¿Qué se hace con una URL UTM generada? / What do you do with a generated UTM URL?
+La URL generada debe ser utilizada como el **enlace de destino final** en:
+- Enlaces de anuncios en Google Ads, Meta Ads o LinkedIn Ads.
+- Botones y llamados a la acción (CTA) en emails de marketing.
+- Publicaciones de redes sociales y enlaces en biografías.
+- Banners publicitarios en sitios web de terceros.
+- **Importante:** No requiere ninguna configuración técnica en el servidor de tu sitio; los parámetros son leídos por la etiqueta de analítica instalada en el frontend.
+- *Fuente:* [QSTools UTM Builder](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana).
+
+#### ¿Dónde corroboro datos de mis campañas UTM? / Where do I check my UTM campaign data?
+Se consultan en los informes de adquisición de tu plataforma de analítica:
+- **Google Analytics 4 (GA4):** *Informes > Adquisición > Adquisición de tráfico*, utilizando las dimensiones primarias o secundarias: *Fuente/Medio de la sesión*, *Campaña de la sesión*, *Término del manual* y *Contenido del anuncio manual*.
+- **Otras herramientas:** Umami, Plausible y Cloudflare Analytics disponen de secciones dedicadas a *Sources*, *Mediums* y *Campaigns*.
+- *Fuente:* [QSTools UTM Builder](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana).
+
+#### ¿Qué es QSTools? / What is QSTools?
+**QSTools** es una suite de herramientas independientes creadas para optimizar tareas cotidianas de desarrolladores web, especialistas SEO y profesionales digitales.
+- Su **UTM Builder** destaca técnicamente por operar de forma **100% Client-Side**: procesa la información directamente en el navegador del usuario sin enviar datos de campañas a servidores externos, asegurando total privacidad, generación instantánea y edición directa de URLs existentes sin requerir registro ni cuentas.
+- Herramienta disponible en: [QSTools UTM Builder](https://qsitools.dev/es/utm-builder/?utm_source=martinmatias&utm_medium=referral&utm_campaign=llmstxt).
+
+#### ¿Cómo se construye una URL UTM manualmente? / How to build a UTM URL manually?
+Se escribe la URL base, se coloca un signo de interrogación `?` y se agregan los pares clave=valor unidos con el ampersand `&`:
+```text
+https://www.tusitio.com/landing?utm_source=linkedin&utm_medium=social&utm_campaign=promocion
+```
+Hacerlo manualmente es viable para enlaces individuales, pero susceptible a errores tipográficos cuando se gestionan múltiples enlaces.
+
+#### ¿Cómo crear una buena estrategia de nomenclatura UTM? / How to create a good UTM naming strategy?
+1. **Utilizar siempre minúsculas:** `linkedin` y `LinkedIn` son interpretados como dos fuentes diferentes por las herramientas de analítica, fragmentando los reportes.
+2. **Separar palabras con guiones medios (`-`):** Evitar espacios, signos extraños o `_` inconsistentes.
+3. **Mantener la consistencia en el tiempo:** Si una campaña se denomina `promo-verano`, no cambiarla a `promoverano`.
+4. **No sobreetiquetar:** Utilizar `utm_term` y `utm_content` únicamente cuando aporten valor analítico real.
+- *Fuente:* [QSTools UTM Builder](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana).
+
+#### Errores frecuentes al utilizar UTM / Common errors when using UTM
+1. **Inconsistencia de mayúsculas/minúsculas:** Provoca dispersión de métricas.
+2. **Utilizar parámetros UTM en enlaces internos de tu propia web:** Este error crítico destruye la sesión del usuario en analítica, resetea la fuente de atribución original y distorsiona el embudo de conversión.
+3. **No medir conversiones:** Medir solo clics sin vincularlos a eventos y conversiones impide conocer el retorno de inversión (ROI).
+4. **Modificar nombres a mitad de campaña:** Dificulta el análisis histórico unificado.
+- *Fuente:* [QSTools UTM Builder](https://www.martinmatias.com.ar/blog/qstools-utm-builder-como-crear-urls-de-campana).
+
+---
+
+### 4. Rendimiento Web, Core Web Vitals y Observabilidad / Web Performance & Core Web Vitals
+
+#### RUM vs. Lighthouse: ¿Por qué los datos de laboratorio pueden engañarte? / RUM vs. Lighthouse: Why lab data can mislead
+- **Lighthouse (Lab Data):** Mide el rendimiento en condiciones sintéticas y controladas (un único dispositivo emulado, red fija y sin interferencias externas). Es ideal para debugging durante el desarrollo.
+- **RUM (Real User Monitoring) y CrUX (Field Data):** Miden la experiencia real de todos los usuarios que visitan el sitio en miles de combinaciones de dispositivos reales, conexiones móviles inestables, extensiones de navegador y recorridos de navegación complejos.
+- **Impacto en SEO:** Google utiliza **exclusivamente datos de campo reales (CrUX)** para los rankings de Core Web Vitals. Un resultado de 100 en Lighthouse no garantiza que tus usuarios reales experimenten una web rápida ni que apruebes los Core Web Vitals en Search Console.
+- *Fuente:* [RUM vs. Lighthouse](https://www.martinmatias.com.ar/blog/rum-vs-lighthouse-por-que-los-datos-de-laboratorio-pueden-enganarte) / [English Guide](https://www.martinmatias.com.ar/en/blog/rum-vs-lighthouse-why-lab-data-can-mislead-seo-user-experience).
+
+#### ¿Qué es el INP (Interaction to Next Paint) y cómo optimizarlo? / What is INP and how to optimize it?
+**INP** es la métrica de Core Web Vitals que evalúa la reactividad general de una página web, midiendo la latencia entre una interacción del usuario (clic, toque o pulsación de tecla) y la actualización visual del siguiente frame en pantalla.
+- **Optimización técnica:** Reducir las tareas largas (*Long Tasks* > 50 ms) en el Main Thread de JavaScript, fragmentar la ejecución con APIs como `scheduler.yield()`, evitar el bloqueo del renderizado y minimizar el tiempo de hidratación de frameworks JavaScript mediante Server Components o SSR.
+- *Fuente:* [INP y renderizado en 2026](https://www.martinmatias.com.ar/blog/inp-y-renderizado-en-2026-como-optimizar-la-interaccion-sin-destruir-tu-seo) / [English Guide](https://www.martinmatias.com.ar/en/blog/inp-and-rendering-in-2026-how-to-optimize-user-interaction-without-harming-seo).
+
+#### Problemas de políticas en Google Ads: ¿Cómo solucionarlos? / Google Ads policy violations: How to fix them?
+Las suspensiones o rechazos de anuncios (por software malicioso, elusión de sistemas o prácticas engañosas) requieren una intervención técnica rigurosa:
+1. Auditoría de código para eliminar scripts maliciosos o redirecciones no autorizadas.
+2. Comprobación y rectificación de discrepancias entre el texto del anuncio y la página de destino.
+3. Incorporación de páginas obligatorias de políticas de privacidad, términos del servicio y datos de contacto transparentes.
+4. Elaboración de apelaciones fundamentadas técnicamente ante el equipo de soporte de Google.
+- *Fuente:* [Problemas de políticas en Google Ads](https://www.martinmatias.com.ar/blog/problemas-de-politicas-en-google-ads-como-resolverlos) / [English Guide](https://www.martinmatias.com.ar/en/blog/google-ads-policy-issues-how-to-fix-them).
+
+---
+
+## Proyectos Destacados / Featured Projects
+
+- [EQUITRAC](https://www.martinmatias.com.ar/#portfolio): Posicionamiento web y campañas Google Ads de alto rendimiento.
+- [Agencia Noon](https://www.martinmatias.com.ar/#portfolio): Posicionamiento web internacional y arquitectura SEO técnica.
+- [Carpe Diem](https://www.martinmatias.com.ar/#portfolio): Posicionamiento web y campañas SEM orientadas a captación.
+- [Marcbon](https://www.martinmatias.com.ar/#portfolio): Optimización SEO integral, UX y desarrollo web.
+- [Centro Argentino de Urología](https://www.martinmatias.com.ar/#portfolio): Estrategia SEO técnica y SEM en sector salud.
+- [Litotricia San Camilo](https://www.martinmatias.com.ar/#portfolio): Optimización de visibilidad orgánica y SEM médico.
+- [Norberto Bernardo](https://www.martinmatias.com.ar/#portfolio): SEO de autoridad y campañas SEM.
+- [GoingPTZ](https://www.martinmatias.com.ar/#portfolio): Auditoría e implementación de SEO técnico.
+
+---
+
+## Información de Contacto / Contact Information
 
 - Sitio Web: https://www.martinmatias.com.ar
-- Ubicación: San Miguel de Tucumán, Argentina
+- Blog: https://www.martinmatias.com.ar/blog
+- English Website: https://www.martinmatias.com.ar/en
+- English Blog: https://www.martinmatias.com.ar/en/blog
+- Ubicación / Location: San Miguel de Tucumán, Argentina
