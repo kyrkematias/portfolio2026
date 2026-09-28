@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCategories, getTechs } from "../../data/techsData";
 import { getDictionary } from "../../data/dictionary";
@@ -80,9 +80,17 @@ export default function Techs({ lang = "es" }) {
 
                 <div>
                   <div className="flex items-center gap-4">
-                    <div className="p-[1px] rounded-lg bg-[#2c2f3a] group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-blue-500 transition-all duration-300">
+                    <div
+                      className="p-[1px] rounded-lg bg-[#2c2f3a] group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-blue-500 transition-all duration-300"
+                      aria-hidden="true"
+                    >
                       <div className="bg-[#171926] p-3 rounded-lg text-2xl text-blue-400 group-hover:text-white transition-colors duration-300 flex items-center justify-center">
-                        {tech.icon}
+                        {React.isValidElement(tech.icon)
+                          ? React.cloneElement(tech.icon, {
+                              "aria-label": tech.name,
+                              "aria-hidden": "true",
+                            })
+                          : tech.icon}
                       </div>
                     </div>
                     <h3 className="text-lg font-semibold text-white tracking-wide group-hover:text-blue-400 transition-colors duration-300">

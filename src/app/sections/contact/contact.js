@@ -239,7 +239,7 @@ export default function Contact({ lang = "es" }) {
                 >
                   <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
                     <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
-                      <FaGithub />
+                      <FaGithub aria-hidden="true" />
                     </div>
                   </div>
                 </a>
@@ -252,7 +252,7 @@ export default function Contact({ lang = "es" }) {
                 >
                   <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
                     <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
-                      <FaLinkedin />
+                      <FaLinkedin aria-hidden="true" />
                     </div>
                   </div>
                 </a>
@@ -265,7 +265,7 @@ export default function Contact({ lang = "es" }) {
                 >
                   <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
                     <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
-                      <FaBehance />
+                      <FaBehance aria-hidden="true" />
                     </div>
                   </div>
                 </a>
@@ -278,7 +278,7 @@ export default function Contact({ lang = "es" }) {
                 >
                   <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 group-hover:scale-105">
                     <div className="bg-[#0e0f1a] rounded-full p-3 text-white text-xl flex items-center justify-center">
-                      <FaInstagram />
+                      <FaInstagram aria-hidden="true" />
                     </div>
                   </div>
                 </a>

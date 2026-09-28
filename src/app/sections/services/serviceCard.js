@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
 import { getServices } from "../../data/services";
 
@@ -25,10 +26,15 @@ export default function ServiceCard({ lang = "es" }) {
               ${index % 2 === 0 ? "self-start md:self-start" : "self-end md:self-end"}
             `}
           >
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0" aria-hidden="true">
               <div className="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-blue-500 inline-block">
                 <div className="bg-black rounded-full p-3 sm:p-4 text-white text-2xl sm:text-3xl">
-                  {service.icon}
+                  {React.isValidElement(service.icon)
+                    ? React.cloneElement(service.icon, {
+                        "aria-label": service.title,
+                        "aria-hidden": "true",
+                      })
+                    : service.icon}
                 </div>
               </div>
             </div>

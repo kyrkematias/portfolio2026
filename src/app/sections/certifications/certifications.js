@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
 import { getCertifications } from "../../data/certificationsData";
 import { getDictionary } from "../../data/dictionary";
@@ -34,9 +35,17 @@ export default function Certifications({ lang = "es" }) {
               <div>
                 <div className="flex items-start gap-4">
                   {/* Icon Wrapper */}
-                  <div className="p-[1px] rounded-lg bg-[#2c2f3a] group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-blue-500 transition-all duration-300 flex-shrink-0">
+                  <div
+                    className="p-[1px] rounded-lg bg-[#2c2f3a] group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-blue-500 transition-all duration-300 flex-shrink-0"
+                    aria-hidden="true"
+                  >
                     <div className="bg-[#171926] p-3 rounded-lg text-2xl text-blue-400 group-hover:text-white transition-colors duration-300 flex items-center justify-center">
-                      {cert.icon}
+                      {React.isValidElement(cert.icon)
+                        ? React.cloneElement(cert.icon, {
+                            "aria-label": cert.title,
+                            "aria-hidden": "true",
+                          })
+                        : cert.icon}
                     </div>
                   </div>
 

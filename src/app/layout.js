@@ -6,11 +6,13 @@ import Navbar from "./components/navbar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -76,11 +78,32 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className="scroll-smooth">
       <head>
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link
+          rel="preconnect"
+          href="https://analytics.quicksolutionsit.com.ar"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="dns-prefetch"
+          href="https://analytics.quicksolutionsit.com.ar"
+        />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0e0f1a] text-white`}
+      >
+        <Navbar />
+        {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-MRHQGZEZLK"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -93,15 +116,8 @@ export default function RootLayout({ children }) {
           src="https://analytics.quicksolutionsit.com.ar/script.js"
           data-website-id="2879b1f0-6326-47cb-ac1d-ffc922b0ab02"
           data-performance="true"
-          strategy="afterInteractive"
-          defer
+          strategy="lazyOnload"
         />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0e0f1a] text-white`}
-      >
-        <Navbar />
-        {children}
       </body>
     </html>
   );

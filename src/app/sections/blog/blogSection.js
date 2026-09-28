@@ -1,7 +1,5 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Calendar } from "lucide-react";
 import { getPosts } from "../../data/blogData";
 import { getDictionary } from "../../data/dictionary";
@@ -25,13 +23,7 @@ export default function BlogSection({ lang = "es" }) {
     <section className="bg-[#0e0f1a] px-6 md:px-20 py-16 md:py-24" id="blog">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12"
-        >
+        <div className="mb-12">
           <h2 className="text-sm font-mono tracking-widest text-pink-400 uppercase mb-2">
             {b.tag}
           </h2>
@@ -41,16 +33,10 @@ export default function BlogSection({ lang = "es" }) {
           <p className="mt-3 text-gray-400 text-base font-light max-w-2xl">
             {b.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* Featured Latest Post Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative p-[1px] rounded-3xl bg-gradient-to-r from-pink-500/30 via-purple-500/30 to-cyan-400/30 shadow-2xl overflow-hidden group"
-        >
+        <div className="relative p-[1px] rounded-3xl bg-gradient-to-r from-pink-500/30 via-purple-500/30 to-cyan-400/30 shadow-2xl overflow-hidden group">
           <div className="bg-[#121324]/90 backdrop-blur-md rounded-[23px] p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Post Image */}
             {latestPost.image && (
@@ -59,6 +45,8 @@ export default function BlogSection({ lang = "es" }) {
                   src={latestPost.image}
                   alt={latestPost.title}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  quality={80}
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -110,7 +98,7 @@ export default function BlogSection({ lang = "es" }) {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

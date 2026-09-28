@@ -86,8 +86,8 @@ export default function Portfolio({ lang = "es" }) {
                         src={project.image}
                         alt={project.title}
                         fill
-                        unoptimized
-                        quality={100}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        quality={75}
                         className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/20 pointer-events-none" />
@@ -201,7 +201,8 @@ export default function Portfolio({ lang = "es" }) {
                             src={activeProject.image}
                             alt={activeProject.title}
                             fill
-                            unoptimized
+                            sizes="(max-width: 768px) 100vw, 800px"
+                            quality={80}
                             className="object-cover object-top"
                           />
                           <div className="absolute inset-0 bg-black/20 pointer-events-none" />

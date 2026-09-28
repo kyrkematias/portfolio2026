@@ -81,7 +81,7 @@ export default function Navbar({ lang: propLang }) {
             >
               <div className="p-[1px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
                 <div className="bg-black rounded-full p-2 text-white text-lg flex items-center justify-center">
-                  <FaGithub />
+                  <FaGithub aria-hidden="true" />
                 </div>
               </div>
             </a>
@@ -94,7 +94,7 @@ export default function Navbar({ lang: propLang }) {
             >
               <div className="p-[1px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
                 <div className="bg-black rounded-full p-2 text-white text-lg flex items-center justify-center">
-                  <FaLinkedin />
+                  <FaLinkedin aria-hidden="true" />
                 </div>
               </div>
             </a>
@@ -107,7 +107,7 @@ export default function Navbar({ lang: propLang }) {
             >
               <div className="p-[1px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
                 <div className="bg-black rounded-full p-2 text-white text-lg flex items-center justify-center">
-                  <FaBehance />
+                  <FaBehance aria-hidden="true" />
                 </div>
               </div>
             </a>
@@ -120,7 +120,7 @@ export default function Navbar({ lang: propLang }) {
             >
               <div className="p-[1px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover:scale-110">
                 <div className="bg-black rounded-full p-2 text-white text-lg flex items-center justify-center">
-                  <FaInstagram />
+                  <FaInstagram aria-hidden="true" />
                 </div>
               </div>
             </a>
@@ -161,7 +161,7 @@ export default function Navbar({ lang: propLang }) {
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <FaGithub className="text-xl text-gray-300 hover:text-pink-400" />
+                <FaGithub className="text-xl text-gray-300 hover:text-pink-400" aria-hidden="true" />
               </a>
               <a
                 href="https://www.linkedin.com/in/martinrodrigomatias/"
@@ -169,7 +169,7 @@ export default function Navbar({ lang: propLang }) {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin className="text-xl text-gray-300 hover:text-pink-400" />
+                <FaLinkedin className="text-xl text-gray-300 hover:text-pink-400" aria-hidden="true" />
               </a>
               <a
                 href="https://www.behance.net/martinmatias2"
@@ -177,7 +177,7 @@ export default function Navbar({ lang: propLang }) {
                 rel="noopener noreferrer"
                 aria-label="Behance"
               >
-                <FaBehance className="text-xl text-gray-300 hover:text-pink-400" />
+                <FaBehance className="text-xl text-gray-300 hover:text-pink-400" aria-hidden="true" />
               </a>
               <a
                 href="https://www.instagram.com/martinmatias.dev/"
@@ -185,7 +185,7 @@ export default function Navbar({ lang: propLang }) {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                <FaInstagram className="text-xl text-gray-300 hover:text-pink-400" />
+                <FaInstagram className="text-xl text-gray-300 hover:text-pink-400" aria-hidden="true" />
               </a>
             </div>
           </div>

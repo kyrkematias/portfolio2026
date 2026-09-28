@@ -93,7 +93,7 @@ export default function Footer({ lang = "es" }) {
                 aria-label="GitHub"
                 className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-pink-500/50 hover:bg-white/10 transition-all duration-300"
               >
-                <FaGithub className="w-5 h-5" />
+                <FaGithub className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="https://www.linkedin.com/in/martinrodrigomatias/"
@@ -102,7 +102,7 @@ export default function Footer({ lang = "es" }) {
                 aria-label="LinkedIn"
                 className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-blue-500/50 hover:bg-white/10 transition-all duration-300"
               >
-                <FaLinkedin className="w-5 h-5" />
+                <FaLinkedin className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="https://www.behance.net/martinmatias2"
@@ -111,7 +111,7 @@ export default function Footer({ lang = "es" }) {
                 aria-label="Behance"
                 className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300"
               >
-                <FaBehance className="w-5 h-5" />
+                <FaBehance className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="https://www.instagram.com/martinmatias.dev/"
@@ -120,7 +120,7 @@ export default function Footer({ lang = "es" }) {
                 aria-label="Instagram"
                 className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-pink-500/50 hover:bg-white/10 transition-all duration-300"
               >
-                <FaInstagram className="w-5 h-5" />
+                <FaInstagram className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function Footer({ lang = "es" }) {
           >
             <span>{lang === "en" ? "Back to top" : "Volver arriba"}</span>
             <div className="p-1.5 rounded-full bg-white/5 border border-white/10 group-hover:border-pink-500/50 transition-colors duration-200">
-              <ArrowUp className="w-3.5 h-3.5" />
+              <ArrowUp className="w-3.5 h-3.5" aria-hidden="true" />
             </div>
           </button>
         </div>
