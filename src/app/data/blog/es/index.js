@@ -1,3 +1,4 @@
+import por_que_instagram_no_agrega_otras_reacciones from "./por-que-instagram-no-agrega-otras-reacciones.js";
 import rum_vs_lighthouse from "./rum-vs-lighthouse-por-que-los-datos-de-laboratorio-pueden-enganarte.js";
 import arquitectura_web_seo_first from "./arquitectura-web-seo-first-por-que-integrar-seo-tecnico-desde-el-diseno-ui-ux.js";
 import inp_y_renderizado_en_2026 from "./inp-y-renderizado-en-2026-como-optimizar-la-interaccion-sin-destruir-tu-seo.js";
@@ -7,6 +8,7 @@ import geo_la_evolucion_del_seo_para_ia from "./geo-la-evolucion-del-seo-para-ia
 import el_seo_ya_no_alcanza from "./el-seo-ya-no-alcanza.js";
 
 export const postsEs = [
+  por_que_instagram_no_agrega_otras_reacciones,
   rum_vs_lighthouse,
   arquitectura_web_seo_first,
   inp_y_renderizado_en_2026,
