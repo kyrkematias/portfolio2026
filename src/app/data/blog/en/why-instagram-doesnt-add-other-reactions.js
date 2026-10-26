@@ -4,7 +4,7 @@ export const post = {
   title: "Why Doesn't Instagram Add Other Reactions?",
   h1: "Why Doesn't Instagram Add Other Reactions? The Heart is a Product Decision, Not Just a Button",
   date: "2026-10-16",
-  image: "/blog/8-en.png",
+  image: "/blog/8.jpg",
   category: "Product Design & UX",
   tags: [
     "Product Design",

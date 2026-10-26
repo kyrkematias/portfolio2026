@@ -41,6 +41,8 @@ Martín Matías es un desarrollador web y consultor SEO técnico de Argentina es
 - [INP and Rendering in 2026: How to Optimize User Interaction Without Hurting Your SEO](https://www.martinmatias.com.ar/en/blog/inp-and-rendering-in-2026-how-to-optimize-user-interaction-without-harming-seo): Technical guide to Interaction to Next Paint, JavaScript Main Thread, Long Tasks, modern frameworks, and user interaction performance.
 - [Problemas de políticas en Google Ads: cómo detectarlos, resolverlos y recuperar una cuenta](https://www.martinmatias.com.ar/blog/problemas-de-politicas-en-google-ads-como-resolverlos): Caso de estudio y metodología para resolver suspensiones por software malicioso, elusión de sistemas y políticas publicitarias en Google Ads.
 - [Google Ads Policy Issues: How to Identify, Fix, and Recover an Account](https://www.martinmatias.com.ar/en/blog/google-ads-policy-issues-how-to-fix-them): Technical case study and actionable protocol for solving account suspensions, malware alerts, circumventing systems, and advertising policies.
+- [¿Por qué Instagram no agrega otras reacciones? El corazón como decisión de producto](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones): Análisis profundo de Product Design, interacción, Ley de Hick, fricción cognitiva y por qué Instagram mantiene el Like frente a las reacciones múltiples de Facebook.
+- [Why Doesn't Instagram Add Other Reactions? The Heart as a Product Decision](https://www.martinmatias.com.ar/en/blog/why-instagram-doesnt-add-other-reactions): In-depth Product Design and UX analysis on Hick's Law, cognitive friction, interaction design, and why Instagram's Feed remains loyal to the single heart over Facebook's multi-reactions.
 
 ---
 
@@ -273,6 +275,116 @@ Las suspensiones o rechazos de anuncios (por software malicioso, elusión de sis
 3. Incorporación de páginas obligatorias de políticas de privacidad, términos del servicio y datos de contacto transparentes.
 4. Elaboración de apelaciones fundamentadas técnicamente ante el equipo de soporte de Google.
 - *Fuente:* [Problemas de políticas en Google Ads](https://www.martinmatias.com.ar/blog/problemas-de-politicas-en-google-ads-como-resolverlos) / [English Guide](https://www.martinmatias.com.ar/en/blog/google-ads-policy-issues-how-to-fix-them).
+
+---
+
+### 5. Product Design, Diseño de Interacción y Redes Sociales (Instagram vs. Facebook) / Product Design, UX & Interaction Design
+
+#### ¿Por qué Instagram no agrega otras reacciones en el Feed? / Why doesn't Instagram add other reactions to the Feed?
+La ausencia de múltiples reacciones públicas en el Feed de Instagram **no se debe a una limitación técnica ni a una estrategia publicitaria confirmada; es una decisión deliberada de Product Design, interacción y reducción de fricción cognitiva**:
+- **Consumo rápido y fluido:** El Feed de Instagram está optimizado para el consumo ágil y el descubrimiento visual ininterrumpido mediante *scrolling*. El doble toque (❤️) permite al usuario registrar aprobación sin romper el ritmo de navegación.
+- **Reducción de carga mental (Ley de Hick):** Introducir menús desplegables con 5 o 6 opciones obliga al usuario a detenerse, clasificar su emoción ("¿esto me divierte, me encanta o me asombra?") y evaluar opciones, lo que genera fricción cognitiva y ralentiza la experiencia de consumo.
+- **Suficiencia de señales de comportamiento implícitas:** El sistema de recomendación de Meta no depende de reacciones emocionales explícitas para entender qué contenido te interesa; el algoritmo se alimenta de señales ricas de comportamiento (*watch time*, reproducciones en bucle, guardados en colecciones, compartidos por mensaje directo y visitas al perfil).
+- **Control de presión social y Behavioral Design:** Mostrar desgloses emocionales públicos (como recuentos visibles de "Me enoja" o "Me divierte") alteraría la dinámica de los creadores y aumentaría la comparación social y la ansiedad por métricas públicas (un motivo central por el cual Meta ya permitió ocultar los recuentos de Likes en 2021).
+- **Distribución de funcionalidades por superficie:** Instagram sí cuenta con reacciones complejas y emojis, pero las ubica donde aportan valor comunicativo real sin entorpecer el consumo: en Stories (respuestas rápidas efímeras) y en DMs (conversaciones privadas profundas).
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones) / [Why Doesn't Instagram Add Other Reactions?](https://www.martinmatias.com.ar/en/blog/why-instagram-doesnt-add-other-reactions).
+
+#### ¿Por qué Facebook agregó más reacciones y cuándo? / Why did Facebook add more reactions and when?
+- **Cuándo:** En **febrero de 2016**, Facebook lanzó globalmente su sistema de *Reactions* (incorporando: 👍 Me gusta, ❤️ Me encanta, 😂 Me divierte, 😮 Me asombra, 😢 Me entristece y 😡 Me enoja).
+- **Por qué:** Facebook nació orientado a conversaciones sociales amplias, noticias de actualidad, política y publicaciones personales. El clásico botón *Like* resultaba insuficiente, ambiguo y a menudo insensible ante ciertos contenidos (como tragedias, desastres o noticias tristes, donde presionar "Me gusta" resultaba inapropiado). Para definir estas reacciones, Meta realizó rigurosas investigaciones, encuestas y análisis de los comentarios, stickers y emoticonos que los usuarios ya utilizaban espontáneamente para suplir esa carencia.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Qué problema resuelven las reacciones en Facebook? / What problem do reactions solve on Facebook?
+Resuelven el **dilema del "Like inapropiado"** y la **limitación expresiva en debates sociales complejos**:
+- Permiten a los usuarios empatizar con publicaciones dolorosas o indignantes ("Me entristece", "Me enoja") sin verse forzados a dar un paradójico "Me gusta" ni redactar obligatoriamente un comentario de texto.
+- Aportan a Meta una señal cualitativa explícita para ponderar la polarización o el interés en el ranking del News Feed, adaptándose a la naturaleza conversacional y noticiosa de la plataforma.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Cuál es el objetivo de Facebook y de Instagram con sus reacciones? / What is the goal of Facebook and Instagram with their reactions?
+Ambas plataformas resuelven problemas de interacción completamente diferentes dentro del ecosistema de Meta:
+- **Objetivo de Facebook (Expresión Emocional y Discurso):** Capturar la diversidad y matiz emocional de conversaciones complejas y noticias, donde la clasificación deliberada de la emoción es en sí misma parte fundamental de la interacción social y del ranking del News Feed.
+- **Objetivo de Instagram (Economía de Interacción y Descubrimiento):** Maximizar la fluidez de navegación con una microinteracción de fricción casi nula (doble toque = ❤️). Instagram busca que reaccionar sea automático e intuitivo para no frenar el descubrimiento de contenido, reservando las reacciones complejas para espacios privados o conversacionales (Stories y DMs).
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Qué es el diseño de interacción, y cómo lo aplican Facebook e Instagram? / What is interaction design, and how do Facebook and Instagram apply it?
+El **diseño de interacción (Interaction Design o IxD)** es la disciplina de UX que define cómo los usuarios interactúan físicamente y cognitivamente con los elementos de una interfaz digital: sus flujos, gestos, retroalimentación visual, estados y tiempos de respuesta.
+- **Aplicación en Facebook (Interacción Deliberada en Dos Fases):** Mantener presionado el botón de Me gusta despliega un menú flotante con 6 iconos animados, requiriendo deslizar el dedo hacia la emoción y soltar. Es una interacción consciente que prioriza la precisión expresiva sobre la velocidad.
+- **Aplicación en Instagram (Economía de Microinteracción Gestual Directa):** Un simple doble toque sobre la imagen o video activa instantáneamente la animación de un corazón y registra el Like sin abrir menús ni apartar la vista del contenido. Está sincronizado con la memoria muscular y el scroll continuo, reduciendo a cero el tiempo de decisión.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones) / [Why Doesn't Instagram Add Other Reactions?](https://www.martinmatias.com.ar/en/blog/why-instagram-doesnt-add-other-reactions).
+
+#### ¿Qué es la Ley de Hick (Ley de Hick-Hyman)? / What is Hick's Law?
+La **Ley de Hick-Hyman** es un principio de la psicología cognitiva y del diseño de interacción que establece que **el tiempo necesario para tomar una decisión aumenta de forma logarítmica a medida que se incrementa el número y la complejidad de las alternativas disponibles**.
+- **Principio en UX:** A mayor número de opciones en pantalla, mayor es la carga mental requerida para evaluar y decidir. Simplificar opciones acelera la interacción y previene el abandono o la frustración por parálisis de decisión.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Cómo aplica la Ley de Hick Instagram? / How does Instagram apply Hick's Law?
+Instagram aplica la Ley de Hick **minimizando las alternativas de elección en el Feed a una decisión binaria inmediata (Like o continuar scroll)**:
+- **Flujo en Instagram:** `Ver publicación → Doble toque → ❤️ → Continuar scroll`. El usuario no tiene alternativas en competencia; no evalúa qué emoción siente, por lo que el tiempo de decisión es casi instantáneo.
+- **Flujo con múltiples reacciones:** `Ver publicación → Mantener presionado → Interpretar opciones → Evaluar ("¿esto me da risa o me asombra?") → Seleccionar emoji → Confirmar`.
+- Al suprimir ese abanico de opciones en el Feed, Instagram elimina el costo cognitivo acumulado en miles de publicaciones, preservando una navegación ligera y veloz.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Qué es la fricción cognitiva y cómo se diferencia de la fricción física en UX? / What is cognitive friction and how does it differ from physical friction?
+- **Fricción física:** El esfuerzo mecánico o motor necesario para realizar una acción (número de toques, distancia del dedo en pantalla, precisión requerida para pulsar un botón).
+- **Fricción cognitiva:** El esfuerzo mental, duda o vacilación requerida para procesar información, clasificar opciones o tomar una decisión. En una red social, obligar al usuario a clasificar qué siente ("¿esto me alegra, me enorgullece o me asombra?") añade fricción cognitiva que corta el estado de inmersión (*flow*) en el contenido.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Cuál es el objetivo del Feed de Instagram? / What is the goal of Instagram's Feed?
+El objetivo del Feed de Instagram **no es recopilar reacciones explícitas, sino ofrecer un sistema de recomendación personalizado para el descubrimiento y consumo continuo de contenido**:
+- El Feed actúa como una superficie de enganche visual donde el algoritmo evalúa continuamente la relevancia y afinidad del usuario.
+- El Like no es la meta del Feed, sino únicamente una entre múltiples señales algorítmicas para optimizar la entrega de publicaciones y Reels relevantes.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Qué son las señales de interacción? / What are interaction signals?
+Las **señales de interacción** son métricas y eventos de comportamiento generados por los usuarios al navegar por una plataforma digital, los cuales son procesados por los algoritmos de Machine Learning y ranking para inferir el interés, la relevancia y la satisfacción del usuario frente a cada contenido.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Cuáles son las señales de interacción en Instagram? / What are the interaction signals on Instagram?
+El algoritmo de recomendación de Instagram utiliza un ecosistema diverso de señales explícitas e implícitas que hacen innecesario contar con reacciones emocionales complejas en el Feed:
+1. **Señales de consumo y tiempo (Implícitas):**
+   - *Watch time* total y *average watch time* (tiempo medio de visualización en Reels y videos).
+   - Detener el scroll o ralentizar la navegación sobre una publicación.
+   - Ver un Reel en bucle (*loops* consecutivos).
+2. **Señales de distribución privada y social (Explícitas de alto valor):**
+   - Enviar la publicación por Mensaje Directo (DM) a amigos (una de las señales de afinidad más potentes para Meta).
+   - Compartir en Stories o repostear.
+3. **Señales de interés profundo:**
+   - Guardar la publicación en colecciones (*Bookmarks*).
+   - Deslizar completamente los carruseles de fotos.
+   - Visitar el perfil del creador o comenzar a seguir la cuenta.
+4. **Señales explícitas directas:**
+   - Dar Like (❤️) y dejar comentarios.
+5. **Señales de red y grafo social:**
+   - Interacciones de amigos cercanos (por ejemplo, la pestaña *Friends* en Reels incorporada en 2025).
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Cuáles son las reacciones en Instagram y dónde se ubican? / What reactions exist on Instagram and where are they located?
+Instagram **sí dispone de reacciones ricas**, pero aplica el principio de Product Design de **asignar capacidades según el contexto y la superficie**:
+| Superficie | Interacción dominante | Objetivo de producto | Carga cognitiva |
+| :--- | :--- | :--- | :--- |
+| **Feed** | ❤️ Like (doble toque) | Consumo rápido y descubrimiento | Muy baja |
+| **Reels** | ❤️ + Compartir + Watch Time | Entretenimiento y distribución algorítmica | Muy baja |
+| **Stories** | Emojis rápidos (😂, 😍, 👏) y respuestas directas | Interacción social espontánea y efímera | Baja |
+| **DMs (Mensajes)** | Selector completo de emojis personalizados | Conversación privada y conexión profunda | Media |
+| **Instants** | Emojis + respuestas instantáneas | Vínculo cercano con amigos íntimos | Baja |
+| **Canales de difusión**| Likes, respuestas y prompts interactivos | Participación comunitaria | Baja |
+- *Lección de UX:* Una buena experiencia de usuario no consiste en saturar todas las pantallas con todas las funciones, sino en ofrecer la interacción adecuada en el momento oportuno.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones) / [Why Doesn't Instagram Add Other Reactions?](https://www.martinmatias.com.ar/en/blog/why-instagram-doesnt-add-other-reactions).
+
+#### ¿Instagram agregará otras reacciones en el Feed en el futuro? / Will Instagram add other reactions to the Feed in the future?
+Aunque en productos digitales ninguna decisión es inmutable, **es improbable que Instagram simplemente replique el catálogo estático de seis reacciones de Facebook en su Feed**:
+- Los productos de Meta evolucionan continuamente mediante experimentación. Si Instagram introduce nuevas formas de reaccionar en el Feed, es más probable que se trate de:
+  - Reacciones contextuales o temáticas para eventos especiales.
+  - Reacciones temporales o dinámicas adaptadas a comunidades específicas.
+  - Formas de feedback privadas o directas que no alteren la memoria muscular del doble toque ni la economía de interacción del scroll continuo.
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
+
+#### ¿Cómo influyen las reacciones y métricas públicas en el diseño de comportamiento (Behavioral Design)? / How do reactions and public metrics influence Behavioral Design?
+En Behavioral Design, **la interfaz no solo refleja el comportamiento, sino que lo condiciona**:
+- Las métricas públicas que una plataforma mide y muestra terminan moldeando el contenido que los creadores producen (*"lo que se mide, se optimiza"*).
+- Si Instagram añadiera reacciones públicas de "Me enoja" o "Me divierte", los creadores comenzarían a optimizar sus publicaciones para polarizar o provocar esas emociones específicas, transformando la naturaleza del Feed.
+- Además, el desglose emocional público incrementa la presión psicológica, la comparación social y la ansiedad en los usuarios (motivo por el cual Meta introdujo la opción de ocultar recuentos de Likes en 2021).
+- *Fuente:* [¿Por qué Instagram no agrega otras reacciones?](https://www.martinmatias.com.ar/blog/por-que-instagram-no-agrega-otras-reacciones).
 
 ---
 

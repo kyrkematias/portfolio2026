@@ -4,7 +4,7 @@ export const post = {
   title: "¿Por qué Instagram no agrega otras reacciones?",
   h1: "¿Por qué Instagram no agrega otras reacciones? El corazón como decisión de producto",
   date: "2026-10-16",
-  image: "/blog/8.png",
+  image: "/blog/8.jpg",
   category: "Product Design & UX",
   tags: [
     "Product Design",
